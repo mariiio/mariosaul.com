@@ -11,7 +11,7 @@ const taglines = [
     text: `
       was born in 🇺🇾 and lives in 🇮🇱
     `,
-    'margin-top': '9px',
+    'margin-top': '13px',
   },
   {
     'size-lg': '68px',
@@ -26,6 +26,7 @@ const taglines = [
     text: `
       is a software engineer
     `,
+    'margin-top': '12px',
   },
   {
     size: '5.8vw',
@@ -33,6 +34,7 @@ const taglines = [
     text: `
       has 6 beautiful nephews
     `,
+    'margin-top': '12px',
   },
   {
     size: '8vw',
@@ -42,7 +44,7 @@ const taglines = [
     `,
   },
   {
-    'size-lg': '70.5px',
+    'size-lg': '65px',
     text: `
       ❤️ the beatles
     `,
