@@ -1,0 +1,69 @@
+:root {
+  --white: white;
+  --text: #403c4a;
+  --text-muted: #78757f;
+  --red: #e70112;
+  --yellow: #ffdf02;
+  --yellow-dark: #ffd324;
+  --green: #45AE39;
+  --green-dark: #42AA37;
+  --blue: #3FBEFF;
+  --blue-dark: #0058bc;
+  --black: #070707;
+  --gray-light: #d4d0e0;
+  --brown: #FDC4B6;
+  --brown-dark: #D64B00;
+  --font-main: "Catamaran", sans-serif;
+  --font-family: 'Work Sans', Roboto, Helvetica, Arial, sans-serif;
+  --background: var(--white);
+  --foreground: var(--black);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  font-family: var(--font-family);
+  font-weight: 400;
+  font-style: bold;
+  line-height: 1.45;
+  margin: 0;
+}
+
+body {
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+
+.outer {
+  color: var(--text);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--foreground);
+  font-weight: 900;
+  line-height: 1.1;
+}
+
+a {
+  color: var(--text);
+  font-weight: 400;
+}
+
+strong,
+b {
+  font-weight: 900;
+}
+
+img {
+  max-width: 100%;
+}

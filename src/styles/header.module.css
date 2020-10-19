@@ -1,0 +1,29 @@
+.header {
+  padding: 1rem 2rem;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background-image: repeating-linear-gradient(-45deg,#302f2f,#302f2f 6px,#2a2929 0,#2a2929 12px);
+}
+
+.header::after {
+  background-image: linear-gradient(
+    to right,
+    var(--brown) 0%,
+    var(--blue) 50%,
+    var(--brown) 100%
+  );
+  content: '';
+  display: block;
+  height: 4px;
+  left: 0;
+  position: absolute;
+  top: 100%;
+  width: 100%;
+}
+
+.home {
+  color: var(--white);
+  font-weight: 400;
+  text-decoration: none;
+}

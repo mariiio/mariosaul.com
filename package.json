@@ -5,16 +5,20 @@
   "version": "0.1.0",
   "license": "0BSD",
   "scripts": {
+    "prebuild": "postcss src/styles/*.css --dir .cache/styles/ && mkdir -p public/styles &&  cat .cache/styles/*.css > public/styles/global.css",
     "build": "gatsby build",
     "develop": "gatsby develop",
     "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md}\"",
     "start": "npm run develop",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
-    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
+    "test": "echo \"Don't fix it if it ain't broke.\" && exit 1"
   },
   "dependencies": {
     "gatsby": "^2.24.67",
+    "gatsby-plugin-google-fonts": "^1.0.1",
+    "gatsby-plugin-postcss": "^3.0.1",
+    "postcss": "^8.1.1",
     "react": "^16.12.0",
     "react-dom": "^16.12.0"
   },

@@ -1,0 +1,19 @@
+.block {
+  background: var(--background);
+  padding: 5rem 5vw;
+  position: relative;
+}
+
+.block.clouds {
+  background: url('../images/bg-clouds.jpg') var(--blue);
+}
+
+  .block.blue {
+  background: var(--blue);
+  border-color: var(--blue-dark);
+}
+
+.block.red {
+  background: var(--red);
+  border-color: var(--red-dark);
+}

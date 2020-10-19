@@ -1,0 +1,15 @@
+.clouds {
+  line-height: 0;
+  position: relative;
+  fill: var(--background);
+	stroke: var(--background);
+}
+
+.clouds svg {
+  position: relative;
+  z-index: 2;
+}
+
+.clouds.previousBlue {
+  background: var(--blue);
+}
