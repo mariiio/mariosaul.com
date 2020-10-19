@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
-import stand from '../images/stand.png'
-import jump from '../images/jump.png'
+import stand from '../images/stand.png';
+import jump from '../images/jump.png';
+import cursor from '../images/cursor.png';
 import pipe from '../images/pipe.png'
 import styles from '../styles/hero.module.css';
 
@@ -52,11 +53,13 @@ const taglines = [
 ];
 
 const Tagline = ({ active, setActive, clickHandler }) => {
-  const images = { stand, jump };
+  const marioImages = { stand, jump };
+  const [clickedMario, setClickedMario] = useState(false);
 
   const handleClick = event => {
     event.preventDefault();
 
+    setClickedMario(true);
     setActive(true);
     setTimeout(() => setActive(false), 450);
 
@@ -65,16 +68,25 @@ const Tagline = ({ active, setActive, clickHandler }) => {
 
   return (
     <div>
-      <a
-        href="#mario"
-        onClick={handleClick}
-        className={`${styles.mario} ${active ? styles.active : ''}`}
-      >
-        <img
-          src={images[active ? 'jump' : 'stand']}
-          alt="it's a me! Mario!"
-        />
-      </a>
+      <div>
+        <a
+          href="#mario"
+          onClick={handleClick}
+          className={`${styles.mario} ${active ? styles.active : ''}`}
+          >
+          <img
+            src={marioImages[active ? 'jump' : 'stand']}
+            alt="it's a me! Mario!"
+            />
+        </a>
+        {!clickedMario &&
+            <img
+              className={styles.clickIndicator}
+              src={cursor}
+              alt="click indicator"
+            />
+        }
+      </div>
       
       <div className={styles.pipe}>
         <img
