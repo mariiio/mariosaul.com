@@ -1,0 +1,145 @@
+.hero {
+  height: 420px;
+  margin: 0 auto;
+  max-height: 54vw;
+  max-width: 700px;
+  overflow: hidden;
+  position: relative;
+  text-align: center;
+  text-transform: uppercase;
+  width: 90vw;
+  z-index: 1;
+}
+
+.box {
+  color: var(--brown);
+  background: var(--brown-dark);
+  box-shadow: 3px 3px black;
+  text-shadow: 5px 12px black;
+  display: block;
+  font-size: 20vw;
+  line-height: 1;
+  padding: 0 0.5rem 0.5rem;
+}
+
+.box:before,
+.box:after {
+  content: "";
+  position: absolute;
+  height: 78%;
+  width: 20px;
+  top: 0px;
+  background-image: radial-gradient(
+      circle at center,
+      var(--brown) 5px,
+      transparent 5px
+    ),
+    radial-gradient(circle at center, var(--brown) 5px, transparent 5px);
+  background-size: 20px 20px;
+  background-position: top center, bottom center;
+  background-repeat: no-repeat;
+}
+
+.box:before {
+  left: 0px;
+}
+
+.box:after {
+  right: 0px;
+}
+
+.tagline {
+  color: var(--white);
+  text-shadow: 1px 1px 3px black;
+  display: block;
+  font-size: var(--size, 7.42vw);
+  margin-top: var(--margin-top);
+}
+
+.tagline.active {
+  animation-duration: 700ms;
+  animation-name: bump;
+  animation-iteration-count: 1;
+}
+
+.pipe {
+  display: block;
+  margin: 0 auto;
+  margin-bottom: -165px;
+  height: 300px;
+  width: 250px;
+}
+
+.pipe img {
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  position: relative;
+}
+
+.mario {
+  display: block;
+  margin: 0 auto;
+  text-align: center;
+  width: 50px;
+}
+
+.mario.active {
+  animation-duration: 1000ms;
+  animation-name: jump;
+  animation-iteration-count: 1;
+}
+
+.mario img {
+  width: 100%;
+}
+
+@keyframes bump {
+  0% {
+    transform: scale(1, 1) translateY(0);
+  }
+  23% {
+    transform: scale(1, 1) translateY(0);
+  }
+  45% {
+    transform: scale(0.95, 1.05) translateY(-30px);
+  }
+  100% {
+    transform: scale(1, 1) translateY(0);
+  }
+}
+
+@keyframes jump {
+  0% {
+    transform: scale(1, 1) translateY(0);
+  }
+  10% {
+    transform: scale(1.1, 0.9) translateY(0);
+  }
+  23% {
+    transform: scale(0.9, 1.1) translateY(-50px);
+  }
+  55% {
+    transform: scale(1.05, 0.95) translateY(0);
+  }
+  60% {
+    transform: scale(1, 1) translateY(0);
+  }
+  100% {
+    transform: scale(1, 1) translateY(0);
+  }
+}
+
+@media (min-width: 775px) {
+  .firstLine {
+    font-size: 197px;
+  }
+
+  .box {
+    font-size: 160px;
+  }
+
+  .tagline {
+    font-size: var(--size-lg, 57.5px);
+  }
+}
