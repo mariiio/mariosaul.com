@@ -8,12 +8,7 @@
   background: url('../images/bg-clouds.jpg') var(--blue);
 }
 
-  .block.blue {
+.block.blue {
   background: var(--blue);
   border-color: var(--blue-dark);
-}
-
-.block.red {
-  background: var(--red);
-  border-color: var(--red-dark);
 }
