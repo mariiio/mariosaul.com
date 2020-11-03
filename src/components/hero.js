@@ -15,9 +15,10 @@ const taglines = [
     'margin-top': '13px',
   },
   {
-    'size-lg': '68px',
+    size: '7vw',
+    'size-lg': '55px',
     text: `
-      ❤️ to code
+      can't live without ☕️
     `,
     'margin-top': '8px',
   },
@@ -45,9 +46,10 @@ const taglines = [
     `,
   },
   {
+    size: '8vw',
     'size-lg': '65px',
     text: `
-      ❤️ the beatles
+      is a Beatlemaniac
     `,
   },
 ];
