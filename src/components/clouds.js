@@ -6,7 +6,7 @@ export function Clouds({ previousColor, color, children, id, ...props }) {
   return (
     <div>
       <section
-        className={`${styles.clouds} ${
+        className={`${styles.clouds} ${styles[color]} ${
           styles[
             `previous${
               previousColor.charAt(0).toUpperCase() + previousColor.slice(1)

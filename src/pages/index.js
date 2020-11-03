@@ -3,6 +3,7 @@ import { Layout } from '../components/layout.js';
 import { Clouds } from '../components/clouds.js';
 import { Block } from '../components/block.js';
 import { Hero } from '../components/hero.js';
+import { Bio } from '../components/bio.js';
 import "../styles/global.css"
 
 export default function Home() {
@@ -12,7 +13,7 @@ export default function Home() {
         <Hero />
       </Block>
       <Clouds previousColor="blue">
-        coming soon
+        <Bio />
       </Clouds>
     </Layout>
   ];
