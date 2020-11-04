@@ -85,6 +85,7 @@ const Tagline = ({ active, setActive, clickHandler }) => {
             <img
               className={styles.clickIndicator}
               src={cursor}
+              onClick={handleClick}
               alt="click indicator"
             />
         }
