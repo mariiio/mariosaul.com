@@ -9,9 +9,9 @@
 .header::after {
   background-image: linear-gradient(
     to right,
-    var(--brown) 0%,
-    var(--blue) 50%,
-    var(--brown) 100%
+    var(--blue) 0%,
+    var(--brown) 50%,
+    var(--blue) 100%
   );
   content: '';
   display: block;
