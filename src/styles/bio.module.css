@@ -4,16 +4,24 @@
   align-items: center;
 }
 
-.options {
+.optionsContainer {
   display: flex;
-  justify-content: center;
-  align-items: flex-start;
   flex-direction: column;
 }
 
-.options a, h3 {
+.optionsContainer a, h3 {
   text-decoration: none;
   font-family: 'Press Start 2P';
+  margin-top: 0;
+}
+
+.options {
+  margin: auto 80px;
+}
+
+.option {
+  display: flex;
+  margin: 3px 0;
 }
 
 .sideContainer {
@@ -23,12 +31,24 @@
   width: 80vw;
 }
 
+.bio {
+  background: var(--black);
+  color: var(--white);
+  font-family: 'Press Start 2P';
+  padding: 0 1rem;
+  margin-top: 1rem;
+}
+
+.bio a {
+  color: var(--white);
+}
+
 .notSelected {
-  color: white;
+  color: var(--white);;
 }
 
 .selected {
-  color: red;
+  color: var(--red);;
 }
 
 @media (min-width: 775px) {
@@ -39,7 +59,7 @@
   .container {
     display: flex;
     flex-direction: row;
-    justify-content: space-evenly;
-    align-items: center;
+    justify-content: space-around;
+    align-items: flex-start;
   }
 }
