@@ -8,30 +8,32 @@ function DifficultyChooser({ bioDifficulty, bioDifficulties, clickHandler }) {
   }
 
   return (
-    <div className={styles.options}>
+    <div className={styles.optionsContainer}>
       <h3>Select Bio Difficulty</h3>
-      {bioDifficulties.map(d => {
-        return (
-          <div className={styles.option}>
-            <span
-              className={
-                bioDifficulty === d ? styles.selected : styles.notSelected
-              }
-              id={`difficulty-${d}`}
-              name="difficulty"
-            >
-              &#9658;
-            </span>
-            <a
-              href={`#difficulty-${d}`}
-              className={styles.label}
-              onClick={handleClick}
-            >
-              {d.replace(/_/, " ").toUpperCase()}
-            </a>
-          </div>
-        )
-      })}
+      <div className={styles.options}>
+        {bioDifficulties.map(d => {
+          return (
+            <div className={styles.option}>
+              <span
+                className={
+                  bioDifficulty === d ? styles.selected : styles.notSelected
+                }
+                id={`difficulty-${d}`}
+                name="difficulty"
+              >
+                &#9658;
+              </span>
+              <a
+                href={`#difficulty-${d}`}
+                className={styles.label}
+                onClick={handleClick}
+              >
+                {d.replace(/_/, " ").toUpperCase()}
+              </a>
+            </div>
+          )
+        })}
+      </div>
     </div>
   )
 }
@@ -126,7 +128,7 @@ export function Bio() {
           clickHandler={clickHandler}
         />
       </div>
-      <div className={`${styles.sideContainer}`}>
+      <div className={`${styles.sideContainer} ${styles.bio}`}>
         <BioText bioDifficulty={bioDifficulty} />
       </div>
     </div>
