@@ -15,9 +15,13 @@
     "test": "echo \"Don't fix it if it ain't broke.\" && exit 1"
   },
   "dependencies": {
-    "gatsby": "^2.24.67",
+    "gatsby": "^2.25.3",
+    "gatsby-image": "^2.4.21",
     "gatsby-plugin-google-fonts": "^1.0.1",
     "gatsby-plugin-postcss": "^3.0.1",
+    "gatsby-plugin-sharp": "^2.7.1",
+    "gatsby-source-filesystem": "^2.4.2",
+    "gatsby-transformer-sharp": "^2.5.21",
     "postcss": "^8.1.1",
     "react": "^16.12.0",
     "react-dom": "^16.12.0"

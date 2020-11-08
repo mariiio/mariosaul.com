@@ -1,3 +1,5 @@
+const path = require(`path`)
+
 module.exports = {
   siteMetadata: {
     title: `Mario Saul`
@@ -8,11 +10,19 @@ module.exports = {
       options: {
         fonts: [
           `Work Sans\:400,900`,
-          `Press Start 2P`,
-          // `source sans pro\:300,400,400i,700` // you can also specify font weights and styles
+          `Press Start 2P`
         ],
         display: 'swap'
       }
-    }
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `images`,
+        path: path.join(__dirname, `src`, `images`),
+      },
+    },
+    `gatsby-plugin-sharp`,
+    `gatsby-transformer-sharp`
   ]
 }
