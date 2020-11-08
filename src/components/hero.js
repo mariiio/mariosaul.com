@@ -1,9 +1,9 @@
 import React, { useState } from "react"
-import stand from "../images/stand.png"
-import jump from "../images/jump.png"
 import cursor from "../images/cursor.png"
 import pipe from "../images/pipe.png"
 import styles from "../styles/hero.module.css"
+import { useStaticQuery, graphql } from "gatsby"
+import Img from "gatsby-image"
 
 const taglines = [
   {
@@ -55,7 +55,6 @@ const taglines = [
 ]
 
 const Tagline = ({ active, setActive, clickHandler }) => {
-  const marioImages = { stand, jump }
   const [clickedMario, setClickedMario] = useState(false)
 
   const handleClick = event => {
@@ -68,6 +67,25 @@ const Tagline = ({ active, setActive, clickHandler }) => {
     clickHandler()
   }
 
+  const marioImages = useStaticQuery(graphql`
+    query {
+      jump: file(relativePath: { eq: "jump.png" }) {
+        childImageSharp {
+          fixed(width: 66, height: 63) {
+            ...GatsbyImageSharpFixed
+          }
+        }
+      }
+      stand: file(relativePath: { eq: "stand.png" }) {
+        childImageSharp {
+          fixed(width: 49 , height: 64) {
+            ...GatsbyImageSharpFixed
+          }
+        }
+      }
+    }
+  `)
+
   return (
     <div>
       <div>
@@ -76,10 +94,17 @@ const Tagline = ({ active, setActive, clickHandler }) => {
           onClick={handleClick}
           className={`${styles.mario} ${active ? styles.active : ""} noselect`}
         >
-          <img
-            src={marioImages[active ? "jump" : "stand"]}
-            alt="it's a me! Mario!"
-          />
+          {active ? (
+            <Img
+              fixed={marioImages.jump.childImageSharp.fixed}
+              alt="it's a me! Mario!"
+            />
+          ) : (
+            <Img
+              fixed={marioImages.stand.childImageSharp.fixed}
+              alt="it's a me! Mario!"
+            />
+          )}
         </a>
         {!clickedMario && (
           <img
