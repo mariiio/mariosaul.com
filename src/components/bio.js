@@ -15,9 +15,10 @@ function DifficultyChooser({ bioDifficulty, bioDifficulties, clickHandler }) {
           return (
             <div className={styles.option}>
               <span
-                className={
+                className={`${
                   bioDifficulty === d ? styles.selected : styles.notSelected
                 }
+                  noselect`}
                 id={`difficulty-${d}`}
                 name="difficulty"
               >
