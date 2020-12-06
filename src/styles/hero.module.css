@@ -79,12 +79,14 @@
   margin: 0 auto;
   margin-top: 15px;
   text-align: center;
+  width: 50px;
   margin-bottom: -5px;
 }
 
 .mario.active {
   animation-duration: 1000ms;
   animation-name: jump;
+  width: 70px;
   animation-iteration-count: 1;
 }
 
