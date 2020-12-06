@@ -1,6 +1,5 @@
 import React, { useState } from "react"
 import cursor from "../images/cursor.png"
-import pipe from "../images/pipe.png"
 import styles from "../styles/hero.module.css"
 import { useStaticQuery, graphql } from "gatsby"
 import Img from "gatsby-image"
@@ -67,7 +66,7 @@ const Tagline = ({ active, setActive, clickHandler }) => {
     clickHandler()
   }
 
-  const marioImages = useStaticQuery(graphql`
+  const images = useStaticQuery(graphql`
     query {
       jump: file(relativePath: { eq: "jump.png" }) {
         childImageSharp {
@@ -79,6 +78,13 @@ const Tagline = ({ active, setActive, clickHandler }) => {
       stand: file(relativePath: { eq: "stand.png" }) {
         childImageSharp {
           fixed(width: 49 , height: 64) {
+            ...GatsbyImageSharpFixed
+          }
+        }
+      }
+      pipe: file(relativePath: { eq: "pipe.png" }) {
+        childImageSharp {
+          fixed(width: 150, height: 120) {
             ...GatsbyImageSharpFixed
           }
         }
@@ -96,12 +102,12 @@ const Tagline = ({ active, setActive, clickHandler }) => {
         >
           {active ? (
             <Img
-              fixed={marioImages.jump.childImageSharp.fixed}
+              fixed={images.jump.childImageSharp.fixed}
               alt="it's a me! Mario!"
             />
           ) : (
             <Img
-              fixed={marioImages.stand.childImageSharp.fixed}
+              fixed={images.stand.childImageSharp.fixed}
               alt="it's a me! Mario!"
             />
           )}
@@ -117,7 +123,11 @@ const Tagline = ({ active, setActive, clickHandler }) => {
       </div>
 
       <div className={styles.pipe}>
-        <img className="noselect" src={pipe} alt="pipe" />
+          <Img
+            className="noselect"
+            fixed={images.pipe.childImageSharp.fixed}
+            alt="pipe"
+          />
       </div>
     </div>
   )
