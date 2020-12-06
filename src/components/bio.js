@@ -77,15 +77,15 @@ function BioText({ bioDifficulty }) {
       <br />
       <span style={{ display: getVisibility("easy") }}>
         {" "}
-        He currently works as a full-stack web developer at{" "}
+        He currently works as a Technical Team Leader at{" "}
         <a href="https://imgn.media/">IMGN Media</a>
         <span style={{ display: getVisibility("normal") }}>
           {" "}
-          where he develops robust solutions to complex problems
+          where he guides his teams through technical issues and challenges to build robust solutions to complex problems
         </span>
         <span style={{ display: getVisibility("hard") }}>
-          , using a broad set of technologies and tools in a distributed
-          environment
+          , using a broad set of technologies and tools to build real time, big data applications in a distributed
+          environment that reach over 5 million+ monthly users
         </span>
         .
         <br />
