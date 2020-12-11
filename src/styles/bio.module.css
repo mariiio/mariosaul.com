@@ -7,6 +7,7 @@
 .optionsContainer {
   display: flex;
   flex-direction: column;
+  margin-bottom: 10px;
 }
 
 .optionsContainer a, h3 {
@@ -16,7 +17,7 @@
 }
 
 .options {
-  margin: auto 80px;
+  margin: auto 15vw;
 }
 
 .option {
@@ -32,11 +33,12 @@
 }
 
 .bio {
+  font-size: 12px;
   background: var(--black);
   color: var(--white);
   font-family: 'Press Start 2P';
+  text-align: center;
   padding: 0 1rem;
-  margin-top: 1rem;
 }
 
 .bio a {
@@ -51,9 +53,23 @@
   color: var(--red);;
 }
 
-@media (min-width: 775px) {
+@media (min-width: 1400px) {
+  .bio {
+    font-size: 14px;
+  }
+
   .sideContainer {
     width: 35vw;
+  }
+
+  .options {
+    margin: auto 80px;
+  }
+}
+
+@media (min-width: 1075px) {
+  .options {
+    margin: auto 80px;
   }
 
   .container {
@@ -61,5 +77,16 @@
     flex-direction: row;
     justify-content: space-around;
     align-items: flex-start;
+  }
+
+  .bio {
+    font-size: 14px;
+    height: 490px;
+  }
+}
+
+@media (min-width: 1875px) {
+  .bio {
+    height: 400px;
   }
 }
