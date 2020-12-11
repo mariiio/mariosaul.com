@@ -1,0 +1,8 @@
+.blue path {
+	fill: var(--blue);
+	stroke: var(--blue);
+}
+
+.circleUp {
+  margin-bottom: -0.4rem;
+}
