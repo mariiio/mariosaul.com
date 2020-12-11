@@ -10,5 +10,4 @@
 
 .block.blue {
   background: var(--blue);
-  border-color: var(--blue-dark);
 }
