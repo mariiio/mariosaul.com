@@ -16,7 +16,7 @@ export default function Home() {
       <Clouds previousColor="blue">
         <Bio />
       </Clouds>
-      <Block color="blue">
+      <Block color="white">
         <AboutLinks />
       </Block>
     </Layout>
