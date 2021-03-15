@@ -9,31 +9,33 @@ function DifficultyChooser({ bioDifficulty, bioDifficulties, clickHandler }) {
 
   return (
     <div className={styles.optionsContainer}>
-      <h3>Select Bio Difficulty</h3>
-      <div className={styles.options}>
-        {bioDifficulties.map(d => {
-          return (
-            <div className={styles.option}>
-              <span
-                className={`${
-                  bioDifficulty === d ? styles.selected : styles.notSelected
-                }
-                  noselect`}
-                id={`difficulty-${d}`}
-                name="difficulty"
-              >
-                &#9658;
-              </span>
-              <a
-                href={`#difficulty-${d}`}
-                className={styles.label}
-                onClick={handleClick}
-              >
-                {d.replace(/_/, " ").toUpperCase()}
-              </a>
-            </div>
-          )
-        })}
+      <div class="nes-container with-title is-centered">
+        <p class="title">Select Bio Difficulty</p>
+        <div className={styles.options}>
+          {bioDifficulties.map(d => {
+            return (
+              <div className={styles.option}>
+                <span
+                  className={`${
+                    bioDifficulty === d ? styles.selected : styles.notSelected
+                  }
+                    noselect`}
+                  id={`difficulty-${d}`}
+                  name="difficulty"
+                >
+                  &#9658;
+                </span>
+                <a
+                  href={`#difficulty-${d}`}
+                  className={styles.label}
+                  onClick={handleClick}
+                >
+                  {d.replace(/_/, " ").toUpperCase()}
+                </a>
+              </div>
+            )
+          })}
+        </div>
       </div>
     </div>
   )
@@ -131,7 +133,7 @@ export function Bio() {
           clickHandler={clickHandler}
         />
       </div>
-      <div className={`${styles.sideContainer} ${styles.bio}`}>
+      <div className={`nes-container is-rounded is-dark ${styles.sideContainer} ${styles.bio}`}>
         <BioText bioDifficulty={bioDifficulty} />
       </div>
     </div>
