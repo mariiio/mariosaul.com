@@ -8,11 +8,11 @@
   display: flex;
   flex-direction: column;
   margin-bottom: 10px;
+  font-family: 'Press Start 2P';
 }
 
 .optionsContainer a, h3 {
   text-decoration: none;
-  font-family: 'Press Start 2P';
   margin-top: 0;
 }
 
@@ -34,8 +34,6 @@
 
 .bio {
   font-size: 12px;
-  background: var(--black);
-  color: var(--white);
   font-family: 'Press Start 2P';
   text-align: center;
   padding: 0 1rem;
@@ -81,7 +79,7 @@
 
   .bio {
     font-size: 14px;
-    height: 490px;
+    height: 500px;
   }
 }
 
