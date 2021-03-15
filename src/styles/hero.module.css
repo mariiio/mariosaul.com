@@ -79,14 +79,17 @@
   margin: 0 auto;
   margin-top: 15px;
   text-align: center;
-  width: 50px;
-  margin-bottom: -5px;
+  width: 40px;
+}
+
+.mario img {
+  height: 56px;
 }
 
 .mario.active {
   animation-duration: 1000ms;
   animation-name: jump;
-  width: 70px;
+  width: 50px;
   animation-iteration-count: 1;
 }
 
@@ -162,7 +165,15 @@
   }
 
   .mario {
-    width: 90px;
+    width: 50px;
+  }
+
+  .mario img {
+    height: 70px;
+  }
+
+  .mario.active {
+    width: 60px;
   }
 
   .clickIndicator {
