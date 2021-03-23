@@ -44,14 +44,6 @@
   color: var(--white);
 }
 
-.notSelected {
-  color: var(--white);;
-}
-
-.selected {
-  color: var(--red);;
-}
-
 @media (min-width: 1400px) {
   .bio {
     font-size: 14px;

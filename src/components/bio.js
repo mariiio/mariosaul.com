@@ -15,23 +15,10 @@ function DifficultyChooser({ bioDifficulty, bioDifficulties, clickHandler }) {
           {bioDifficulties.map(d => {
             return (
               <div key={d} className={styles.option}>
-                <span
-                  className={`${
-                    bioDifficulty === d ? styles.selected : styles.notSelected
-                  }
-                    noselect`}
-                  id={`difficulty-${d}`}
-                  name="difficulty"
-                >
-                  &#9658;
-                </span>
-                <a
-                  href={`#difficulty-${d}`}
-                  className={styles.label}
-                  onClick={handleClick}
-                >
-                  {d.replace(/_/, " ").toUpperCase()}
-                </a>
+                <label>
+                  <input type="radio" className="nes-radio" name="difficulty" checked={bioDifficulty === d} />
+                    <span onClick={handleClick}>{d.replace(/_/, " ").toUpperCase()}</span>
+                </label>
               </div>
             )
           })}
