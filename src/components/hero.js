@@ -105,11 +105,11 @@ const Tagline = ({ active, setActive, clickHandler }) => {
       </div>
 
       <div className={styles.pipe}>
-          <Img
-            className="noselect"
-            fixed={images.pipe.childImageSharp.fixed}
-            alt="pipe"
-          />
+        <Img
+          className="noselect"
+          fixed={images.pipe.childImageSharp.fixed}
+          alt="pipe"
+        />
       </div>
     </div>
   )

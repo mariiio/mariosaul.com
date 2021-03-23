@@ -9,12 +9,12 @@ function DifficultyChooser({ bioDifficulty, bioDifficulties, clickHandler }) {
 
   return (
     <div className={styles.optionsContainer}>
-      <div class="nes-container with-title is-centered">
-        <p class="title">Select Bio Difficulty</p>
+      <div className="nes-container with-title is-centered">
+        <p className="title">Select Bio Difficulty</p>
         <div className={styles.options}>
           {bioDifficulties.map(d => {
             return (
-              <div className={styles.option}>
+              <div key={d} className={styles.option}>
                 <span
                   className={`${
                     bioDifficulty === d ? styles.selected : styles.notSelected
