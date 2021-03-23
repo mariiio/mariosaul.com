@@ -18,6 +18,7 @@
 
 .options {
   margin: auto 15vw;
+  white-space: nowrap;
 }
 
 .option {
