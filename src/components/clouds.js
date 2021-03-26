@@ -2,7 +2,14 @@ import React from "react"
 import { Block } from "./block.js"
 import styles from "../styles/clouds.module.css"
 
-export function Clouds({ previousColor, color, children, id, ...props }) {
+export function Clouds({
+  inverted,
+  previousColor,
+  color,
+  children,
+  id,
+  ...props
+}) {
   return (
     <div>
       <section
@@ -24,6 +31,7 @@ export function Clouds({ previousColor, color, children, id, ...props }) {
           preserveAspectRatio="none"
         >
           <path
+            transform={inverted ? "scale(1, -1) translate(0, -100)" : ""}
             d="M-5 100 Q 0 20 5 100 Z
                 M0 100 Q 5 0 10 100
                 M5 100 Q 10 30 15 100
