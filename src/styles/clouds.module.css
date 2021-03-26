@@ -13,3 +13,7 @@
 .clouds.previousBlue {
   background: var(--blue);
 }
+
+.inverted {
+  margin-top: -1px;
+}

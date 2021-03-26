@@ -16,8 +16,15 @@ function DifficultyChooser({ bioDifficulty, bioDifficulties, clickHandler }) {
             return (
               <div key={d} className={styles.option}>
                 <label>
-                  <input type="radio" className="nes-radio" name="difficulty" checked={bioDifficulty === d} />
-                    <span onClick={handleClick}>{d.replace(/_/, " ").toUpperCase()}</span>
+                  <input
+                    type="radio"
+                    className="nes-radio"
+                    name="difficulty"
+                    checked={bioDifficulty === d}
+                  />
+                  <span onClick={handleClick}>
+                    {d.replace(/_/, " ").toUpperCase()}
+                  </span>
                 </label>
               </div>
             )
@@ -46,58 +53,67 @@ function BioText({ bioDifficulty }) {
   const yearsWorking = new Date().getFullYear() - 2016
 
   return bioDifficulty ? (
-    <p>
-      <strong>Mario Saul</strong> is a{" "}
-      <span style={{ display: getVisibility("hard") }}>passionate </span>
-      Software Engineer
-      <span style={{ display: getVisibility("easy") }}>
-        {" "}
-        with {yearsWorking}+ years of experience
-        <span style={{ display: getVisibility("hard") }}>
+    <div>
+      <p>
+        <strong>Mario Saul</strong> is a{" "}
+        <span style={{ display: getVisibility("hard") }}>passionate </span>
+        Software Engineer
+        <span style={{ display: getVisibility("easy") }}>
           {" "}
-          in building user-centric, high-impact solutions
-        </span>
-        <span style={{ display: getVisibility("very_hard") }}>
-          {" "}
-          for leading companies in different fields
-        </span>
-      </span>
-      .
-      <br />
-      <span style={{ display: getVisibility("easy") }}>
-        {" "}
-        He currently works as a Team Leader at{" "}
-        <a href="https://imgn.media/">IMGN Media (Warner Music Group)</a>
-        <span style={{ display: getVisibility("normal") }}>
-          {" "}
-          where he guides his teams through technical challenges to
-          build robust solutions to complex problems
-        </span>
-        <span style={{ display: getVisibility("hard") }}>
-          , using a broad set of technologies and tools to build real time, big
-          data applications in a distributed environment that reaches
-          millions of people
+          with {yearsWorking}+ years of experience
+          <span style={{ display: getVisibility("hard") }}>
+            {" "}
+            in building user-centric, high-impact solutions
+          </span>
+          <span style={{ display: getVisibility("very_hard") }}>
+            {" "}
+            for leading companies in different fields
+          </span>
         </span>
         .
         <br />
-      </span>
-      <span style={{ display: getVisibility("very_hard") }}>
-        {" "}
-        The multi-faceted nature of developing software and the drive to always
-        learn something new is what excites him most about the profession.
-        <br />
-      </span>{" "}
-      He was born in Uruguay
-      <span style={{ display: getVisibility("easy") }}>
-        {" "}
-        and moved to Israel
-      </span>
-      <span style={{ display: getVisibility("hard") }}>
-        {" "}
-        {yearsSinceAlyah} year{yearsSinceAlyah > 1 ? "s" : ""} ago
-      </span>
-      .
-    </p>
+      </p>
+
+      <p>
+        <span style={{ display: getVisibility("easy") }}>
+          {" "}
+          He currently works as a Team Leader at{" "}
+          <a href="https://imgn.media/">IMGN Media (Warner Music Group)</a>
+          <span style={{ display: getVisibility("normal") }}>
+            {" "}
+            where he guides his teams through technical challenges to build
+            robust solutions to complex problems
+          </span>
+          <span style={{ display: getVisibility("hard") }}>
+            , using a broad set of technologies and tools to build real time,
+            big data applications in a distributed environment that reaches
+            millions of people
+          </span>
+          .
+          <br />
+        </span>
+      </p>
+
+      <p>
+        <span style={{ display: getVisibility("very_hard") }}>
+          {" "}
+          The multi-faceted nature of developing software and the drive to
+          always learn something new is what excites him most about the
+          profession.
+          <br />
+        </span>{" "}
+        He was born in Uruguay
+        <span style={{ display: getVisibility("easy") }}>
+          {" "}
+          and moved to Israel
+        </span>
+        <span style={{ display: getVisibility("hard") }}>
+          {" "}
+          {yearsSinceAlyah} year{yearsSinceAlyah > 1 ? "s" : ""} ago
+        </span>
+        .
+      </p>
+    </div>
   ) : null
 }
 
@@ -120,7 +136,9 @@ export function Bio() {
           clickHandler={clickHandler}
         />
       </div>
-      <div className={`nes-container is-rounded is-dark ${styles.sideContainer} ${styles.bio}`}>
+      <div
+        className={`nes-container is-rounded is-dark ${styles.sideContainer} ${styles.bio}`}
+      >
         <BioText bioDifficulty={bioDifficulty} />
       </div>
     </div>
