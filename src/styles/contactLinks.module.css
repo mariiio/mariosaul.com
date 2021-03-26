@@ -1,0 +1,42 @@
+.container {
+  margin-bottom: -4rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.balloonContainer {
+  font-family: "Press Start 2P";
+}
+
+.contactLink {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.balloonContainer i {
+  margin-top: 15px;
+}
+
+.mario {
+  width: 60px;
+}
+
+.castle {
+  display: none;
+}
+
+@media (min-width: 775px) {
+  .balloonContainer {
+    margin: 0 50px -5px 50px;
+  }
+
+  .mario {
+    width: 70px;
+  }
+
+  .castle {
+    display: block;
+  }
+}
