@@ -3,6 +3,8 @@
   padding: 2rem;
   display: flex;
   justify-content: center;
+  background: url("../images/floor-block.png");
+  background-repeat: repeat;
 }
 .footer a {
   color: inherit;
@@ -13,4 +15,10 @@
 .footer a:focus,
 .footer a:hover {
   color: var(--text);
+}
+
+.container {
+  padding: 8px;
+  background-color: var(--white);
+  border-radius: 20px;
 }

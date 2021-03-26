@@ -67,7 +67,7 @@ function BioText({ bioDifficulty }) {
       <span style={{ display: getVisibility("easy") }}>
         {" "}
         He currently works as a Team Leader at{" "}
-        <a href="https://imgn.media/">IMGN Media</a>
+        <a href="https://imgn.media/">IMGN Media (Warner Music Group)</a>
         <span style={{ display: getVisibility("normal") }}>
           {" "}
           where he guides his teams through technical issues and challenges to
@@ -76,7 +76,7 @@ function BioText({ bioDifficulty }) {
         <span style={{ display: getVisibility("hard") }}>
           , using a broad set of technologies and tools to build real time, big
           data applications in a distributed environment that reaches
-          millions of people.
+          millions of people
         </span>
         .
         <br />

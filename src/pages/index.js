@@ -1,10 +1,10 @@
-import React from 'react';
-import { Layout } from '../components/layout.js';
-import { Block } from '../components/block.js';
-import { Hero } from '../components/hero.js';
-import { Clouds } from '../components/clouds.js';
-import { Bio } from '../components/bio.js';
-import { AboutLinks } from '../components/aboutLinks.js';
+import React from "react"
+import { Layout } from "../components/layout.js"
+import { Block } from "../components/block.js"
+import { Hero } from "../components/hero.js"
+import { Clouds } from "../components/clouds.js"
+import { Bio } from "../components/bio.js"
+import { ContactLinks } from "../components/contactLinks.js"
 import "../styles/global.css"
 
 export default function Home() {
@@ -16,9 +16,9 @@ export default function Home() {
       <Clouds previousColor="blue">
         <Bio />
       </Clouds>
-      <Block color="white">
-        <AboutLinks />
-      </Block>
-    </Layout>
-  ];
+      <Clouds inverted="true" background="blue" previousColor="blue">
+        <ContactLinks />
+      </Clouds>
+    </Layout>,
+  ]
 }
