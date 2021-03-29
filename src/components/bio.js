@@ -56,7 +56,7 @@ function BioText({ bioDifficulty }) {
     <div>
       <p>
         <strong>Mario Saul</strong> is a{" "}
-        <span style={{ display: getVisibility("hard") }}>passionate </span>
+        <span style={{ display: getVisibility("very_hard") }}>passionate </span>
         Software Engineer
         <span style={{ display: getVisibility("easy") }}>
           {" "}
@@ -67,7 +67,7 @@ function BioText({ bioDifficulty }) {
           </span>
           <span style={{ display: getVisibility("very_hard") }}>
             {" "}
-            for leading companies in different fields
+            for leading companies from San Francisco in different fields
           </span>
         </span>
         .
