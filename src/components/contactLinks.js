@@ -14,6 +14,7 @@ export function ContactLinks({ color, children, id, ...props }) {
             <a
               href="https://github.com/mariiio"
               target="_blank"
+              rel="noreferrer"
               className={styles.contactLink}
             >
               <i class="nes-icon github is-large"></i>
@@ -22,6 +23,7 @@ export function ContactLinks({ color, children, id, ...props }) {
             <a
               href="https://www.instagram.com/mario_saul"
               target="_blank"
+              rel="noreferrer"
               className={styles.contactLink}
             >
               <i class="nes-icon instagram is-large"></i>
@@ -32,6 +34,7 @@ export function ContactLinks({ color, children, id, ...props }) {
             <a
               href="https://www.linkedin.com/in/mario-saul/"
               target="_blank"
+              rel="noreferrer"
               className={styles.contactLink}
             >
               <i class="nes-icon linkedin is-large"></i>
@@ -40,6 +43,7 @@ export function ContactLinks({ color, children, id, ...props }) {
             <a
               href="https://medium.com/@mariiosaul"
               target="_blank"
+              rel="noreferrer"
               className={styles.contactLink}
             >
               <i class="nes-icon medium is-large"></i>
@@ -48,6 +52,7 @@ export function ContactLinks({ color, children, id, ...props }) {
             <a
               href="https://twitter.com/mario_saul"
               target="_blank"
+              rel="noreferrer"
               className={styles.contactLink}
             >
               <i class="nes-icon twitter is-large"></i>

@@ -90,8 +90,14 @@ const Tagline = ({ active, setActive, clickHandler }) => {
           className={`${styles.mario} ${active ? styles.active : ""} noselect`}
         >
           <img
-            src={marioImages[active ? "jump" : "stand"]}
+            src={marioImages["stand"]}
+            style={{display: `${active ? "none" : "block"}`}}
             alt="it's a me! Mario!"
+          />
+          <img
+            src={marioImages["jump"]}
+            style={{display: `${active ? "block" : "none"}`}}
+            alt="it's a me! Mario jumping!"
           />
         </a>
         {!clickedMario && (
