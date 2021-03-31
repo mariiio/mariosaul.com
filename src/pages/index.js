@@ -10,15 +10,16 @@ import "../styles/global.css"
 
 export default function Home() {
   console.log(
-    "%c HEY THERE!",
+    '%c HEY THERE!',
     `
-      background-color: #0058bc;
-      color: white;
-      font-size: 2.8vw;
+      font-size: 5vw;
+      color: transparent;
+      background-image: url(https://mariosaul.netlify.app/static/jump-d872183963adf9062b228c74c5515b76.png);
+      background-blend-mode: multiply;
+      background-size: contain;
       line-height: 1;
-      padding: 4rem 5vw;
-    `
-  )
+    `,
+  );
 
   return [
     <SEO />,
