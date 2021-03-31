@@ -1,7 +1,7 @@
-  
 .container {
   margin: 0 auto;
   max-width: 600px;
   text-align: center;
   width: 90vw;
+  min-height: calc(100vh - 285px);
 }
