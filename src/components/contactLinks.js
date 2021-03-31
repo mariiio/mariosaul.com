@@ -8,7 +8,7 @@ export function ContactLinks({ color, children, id, ...props }) {
     <div className={styles.container}>
       <div>
         <section className={styles.balloonContainer}>
-          <div class="nes-balloon from-left">
+          <div className="nes-balloon from-left">
             <h2>Connect with Mario!</h2>
 
             <a
@@ -17,7 +17,7 @@ export function ContactLinks({ color, children, id, ...props }) {
               rel="noreferrer"
               className={styles.contactLink}
             >
-              <i class="nes-icon github is-large"></i>
+              <i className="nes-icon github is-large"></i>
               <span>/mariiio</span>
             </a>
             <a
@@ -26,7 +26,7 @@ export function ContactLinks({ color, children, id, ...props }) {
               rel="noreferrer"
               className={styles.contactLink}
             >
-              <i class="nes-icon instagram is-large"></i>
+              <i className="nes-icon instagram is-large"></i>
               <span href="https://www.instagram.com/mario_saul" target="_blank">
                 @mario_saul
               </span>
@@ -37,7 +37,7 @@ export function ContactLinks({ color, children, id, ...props }) {
               rel="noreferrer"
               className={styles.contactLink}
             >
-              <i class="nes-icon linkedin is-large"></i>
+              <i className="nes-icon linkedin is-large"></i>
               <span>/mario-saul</span>
             </a>
             <a
@@ -46,7 +46,7 @@ export function ContactLinks({ color, children, id, ...props }) {
               rel="noreferrer"
               className={styles.contactLink}
             >
-              <i class="nes-icon medium is-large"></i>
+              <i className="nes-icon medium is-large"></i>
               <span>@mariiosaul</span>
             </a>
             <a
@@ -55,7 +55,7 @@ export function ContactLinks({ color, children, id, ...props }) {
               rel="noreferrer"
               className={styles.contactLink}
             >
-              <i class="nes-icon twitter is-large"></i>
+              <i className="nes-icon twitter is-large"></i>
               <span>@mario_saul</span>
             </a>
           </div>
