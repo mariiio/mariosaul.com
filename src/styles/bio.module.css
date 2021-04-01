@@ -39,12 +39,15 @@ h3 {
   font-family: "Press Start 2P";
   text-align: left;
   line-height: 1.7;
-  padding: 0 1rem;
 }
 
 .bio a {
   color: var(--white);
   text-decoration: underline;
+}
+
+.bio p:last-child {
+  margin-bottom: 0;
 }
 
 @media (min-width: 1400px) {

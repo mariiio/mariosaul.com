@@ -1,9 +1,13 @@
 import React, { useState } from "react"
+import { useSfx } from "../hooks/use-sfx.js"
 import styles from "../styles/bio.module.css"
 
 function DifficultyChooser({ bioDifficulty, bioDifficulties, clickHandler }) {
+  const { playClick } = useSfx()
+
   const handleClick = event => {
     event.preventDefault()
+    playClick()
     clickHandler(event.target.innerHTML.replace(/\s/, "_").toLowerCase())
   }
 
