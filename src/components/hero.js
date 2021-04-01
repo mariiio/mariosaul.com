@@ -4,6 +4,7 @@ import styles from "../styles/hero.module.css"
 import Img from "gatsby-image"
 import stand from "../images/stand.png"
 import jump from "../images/jump.png"
+import { useSfx } from "../hooks/use-sfx.js"
 import { useStaticQuery, graphql } from "gatsby"
 
 const taglines = [
@@ -57,12 +58,14 @@ const taglines = [
 
 const Tagline = ({ active, setActive, clickHandler }) => {
   const [clickedMario, setClickedMario] = useState(false)
+  const { playJump } = useSfx()
 
   const handleClick = event => {
     event.preventDefault()
 
     setClickedMario(true)
     setActive(true)
+    playJump()
     setTimeout(() => setActive(false), 450)
 
     clickHandler()
@@ -91,12 +94,12 @@ const Tagline = ({ active, setActive, clickHandler }) => {
         >
           <img
             src={marioImages["stand"]}
-            style={{display: `${active ? "none" : "block"}`}}
+            style={{ display: `${active ? "none" : "block"}` }}
             alt="it's a me! Mario!"
           />
           <img
             src={marioImages["jump"]}
-            style={{display: `${active ? "block" : "none"}`}}
+            style={{ display: `${active ? "block" : "none"}` }}
             alt="it's a me! Mario jumping!"
           />
         </a>
@@ -125,10 +128,14 @@ export function Hero() {
   const [active, setActive] = useState(false)
   const [taglineIndex, setTaglineIndex] = useState(0)
   const tagline = taglines[taglineIndex]
+  const { playCoin } = useSfx()
 
   function changeTagline() {
     const index = taglineIndex + 1
-    setTimeout(() => setTaglineIndex(index < taglines.length ? index : 0), 200)
+    setTimeout(() => {
+      setTaglineIndex(index < taglines.length ? index : 0)
+      playCoin()
+    }, 200)
   }
 
   return [
