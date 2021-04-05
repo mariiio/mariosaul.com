@@ -1,5 +1,8 @@
 .header {
-  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.7rem 2rem;
   position: sticky;
   top: 0;
   z-index: 1000;
@@ -26,4 +29,25 @@
   color: var(--white);
   font-weight: 400;
   text-decoration: none;
+}
+
+.settings-sound-button {
+  background: var(--text-muted);
+  border: 2px solid transparent;
+  border-radius: 50%;
+  display: block;
+  padding: 5px;
+  transition: 200ms all linear;
+}
+
+.settings-sound-button:focus,
+.settings-sound-button:hover {
+  background: var(--white);
+  border-color: var(--brown-dark);
+}
+
+.settings-sound {
+  display: block;
+  height: 30px;
+  width: 30px;
 }

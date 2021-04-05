@@ -1,5 +1,6 @@
 import React from "react"
 import { SEO } from "../components/seo.js"
+import { SettingsProvider } from "../context/settings.js"
 import { Layout } from "../components/layout.js"
 import { Block } from "../components/block.js"
 import { Hero } from "../components/hero.js"
@@ -10,7 +11,7 @@ import "../styles/global.css"
 
 export default function Home() {
   console.log(
-    '%c HEY THERE!',
+    "%c HEY THERE!",
     `
       font-size: 5vw;
       color: transparent;
@@ -18,21 +19,23 @@ export default function Home() {
       background-blend-mode: multiply;
       background-size: contain;
       line-height: 1;
-    `,
-  );
+    `
+  )
 
   return [
-    <SEO />,
-    <Layout>
-      <Block background="clouds">
-        <Hero />
-      </Block>
-      <Clouds previousColor="blue">
-        <Bio />
-      </Clouds>
-      <Clouds inverted="true" background="blue" previousColor="blue">
-        <ContactLinks />
-      </Clouds>
-    </Layout>,
+    <SettingsProvider>
+      <SEO />
+      <Layout>
+        <Block background="clouds">
+          <Hero />
+        </Block>
+        <Clouds previousColor="blue">
+          <Bio />
+        </Clouds>
+        <Clouds inverted="true" background="blue" previousColor="blue">
+          <ContactLinks />
+        </Clouds>
+      </Layout>
+    </SettingsProvider>,
   ]
 }
