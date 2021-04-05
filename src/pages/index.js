@@ -1,6 +1,6 @@
 import React from "react"
-import { SEO } from "../components/seo.js"
 import { SettingsProvider } from "../context/settings.js"
+import { SEO } from "../components/seo.js"
 import { Layout } from "../components/layout.js"
 import { Block } from "../components/block.js"
 import { Hero } from "../components/hero.js"
