@@ -2,7 +2,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0.7rem 2rem;
+  padding: 0.5rem 1.5rem;
   position: sticky;
   top: 0;
   z-index: 1000;
@@ -36,7 +36,7 @@
   border: 2px solid transparent;
   border-radius: 50%;
   display: block;
-  padding: 5px;
+  padding: 3px;
   transition: 200ms all linear;
 }
 
@@ -48,6 +48,12 @@
 
 .settings-sound {
   display: block;
-  height: 30px;
-  width: 30px;
+  height: 25px;
+  width: 25px;
+}
+
+@media (min-width: 400px) {
+  .header {
+    padding: 0.5rem 2rem;
+  }
 }
