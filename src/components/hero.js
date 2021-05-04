@@ -2,6 +2,7 @@ import React, { useState } from "react"
 import cursor from "../images/cursor.png"
 import styles from "../styles/hero.module.css"
 import Img from "gatsby-image"
+import coin from "../images/coin.png"
 import stand from "../images/stand.png"
 import jump from "../images/jump.png"
 import { useSfx } from "../hooks/use-sfx.js"
@@ -55,6 +56,19 @@ const taglines = [
     `,
   },
 ]
+
+const Coins = ({ coins }) => {
+  return(
+    <div className={styles.coins}>
+      <img
+        src={coin}
+        className={styles.coin}
+        alt="coin"
+      />
+      x{coins}
+    </div>
+  )
+}
 
 const Tagline = ({ active, setActive, clickHandler }) => {
   const [clickedMario, setClickedMario] = useState(false)
@@ -125,6 +139,7 @@ const Tagline = ({ active, setActive, clickHandler }) => {
 }
 
 export function Hero() {
+  const [coins, setCoins] = useState(0)
   const [active, setActive] = useState(false)
   const [taglineIndex, setTaglineIndex] = useState(0)
   const tagline = taglines[taglineIndex]
@@ -133,12 +148,15 @@ export function Hero() {
   function changeTagline() {
     const index = taglineIndex + 1
     setTimeout(() => {
-      setTaglineIndex(index < taglines.length ? index : 0)
       playCoin()
+      setCoins(coins + 1)
+      setTaglineIndex(index < taglines.length ? index : 0)
     }, 200)
   }
 
   return [
+    <Coins coins={coins}/>
+    ,
     <h1 className={styles.hero}>
       <span className={styles.box}>Mario Saul</span>
       <span
