@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React, { useState, useEffect } from "react"
 import cursor from "../images/cursor.png"
 import styles from "../styles/hero.module.css"
 import Img from "gatsby-image"
@@ -57,15 +57,23 @@ const taglines = [
   },
 ]
 
-const Coins = ({ coins }) => {
+const GameBar = ({ time, coins }) => {
   return(
-    <div className={styles.coins}>
-      <img
-        src={coin}
-        className={styles.coin}
-        alt="coin"
-      />
-      x{coins}
+    <div className={styles.gameBar}>
+      <div className={styles.timer}>
+        TIME
+        <br/>
+        {time}
+      </div>
+
+      <div className={styles.coins}>
+        <img
+          src={coin}
+          className={styles.coin}
+          alt="coin"
+          />
+        x{coins}
+      </div>
     </div>
   )
 }
@@ -140,6 +148,7 @@ const Tagline = ({ active, setActive, clickHandler }) => {
 
 export function Hero() {
   const [coins, setCoins] = useState(0)
+  const [time, setTime] = useState(400)
   const [active, setActive] = useState(false)
   const [taglineIndex, setTaglineIndex] = useState(0)
   const tagline = taglines[taglineIndex]
@@ -153,9 +162,19 @@ export function Hero() {
       setTaglineIndex(index < taglines.length ? index : 0)
     }, 200)
   }
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setTime(time > 0 ? time - 1 : '-')
+    }, 1000);
+
+    return () => clearTimeout(timer);
+  }, [time]);
 
   return [
-    <Coins coins={coins}/>
+    <GameBar
+      time={time}
+      coins={coins}
+    />
     ,
     <h1 className={styles.hero}>
       <span className={styles.box}>Mario Saul</span>
