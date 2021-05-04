@@ -4,7 +4,8 @@
   justify-content: space-between;
   margin: -3rem 0 2rem 0;
   font-family: "Press Start 2P";
-  color: white
+  color: white;
+  font-size: 12px;
 }
 
 .timer {
@@ -14,7 +15,6 @@
 .coins {
   display: flex;
   align-items: baseline;
-  font-size: 20px;
 }
 
 .coin {
@@ -176,6 +176,14 @@
 }
 
 @media (min-width: 775px) {
+  .gameBar {
+    font-size: 20px;
+  }
+
+  .coins{
+    font-size: 20px;
+  }
+
   .firstLine {
     font-size: 197px;
   }
