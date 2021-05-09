@@ -11,14 +11,9 @@
   font-family: "Press Start 2P";
 }
 
-.optionsContainer a,
-h3 {
-  text-decoration: none;
-  margin-top: 0;
-}
-
 .options {
   margin: auto 15vw;
+  padding-top: 8px;
   white-space: nowrap;
 }
 
@@ -50,30 +45,25 @@ h3 {
   margin-bottom: 0;
 }
 
-@media (min-width: 1400px) {
+@media (min-width: 600px) {
   .bio {
     font-size: 14px;
   }
-
-  .sideContainer {
-    width: 35vw;
-  }
-
-  .options {
-    margin: auto 80px;
-  }
 }
 
-@media (min-width: 1075px) {
-  .options {
-    margin: auto 80px;
+@media (min-width: 1200px) {
+  .optionsContainer {
+    width: 90%;
   }
 
-  .container {
+  .options {
     display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    align-items: flex-start;
+    justify-content: space-between;
+    margin: auto 0px;
+  }
+
+  .sideContainer {
+    width: 80%;
   }
 
   .bio {
