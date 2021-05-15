@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react"
 import cursor from "../images/cursor.png"
 import styles from "../styles/hero.module.css"
 import Img from "gatsby-image"
-import coin from "../images/coin.png"
 import stand from "../images/stand.png"
 import jump from "../images/jump.png"
 import { useSfx } from "../hooks/use-sfx.js"
@@ -58,21 +57,16 @@ const taglines = [
 ]
 
 const GameBar = ({ time, coins }) => {
-  return(
+  return (
     <div className={styles.gameBar}>
       <div className={styles.timer}>
         TIME
-        <br/>
+        <br />
         {time}
       </div>
 
       <div className={styles.coins}>
-        <img
-          src={coin}
-          className={styles.coin}
-          alt="coin"
-          />
-        x{coins}
+        <i className={`${styles.coin} nes-icon coin`}></i>x{coins}
       </div>
     </div>
   )
@@ -164,18 +158,14 @@ export function Hero() {
   }
   useEffect(() => {
     const timer = setTimeout(() => {
-      setTime(time > 0 ? time - 1 : '-')
-    }, 1000);
+      setTime(time > 0 ? time - 1 : "-")
+    }, 1000)
 
-    return () => clearTimeout(timer);
-  }, [time]);
+    return () => clearTimeout(timer)
+  }, [time])
 
   return [
-    <GameBar
-      time={time}
-      coins={coins}
-    />
-    ,
+    <GameBar time={time} coins={coins} />,
     <h1 className={styles.hero}>
       <span className={styles.box}>Mario Saul</span>
       <span
