@@ -1,43 +1,7 @@
 import React, { useState } from "react"
+import { OptionsPicker } from "../components/optionsPicker"
 import { useSfx } from "../hooks/use-sfx.js"
 import styles from "../styles/bio.module.css"
-
-function DifficultyChooser({ bioDifficulty, bioDifficulties, clickHandler }) {
-  const { playClick } = useSfx()
-
-  const handleClick = event => {
-    event.preventDefault()
-    playClick()
-    clickHandler(event.target.innerHTML.replace(/\s/, "_").toLowerCase())
-  }
-
-  return (
-    <div className={styles.optionsContainer}>
-      <div className="nes-container with-title is-centered">
-        <p className="title">Select Bio Difficulty</p>
-        <div className={styles.options}>
-          {bioDifficulties.map(d => {
-            return (
-              <div key={d} className={styles.option}>
-                <label>
-                  <input
-                    type="radio"
-                    className="nes-radio"
-                    name="difficulty"
-                    checked={bioDifficulty === d}
-                  />
-                  <span onClick={handleClick}>
-                    {d.replace(/_/, " ").toUpperCase()}
-                  </span>
-                </label>
-              </div>
-            )
-          })}
-        </div>
-      </div>
-    </div>
-  )
-}
 
 function BioText({ bioDifficulty }) {
   const getVisibility = group => {
@@ -124,6 +88,7 @@ function BioText({ bioDifficulty }) {
 export function Bio() {
   const [bioDifficulty, setBioDifficulty] = useState("normal")
   const bioDifficulties = ["very_easy", "easy", "normal", "hard", "very_hard"]
+  const { playClick } = useSfx()
 
   const clickHandler = difficulty => {
     if (bioDifficulties.includes(difficulty)) {
@@ -134,9 +99,11 @@ export function Bio() {
   return (
     <div className={`${styles.container}`}>
       <div className={`${styles.sideContainer}`}>
-        <DifficultyChooser
-          bioDifficulty={bioDifficulty}
-          bioDifficulties={bioDifficulties}
+        <OptionsPicker
+          title="Select Bio Difficulty"
+          selectedOption={bioDifficulty}
+          options={bioDifficulties}
+          clickSound={playClick}
           clickHandler={clickHandler}
         />
       </div>
