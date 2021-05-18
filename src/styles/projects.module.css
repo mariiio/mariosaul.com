@@ -31,7 +31,9 @@
 
 .logoGroupTitle {
   color: gray;
-  font-size: 10px;
+  font-family: var(--font-family);
+  font-weight: 100;
+  font-size: 12px;
 }
 
 .logoGroupTitle#companiesTitle {

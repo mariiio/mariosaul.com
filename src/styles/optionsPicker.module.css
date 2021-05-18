@@ -5,6 +5,10 @@
   font-family: "Press Start 2P";
 }
 
+.title {
+  letter-spacing: 0.001px;
+}
+
 .options {
   margin: auto 15vw;
   padding-top: 8px;

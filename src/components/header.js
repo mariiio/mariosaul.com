@@ -26,7 +26,7 @@ export function Header() {
           src={soundEnabled ? sound : mute }
           alt=""
         />
-        <span class="visually-hidden">Turn Sound Off</span>
+        <span className="visually-hidden">Turn Sound Off</span>
       </Button>
     </header>
   )

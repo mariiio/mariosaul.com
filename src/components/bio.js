@@ -91,14 +91,12 @@ export function Bio() {
   const { playClick } = useSfx()
 
   const clickHandler = difficulty => {
-    if (bioDifficulties.includes(difficulty)) {
-      setBioDifficulty(difficulty)
-    }
+    setBioDifficulty(difficulty)
   }
 
   return (
-    <div className={`${styles.container}`}>
-      <div className={`${styles.sideContainer}`}>
+    <div className={styles.container}>
+      <div className={styles.sideContainer}>
         <OptionsPicker
           title="Select Bio Difficulty"
           selectedOption={bioDifficulty}

@@ -17,7 +17,7 @@ export function OptionsPicker({
   return (
     <div className={styles.optionsContainer}>
       <div className="nes-container with-title is-centered">
-        <p className="title">{title}</p>
+        <p className={`title ${styles.title}`}>{title}</p>
         <div className={styles.options}>
           {options.map(option => {
             return (
