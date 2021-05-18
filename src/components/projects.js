@@ -19,13 +19,17 @@ export function Projects() {
           companies
         </h3>
         <div className={styles.logoGroup}>
-          <a href="https://www.therealreal.com/" target="_blank">
+          <a
+            href="https://www.therealreal.com/"
+            target="_blank"
+            rel="noreferrer"
+          >
             <img alt="The realreal" loading="lazy" src={trr}></img>
           </a>
-          <a href="https://emeritus.org/" target="_blank">
+          <a href="https://emeritus.org/" target="_blank" rel="noreferrer">
             <img alt="Emeritus" loading="lazy" src={emeritus}></img>
           </a>
-          <a href="https://imgn.media/" target="_blank">
+          <a href="https://imgn.media/" target="_blank" rel="noreferrer">
             <img alt="Warner Music Group" loading="lazy" src={wmg}></img>
           </a>
         </div>
@@ -35,7 +39,7 @@ export function Projects() {
           start-ups
         </h3>
         <div className={styles.logoGroup}>
-          <a href="http://seatmateapp.com/" target="_blank">
+          <a href="http://seatmateapp.com/" target="_blank" rel="noreferrer">
             <img
               style={{ width: "70px" }}
               alt="SeatMate"
@@ -43,12 +47,13 @@ export function Projects() {
               src={seatmate}
             ></img>
           </a>
-          <a href="https://retroally.com/" target="_blank">
+          <a href="https://retroally.com/" target="_blank" rel="noreferrer">
             <img alt="Retroally" loading="lazy" src={retroally}></img>
           </a>
           <a
             href="https://appadvice.com/app/illume-health-sauna-tracker/1439920323"
             target="_blank"
+            rel="noreferrer"
           >
             <img alt="IllumeHealth" loading="lazy" src={illumehealth}></img>
           </a>
@@ -63,10 +68,10 @@ export function Projects() {
           className={styles.logoGroup}
           id={styles.factoriesLogos}
         >
-          <a href="https://www.wyeworks.com/" target="_blank">
+          <a href="https://www.wyeworks.com/" target="_blank" rel="noreferrer">
             <img alt="WyeWorks" loading="lazy" src={wyeworks}></img>
           </a>
-          <a href="https://www.rootstrap.com/" target="_blank">
+          <a href="https://www.rootstrap.com/" target="_blank" rel="noreferrer">
             <img alt="Rootstrap" loading="lazy" src={rootstrap}></img>
           </a>
         </div>
