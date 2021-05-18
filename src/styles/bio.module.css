@@ -5,24 +5,6 @@
   align-items: center;
 }
 
-.optionsContainer {
-  display: flex;
-  flex-direction: column;
-  margin-bottom: 10px;
-  font-family: "Press Start 2P";
-}
-
-.options {
-  margin: auto 15vw;
-  padding-top: 8px;
-  white-space: nowrap;
-}
-
-.option {
-  display: flex;
-  margin: 3px 0;
-}
-
 .sideContainer {
   display: flex;
   justify-content: center;
@@ -57,16 +39,6 @@
 }
 
 @media (min-width: 1200px) {
-  .optionsContainer {
-    width: 90%;
-  }
-
-  .options {
-    display: flex;
-    justify-content: space-between;
-    margin: auto 0px;
-  }
-
   .sideContainer {
     width: 80%;
   }
