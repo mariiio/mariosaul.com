@@ -1,6 +1,7 @@
 .container {
   margin-bottom: -4rem;
   display: flex;
+  flex-direction: row;
   justify-content: space-between;
   align-items: flex-end;
 }
@@ -32,11 +33,23 @@
     margin: 0 50px -5px 50px;
   }
 
+  .balloons {
+    display: flex;
+  }
+
+  .contactLink {
+    margin: 0 20px;
+  }
+
   .luigi {
     width: 70px;
   }
 
   .castle {
     display: block;
+  }
+
+  .accountName {
+    display: none;
   }
 }
