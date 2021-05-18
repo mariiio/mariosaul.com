@@ -1,11 +1,11 @@
 .logosContainer {
-  margin-top: 60px;
+  margin-top: 50px;
   font-family: "Press Start 2P";
   text-align: center;
 }
 
 .mainTitle {
-  margin: 40px 0;
+  margin: 25px 0;
   font-size: 18px;
 }
 
@@ -15,6 +15,11 @@
 
 .logoGroup img {
   width: 90px;
+  filter: grayscale(50%);
+}
+
+.logoGroup img:hover {
+  filter: grayscale(0%);
 }
 
 .logoGroup {
@@ -54,6 +59,10 @@
 }
 
 @media (min-width: 600px) {
+  .logosContainer {
+    margin-top: 60px;
+  }
+
   .mainTitle {
     margin: 50px 0;
     font-size: 1.5rem;
