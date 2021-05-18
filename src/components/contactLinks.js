@@ -11,23 +11,25 @@ export function ContactLinks({ color, children, id, ...props }) {
           <div className="nes-balloon from-left">
             <h2>Connect with Mario!</h2>
 
+            <div className={styles.balloons}>
+
             <a
               href="https://github.com/mariiio"
               target="_blank"
               rel="noreferrer"
               className={styles.contactLink}
-            >
+              >
               <i className="nes-icon github is-large"></i>
-              <span>/mariiio</span>
+              <span className={styles.accountName}>/mariiio</span>
             </a>
             <a
               href="https://www.instagram.com/mario_saul"
               target="_blank"
               rel="noreferrer"
               className={styles.contactLink}
-            >
+              >
               <i className="nes-icon instagram is-large"></i>
-              <span href="https://www.instagram.com/mario_saul" target="_blank">
+              <span className={styles.accountName} href="https://www.instagram.com/mario_saul" target="_blank">
                 @mario_saul
               </span>
             </a>
@@ -36,29 +38,30 @@ export function ContactLinks({ color, children, id, ...props }) {
               target="_blank"
               rel="noreferrer"
               className={styles.contactLink}
-            >
+              >
               <i className="nes-icon linkedin is-large"></i>
-              <span>/mario-saul</span>
+              <span className={styles.accountName}>/mario-saul</span>
             </a>
             <a
               href="https://medium.com/@mariiosaul"
               target="_blank"
               rel="noreferrer"
               className={styles.contactLink}
-            >
+              >
               <i className="nes-icon medium is-large"></i>
-              <span>@mariiosaul</span>
+              <span className={styles.accountName}>@mariiosaul</span>
             </a>
             <a
               href="https://twitter.com/mario_saul"
               target="_blank"
               rel="noreferrer"
               className={styles.contactLink}
-            >
+              >
               <i className="nes-icon twitter is-large"></i>
-              <span>@mario_saul</span>
+              <span className={styles.accountName}>@mario_saul</span>
             </a>
           </div>
+        </div>
         </section>
         <img
           loading="lazy"
