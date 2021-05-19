@@ -1,4 +1,7 @@
 import { useSettings } from "../context/settings.js"
+import liveUp from "../sounds/live-up.wav"
+import die from "../sounds/die.wav"
+import timeWarning from "../sounds/time-warning.wav"
 import jump from "../sounds/jump-small.wav"
 import coin from "../sounds/coin.wav"
 import bump from "../sounds/bump.wav"
@@ -30,22 +33,30 @@ export function useSfx() {
 
   const [playBump] = useSound(bump, {
     soundEnabled,
-    volume: 0.5,
   })
 
   const [playJump] = useSound(jump, {
     soundEnabled,
-    volume: 0.5,
   })
 
   const [playCoin] = useSound(coin, {
     soundEnabled,
-    volume: 0.5,
   })
 
   const [playClick] = useSound(click, {
     soundEnabled,
-    volume: 0.5,
+  })
+
+  const [playLiveUp] = useSound(liveUp, {
+    soundEnabled,
+  })
+
+  const [playTimeWarning] = useSound(timeWarning, {
+    soundEnabled,
+  })
+
+  const [playDie] = useSound(die, {
+    soundEnabled,
   })
 
   return {
@@ -53,5 +64,8 @@ export function useSfx() {
     playClick,
     playBump,
     playCoin,
+    playLiveUp,
+    playTimeWarning,
+    playDie,
   }
 }
