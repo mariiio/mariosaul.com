@@ -142,7 +142,7 @@ const Tagline = ({ active, setActive, clickHandler }) => {
 
 export function Hero() {
   const [coins, setCoins] = useState(0)
-  const [time, setTime] = useState(400)
+  const [time, setTime] = useState(200)
   const [active, setActive] = useState(false)
   const [taglineIndex, setTaglineIndex] = useState(0)
   const tagline = taglines[taglineIndex]
