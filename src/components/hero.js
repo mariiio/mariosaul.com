@@ -153,7 +153,7 @@ export function Hero() {
     setTimeout(() => {
       const newCoins = coins + 1
       playCoin()
-      if (newCoins % 100 === 0) playLiveUp()
+      if (newCoins % 10 === 0) playLiveUp()
       setCoins(newCoins)
       setTaglineIndex(index < taglines.length ? index : 0)
     }, 200)
