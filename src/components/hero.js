@@ -36,7 +36,7 @@ const taglines = [
     size: "5.8vw",
     "size-lg": "46px",
     text: `
-      has 6 beautiful nephews
+      has 7 beautiful nephews
     `,
     "margin-top": "12px",
   },
