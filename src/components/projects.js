@@ -41,7 +41,7 @@ export function Projects() {
         <div className={styles.logoGroup}>
           <a href="http://seatmateapp.com/" target="_blank" rel="noreferrer">
             <img
-              style={{ width: "70px" }}
+              style={{ width: "65px" }}
               alt="SeatMate"
               loading="lazy"
               src={seatmate}
