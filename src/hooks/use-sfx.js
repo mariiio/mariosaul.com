@@ -1,4 +1,5 @@
 import { useSettings } from "../context/settings.js"
+import themeSong from "../sounds/theme-song.mp3"
 import liveUp from "../sounds/live-up.wav"
 import die from "../sounds/die.wav"
 import timeWarning from "../sounds/time-warning.wav"
@@ -9,8 +10,14 @@ import click from "../sounds/click.wav"
 
 const sfxCache = {}
 
-function useSound(sound, { soundEnabled }) {
-  if (!soundEnabled) {
+function useSound(
+  sound,
+  { soundEnabled, musicEnabled, volume = 1, loop = false }
+) {
+  if (
+    (soundEnabled !== undefined && !soundEnabled) ||
+    (musicEnabled !== undefined && !musicEnabled)
+  ) {
     return [() => {}]
   }
 
@@ -19,6 +26,8 @@ function useSound(sound, { soundEnabled }) {
       return [() => sfxCache[sound].play()]
     } else {
       const sfx = new Audio(sound)
+      sfx.volume = volume
+      sfx.loop = loop
       sfxCache[sound] = sfx
 
       return [() => sfxCache[sound].play()]
@@ -28,8 +37,23 @@ function useSound(sound, { soundEnabled }) {
   }
 }
 
+function stopSound(sound) {
+  if (!sfxCache[sound]) {
+    return () => {}
+  }
+  return () => sfxCache[sound].pause()
+}
+
 export function useSfx() {
-  const { soundEnabled } = useSettings()
+  const { soundEnabled, musicEnabled } = useSettings()
+
+  const [playThemeSong] = useSound(themeSong, {
+    musicEnabled,
+    volume: 0.3,
+    loop: true,
+  })
+
+  const stopThemeSong = stopSound(themeSong)
 
   const [playBump] = useSound(bump, {
     soundEnabled,
@@ -52,14 +76,16 @@ export function useSfx() {
   })
 
   const [playTimeWarning] = useSound(timeWarning, {
-    soundEnabled,
+    musicEnabled,
   })
 
   const [playDie] = useSound(die, {
-    soundEnabled,
+    musicEnabled,
   })
 
   return {
+    playThemeSong,
+    stopThemeSong,
     playJump,
     playClick,
     playBump,
