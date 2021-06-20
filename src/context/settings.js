@@ -42,7 +42,7 @@ export const SettingsProvider = ({ children }) => {
       value: musicEnabled,
       fallbackValue: false,
     })
-  }, [soundEnabled, setSoundEnabled, musicEnabled, setMusicEnabled])
+  }, [])
 
   return (
     <SettingsContext.Provider

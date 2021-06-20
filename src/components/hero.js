@@ -79,7 +79,7 @@ const Tagline = ({ active, setActive, clickHandler }) => {
   const handleClick = event => {
     event.preventDefault()
 
-    setClickedMario(true)
+    if (!clickedMario) setClickedMario(true)
     setActive(true)
     playJump()
     setTimeout(() => setActive(false), 450)
