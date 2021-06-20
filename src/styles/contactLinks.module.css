@@ -44,7 +44,6 @@
 
 .bowser {
   float: right;
-  width: 80px;
 }
 
 .castle {
@@ -66,10 +65,6 @@
 
   .contactLink {
     margin: 0 20px;
-  }
-
-  .luigi {
-    width: 70px;
   }
 
   .bowser {
