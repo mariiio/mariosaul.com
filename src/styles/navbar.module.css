@@ -1,11 +1,17 @@
-.header {
+.navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 0.5rem 1.5rem;
   top: 0;
   z-index: 1000;
-  background-image: repeating-linear-gradient(-45deg,#302f2f,#302f2f 6px,#2a2929 0,#2a2929 12px);
+  background-image: repeating-linear-gradient(
+    -45deg,
+    #302f2f,
+    #302f2f 6px,
+    #2a2929 0,
+    #2a2929 12px
+  );
 }
 
 .home {
@@ -14,17 +20,22 @@
   text-decoration: none;
 }
 
-.settings-sound-button {
+.settings {
+  display: flex;
+}
+
+.settings-button {
   background: var(--text-muted);
   border: 2px solid transparent;
   border-radius: 50%;
   display: block;
   padding: 3px;
+  margin-left: 15px;
   transition: 200ms all linear;
 }
 
-.settings-sound-button:focus,
-.settings-sound-button:hover {
+.settings-button:focus,
+.settings-button:hover {
   background: var(--white);
   border-color: var(--brown-dark);
 }
@@ -36,7 +47,7 @@
 }
 
 @media (min-width: 400px) {
-  .header {
+  .navbar {
     padding: 0.5rem 2rem;
   }
 }

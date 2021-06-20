@@ -4,6 +4,7 @@ const SettingsContext = createContext()
 
 export const SettingsProvider = ({ children }) => {
   const [soundEnabled, setSoundEnabled] = useState()
+  const [musicEnabled, setMusicEnabled] = useState()
 
   const initializeSetting = ({
     localStorageKey,
@@ -35,13 +36,21 @@ export const SettingsProvider = ({ children }) => {
       value: soundEnabled,
       fallbackValue: true,
     })
-  }, [soundEnabled, setSoundEnabled])
+    initializeSetting({
+      localStorageKey: "mariosaul.com:music-enabled",
+      setValue: setMusicEnabled,
+      value: musicEnabled,
+      fallbackValue: false,
+    })
+  }, [soundEnabled, setSoundEnabled, musicEnabled, setMusicEnabled])
 
   return (
     <SettingsContext.Provider
       value={{
         soundEnabled,
         setSoundEnabled,
+        musicEnabled,
+        setMusicEnabled,
       }}
     >
       {children}
@@ -50,7 +59,12 @@ export const SettingsProvider = ({ children }) => {
 }
 
 export const useSettings = () => {
-  const { soundEnabled, setSoundEnabled } = useContext(SettingsContext)
+  const {
+    soundEnabled,
+    setSoundEnabled,
+    musicEnabled,
+    setMusicEnabled,
+  } = useContext(SettingsContext)
 
   const toggleSound = () => {
     const newSetting = !soundEnabled
@@ -58,8 +72,16 @@ export const useSettings = () => {
     setSoundEnabled(newSetting)
   }
 
+  const toggleMusic = () => {
+    const newSetting = !musicEnabled
+    localStorage.setItem("mariosaul.com:music-enabled", newSetting)
+    setMusicEnabled(newSetting)
+  }
+
   return {
     soundEnabled,
     toggleSound,
+    musicEnabled,
+    toggleMusic,
   }
 }

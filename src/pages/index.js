@@ -9,6 +9,7 @@ import { Bio } from "../components/bio.js"
 import { Skills } from "../components/skills.js"
 import { Projects } from "../components/projects.js"
 import { ContactLinks } from "../components/contactLinks.js"
+import { MusicPlayer } from "../components/musicPlayer.js"
 import "../styles/global.css"
 
 export default function Home() {
@@ -42,6 +43,7 @@ export default function Home() {
           <ContactLinks />
         </Clouds>
       </Layout>
+      <MusicPlayer />
     </SettingsProvider>,
   ]
 }

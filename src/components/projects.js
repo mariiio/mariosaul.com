@@ -66,7 +66,6 @@ export function Projects() {
         <div
           id={styles.factoriesLogos}
           className={styles.logoGroup}
-          id={styles.factoriesLogos}
         >
           <a href="https://www.wyeworks.com/" target="_blank" rel="noreferrer">
             <img alt="WyeWorks" loading="lazy" src={wyeworks}></img>
