@@ -32,11 +32,12 @@ export default function Home() {
         <Block background="clouds">
           <Hero />
         </Block>
+        <span id="scroll-up-interception-sentinel" />
         <Clouds previousColor="blue">
           <Bio />
           {/* <hr/>
           <Skills /> */}
-          <hr/>
+          <hr />
           <Projects />
         </Clouds>
         <Clouds inverted="true" background="blue" previousColor="blue">
