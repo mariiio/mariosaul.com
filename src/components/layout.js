@@ -7,7 +7,7 @@ import { Button } from "./button.js"
 import styles from "../styles/layout.module.css"
 
 export function Layout({ children }) {
-  const { playBump, playClick } = useSfx()
+  const { playClick } = useSfx()
   const [scrollUp, setScrollUp] = useState(false)
 
   useEffect(() => {
@@ -32,8 +32,7 @@ export function Layout({ children }) {
       <Button
         className={`nes-btn is-error ${styles.goUpButton}`}
         style={{ bottom: `${scrollUp ? 20 : -60}px` }}
-        hoverSound={playClick}
-        clickSound={playBump}
+        clickSound={playClick}
         handleClick={() => {
           window.scrollTo({
             top: 0,
