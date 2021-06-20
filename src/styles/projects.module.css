@@ -45,7 +45,7 @@
 }
 
 .logoGroupTitle#startupsTitle {
-  margin-bottom: 0px;
+  margin-bottom: 5px;
 }
 
 .logoSection#startupsSection {
@@ -87,11 +87,15 @@
   }
 
   .logoGroupTitle#startupsTitle {
-    margin-bottom: -35px;
+    margin-bottom: 0px;
   }
 
   .logoSection#startupsSection {
-    margin-bottom: -35px;
+    margin-bottom: 0px;
+  }
+
+  .logoGroupTitle#factoriesTitle {
+    margin-bottom: 10px;
   }
 
   .logoGroup#factoriesLogos img {
@@ -113,7 +117,7 @@
   }
 
   .logoGroupTitle#startupsTitle {
-    margin-bottom: -10px;
+    margin-bottom: 10px;
   }
 
   .logoSection#startupsSection {
