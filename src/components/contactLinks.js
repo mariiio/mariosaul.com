@@ -67,6 +67,19 @@ export function ContactLinks({ color, children, id, ...props }) {
                 <span className={styles.accountName}>@mario_saul</span>
               </a>
             </div>
+            <div className={styles.cvSameBalloon}>
+              <h2>Open CV</h2>
+              <div>
+                <a href={cv} target="_blank" rel="noreferrer">
+                  <img
+                    loading="lazy"
+                    src={floppy}
+                    className={styles.cvIcon}
+                    alt="cv"
+                  />
+                </a>
+              </div>
+            </div>
           </div>
         </section>
         <img loading="lazy" src={luigi} className={styles.luigi} alt="Luigi" />
@@ -77,11 +90,7 @@ export function ContactLinks({ color, children, id, ...props }) {
           <div className={"nes-balloon from-right"}>
             <h2>Open CV</h2>
             <div>
-              <a
-                href={cv}
-                target="_blank"
-                rel="noreferrer"
-              >
+              <a href={cv} target="_blank" rel="noreferrer">
                 <img
                   loading="lazy"
                   src={floppy}
