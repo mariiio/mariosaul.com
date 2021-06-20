@@ -35,7 +35,7 @@ function BioText({ bioDifficulty }) {
           </span>
           <span style={{ display: getVisibility("very_hard") }}>
             {" "}
-            for leading companies from San Francisco in different fields
+            for leading companies in San Francisco from different fields
           </span>
         </span>
         .
@@ -54,7 +54,7 @@ function BioText({ bioDifficulty }) {
           </span>
           <span style={{ display: getVisibility("hard") }}>
             , using a broad set of technologies and tools to build real time,
-            big data applications in a distributed environment that reaches
+            big data applications in a distributed environment that reach
             millions of people
           </span>
           .
@@ -73,7 +73,7 @@ function BioText({ bioDifficulty }) {
         He was born in Uruguay
         <span style={{ display: getVisibility("easy") }}>
           {" "}
-          and moved to Israel
+          and moved to Israel (Tel Aviv)
         </span>
         <span style={{ display: getVisibility("hard") }}>
           {" "}
