@@ -1,0 +1,14 @@
+.chevron {
+  font-family: "Press Start 2P";
+  font-size: 18px;
+  display: block;
+  transform: rotate(450deg);
+  margin-right: 4px;
+}
+
+.go-up-button {
+  transition: 200ms all linear;
+  position: fixed;
+  right: 30px;
+  z-index: 99;
+}
