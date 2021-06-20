@@ -29,6 +29,15 @@
   white-space: nowrap;
   text-align: center;
 }
+
+.cvSameBalloon {
+  margin-top: 25px;
+}
+
+.cvSameBalloon > div {
+  text-align: center;
+}
+
 .cvIcon {
   margin-top: 15px;
 }
@@ -43,6 +52,10 @@
 }
 
 @media (min-width: 775px) {
+  .cvSameBalloon {
+    display: block;
+  }
+
   .balloonContainer {
     margin: 0 80px -5px 50px;
   }
@@ -76,5 +89,8 @@
 @media (min-width: 1200px) {
   .cvContainer {
     display: block;
+  }
+  .cvSameBalloon {
+    display: none;
   }
 }
