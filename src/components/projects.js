@@ -3,6 +3,7 @@ import trr from "../images/trr.png"
 import emeritus from "../images/emeritus.png"
 import wmg from "../images/wmg.png"
 import seatmate from "../images/seatmate.png"
+import okjux from "../images/okjux.png"
 import illumehealth from "../images/illumehealth.png"
 import retroally from "../images/retroally.png"
 import rootstrap from "../images/rootstrap.png"
@@ -41,7 +42,7 @@ export function Projects() {
         <div className={styles.logoGroup}>
           <a href="http://seatmateapp.com/" target="_blank" rel="noreferrer">
             <img
-              style={{ width: "65px" }}
+              style={{ width: "55px" }}
               alt="SeatMate"
               loading="lazy"
               src={seatmate}
@@ -51,11 +52,23 @@ export function Projects() {
             <img alt="Retroally" loading="lazy" src={retroally}></img>
           </a>
           <a
+            href="https://www.frankyaguilar.com/projects/okjux"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <img
+              style={{ width: "55px" }}
+              alt="okjux"
+              loading="lazy"
+              src={okjux}
+            ></img>
+          </a>
+          <a
             href="https://appadvice.com/app/illume-health-sauna-tracker/1439920323"
             target="_blank"
             rel="noreferrer"
           >
-            <img alt="IllumeHealth" loading="lazy" src={illumehealth}></img>
+            <img style={{ width: "65px" }} alt="IllumeHealth" loading="lazy" src={illumehealth}></img>
           </a>
         </div>
       </div>
@@ -63,10 +76,7 @@ export function Projects() {
         <h3 id={styles.factoriesTitle} className={styles.logoGroupTitle}>
           software factories
         </h3>
-        <div
-          id={styles.factoriesLogos}
-          className={styles.logoGroup}
-        >
+        <div id={styles.factoriesLogos} className={styles.logoGroup}>
           <a href="https://www.wyeworks.com/" target="_blank" rel="noreferrer">
             <img alt="WyeWorks" loading="lazy" src={wyeworks}></img>
           </a>
