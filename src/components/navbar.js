@@ -11,33 +11,26 @@ import styles from "../styles/navbar.module.css"
 export function NavBar() {
   const { soundEnabled, toggleSound, musicEnabled, toggleMusic } = useSettings()
   const { playBump, playClick } = useSfx()
-  const [isSmallScreen, setIsSmallScreen] = useState(false)
-
-  useEffect(() => {
-    setIsSmallScreen(document.documentElement.clientWidth < 768)
-  })
 
   return (
     <header className={styles.navbar}>
       <span className={styles.home}>Mario Saul</span>
 
       <div className={styles.settings}>
-        {!isSmallScreen && (
-          <Button
-            className={styles.settingsButton}
-            hoverSound={playClick}
-            clickSound={playBump}
-            handleClick={toggleMusic}
-            forceSoundEnabled={true}
-          >
-            <img
-              className={styles.settingsSound}
-              src={musicEnabled ? music : muteMusic}
-              alt=""
-            />
-            <span className="visually-hidden">Turn Music On/Off</span>
-          </Button>
-        )}
+        <Button
+          className={styles.settingsButton}
+          hoverSound={playClick}
+          clickSound={playBump}
+          handleClick={toggleMusic}
+          forceSoundEnabled={true}
+        >
+          <img
+            className={styles.settingsSound}
+            src={musicEnabled ? music : muteMusic}
+            alt=""
+          />
+          <span className="visually-hidden">Turn Music On/Off</span>
+        </Button>
 
         <Button
           className={styles.settingsButton}
