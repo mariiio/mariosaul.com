@@ -24,13 +24,27 @@
   width: 60px;
 }
 
+.cvContainer {
+  display: none;
+  white-space: nowrap;
+  text-align: center;
+}
+.cvIcon {
+  margin-top: 15px;
+}
+
+.bowser {
+  float: right;
+  width: 80px;
+}
+
 .castle {
   display: none;
 }
 
 @media (min-width: 775px) {
   .balloonContainer {
-    margin: 0 50px -5px 50px;
+    margin: 0 80px -5px 50px;
   }
 
   .balloons {
@@ -45,11 +59,22 @@
     width: 70px;
   }
 
+  .bowser {
+    width: 92px;
+    margin-right: 20px;
+  }
+
   .castle {
     display: block;
   }
 
   .accountName {
     display: none;
+  }
+}
+
+@media (min-width: 1200px) {
+  .cvContainer {
+    display: block;
   }
 }
