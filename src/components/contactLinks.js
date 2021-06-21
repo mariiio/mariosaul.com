@@ -12,7 +12,7 @@ export function ContactLinks({ color, children, id, ...props }) {
       <div>
         <section className={styles.balloonContainer}>
           <div className="nes-balloon from-left">
-            <h2>Connect with Mario!</h2>
+            <h2>Connect with Mario</h2>
 
             <div className={styles.balloons}>
               <a
@@ -68,7 +68,7 @@ export function ContactLinks({ color, children, id, ...props }) {
               </a>
             </div>
             <div className={styles.cvSameBalloon}>
-              <h2>Open CV</h2>
+              <h2>Download CV</h2>
               <div>
                 <a href={cv} target="_blank" rel="noreferrer">
                   <img
@@ -88,7 +88,7 @@ export function ContactLinks({ color, children, id, ...props }) {
       <div className={styles.cvContainer}>
         <section className={styles.balloonContainer}>
           <div className={"nes-balloon from-right"}>
-            <h2>Open CV</h2>
+            <h2>Download CV</h2>
             <div>
               <a href={cv} target="_blank" rel="noreferrer">
                 <img
