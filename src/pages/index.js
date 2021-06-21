@@ -35,8 +35,8 @@ export default function Home() {
         <span id="scroll-up-interception-sentinel" />
         <Clouds previousColor="blue">
           <Bio />
-          {/* <hr/>
-          <Skills /> */}
+          <hr/>
+          <Skills />
           <hr />
           <Projects />
         </Clouds>

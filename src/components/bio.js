@@ -96,9 +96,15 @@ export function Bio() {
 
   return (
     <div className={styles.container}>
+      <div className={styles.mainTitleContainer}>
+        <i className={`${styles.titleIcon} nes-icon is-medium star`}></i>
+        <h2 className={styles.mainTitle}>Player's Bio</h2>
+        <i className={`${styles.titleIcon} nes-icon is-medium star`}></i>
+      </div>
+
       <div className={styles.sideContainer}>
         <OptionsPicker
-          title="Select Bio Difficulty"
+          title="Select Difficulty"
           selectedOption={bioDifficulty}
           options={bioDifficulties}
           clickSound={playClick}
