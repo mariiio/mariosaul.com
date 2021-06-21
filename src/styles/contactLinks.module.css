@@ -8,6 +8,8 @@
 
 .balloonContainer {
   font-family: "Press Start 2P";
+  position: relative;
+  z-index: 1;
 }
 
 .contactLink {
@@ -22,6 +24,8 @@
 
 .luigi {
   width: 60px;
+  position: relative;
+  z-index: 1;
 }
 
 .cvContainer {
@@ -44,19 +48,31 @@
 
 .bowser {
   float: right;
+  position: relative;
+  z-index: 1;
+}
+
+.flag {
+  display: none;
+  position: relative;
+  z-index: 1;
+}
+
+.mountain {
+  display: none;
 }
 
 .castle {
   display: none;
 }
 
-@media (min-width: 775px) {
+@media (min-width: 830px) {
   .cvSameBalloon {
     display: block;
   }
 
   .balloonContainer {
-    margin: 0 80px -5px 50px;
+    margin: 0px 80px -20px 30px;
   }
 
   .balloons {
@@ -69,6 +85,18 @@
 
   .bowser {
     width: 92px;
+    margin-right: 25px;
+  }
+
+  .mountain {
+    display: block;
+    position: absolute;
+    left: 20%;
+    z-index: 0;
+  }
+
+  .flag {
+    display: block;
     margin-right: 20px;
   }
 
@@ -81,11 +109,26 @@
   }
 }
 
-@media (min-width: 1200px) {
+@media (min-width: 1300px) {
   .cvContainer {
     display: block;
   }
+
   .cvSameBalloon {
     display: none;
+  }
+
+  .flag {
+    margin-right: 0px;
+  }
+
+  .castle {
+    display: none;
+  }
+}
+
+@media (min-width: 1600px) {
+  .castle {
+    display: block;
   }
 }
