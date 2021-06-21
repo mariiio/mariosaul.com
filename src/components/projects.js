@@ -13,7 +13,7 @@ import styles from "../styles/projects.module.css"
 export function Projects() {
   return (
     <div className={styles.logosContainer}>
-      <h2 className={styles.mainTitle}>Previous Players</h2>
+      <h2 className={styles.mainTitle}>Player History</h2>
 
       <div id={styles.companiesSection} className={styles.logoSection}>
         <h3 id={styles.companiesTitle} className={styles.logoGroupTitle}>
@@ -68,7 +68,12 @@ export function Projects() {
             target="_blank"
             rel="noreferrer"
           >
-            <img style={{ width: "65px" }} alt="IllumeHealth" loading="lazy" src={illumehealth}></img>
+            <img
+              style={{ width: "65px" }}
+              alt="IllumeHealth"
+              loading="lazy"
+              src={illumehealth}
+            ></img>
           </a>
         </div>
       </div>
