@@ -1,5 +1,7 @@
 import React from "react"
 import luigi from "../images/luigi.png"
+import mountain from "../images/mountain.png"
+import flag from "../images/flag.png"
 import bowser from "../images/bowser.png"
 import floppy from "../images/floppy.png"
 import castle from "../images/castle.png"
@@ -84,6 +86,12 @@ export function ContactLinks({ color, children, id, ...props }) {
         </section>
         <img loading="lazy" src={luigi} className={styles.luigi} alt="Luigi" />
       </div>
+
+      <div className={styles.mountain}>
+        <img loading="lazy" src={mountain} alt="Mountain" />
+      </div>
+
+      <img loading="lazy" src={flag} className={styles.flag} alt="Flag" />
 
       <div className={styles.cvContainer}>
         <section className={styles.balloonContainer}>

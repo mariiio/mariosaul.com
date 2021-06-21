@@ -4,8 +4,12 @@
   position: relative;
 }
 
+.block.no-top-padding {
+  padding-top: unset;
+}
+
 .block.clouds {
-  background: url('../images/bg-clouds.jpg') var(--blue);
+  background: url("../images/bg-clouds.jpg") var(--blue);
 }
 
 .block.blue {
