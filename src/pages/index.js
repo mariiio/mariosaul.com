@@ -40,7 +40,12 @@ export default function Home() {
           <hr />
           <Projects />
         </Clouds>
-        <Clouds inverted="true" background="blue" previousColor="blue">
+        <Clouds
+          inverted="true"
+          background="blue"
+          previousColor="blue"
+          customStyle="noTopPadding"
+        >
           <ContactLinks />
         </Clouds>
       </Layout>
