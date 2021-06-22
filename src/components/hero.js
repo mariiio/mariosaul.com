@@ -142,11 +142,17 @@ const Tagline = ({ active, setActive, clickHandler }) => {
 
 export function Hero() {
   const [coins, setCoins] = useState(0)
-  const [time, setTime] = useState(200)
+  const [time, setTime] = useState(150)
   const [active, setActive] = useState(false)
   const [taglineIndex, setTaglineIndex] = useState(0)
   const tagline = taglines[taglineIndex]
-  const { playCoin, playTimeWarning, playDie, playLiveUp } = useSfx()
+  const {
+    playCoin,
+    playTimeWarning,
+    playDie,
+    playLiveUp,
+    stopThemeSong,
+  } = useSfx()
 
   function changeTagline() {
     const index = taglineIndex + 1
@@ -162,8 +168,8 @@ export function Hero() {
   useEffect(() => {
     const timer = setTimeout(() => {
       setTime(time > 0 ? time - 1 : "-")
-      if (time === 100) playTimeWarning()
-      if (time === 0) playDie()
+      if (time === 50) playTimeWarning()
+      if (time === 0) playDie() && stopThemeSong()
     }, 1000)
 
     return () => clearTimeout(timer)
