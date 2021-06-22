@@ -13,7 +13,7 @@ import styles from "../styles/projects.module.css"
 export function Projects() {
   return (
     <div className={styles.logosContainer}>
-      <h2 className={styles.mainTitle}>Player History</h2>
+      <h2 className={styles.mainTitle}>Player's History</h2>
 
       <div id={styles.companiesSection} className={styles.logoSection}>
         <h3 id={styles.companiesTitle} className={styles.logoGroupTitle}>
