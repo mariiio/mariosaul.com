@@ -4,6 +4,10 @@
   text-align: center;
 }
 
+.mainTitle > * {
+  display: none;
+}
+
 .mainTitle {
   margin: 25px 0;
   font-size: 18px;
@@ -65,15 +69,20 @@
     margin-top: 60px;
   }
 
+  .mainTitle > * {
+    display: inline-block;
+    margin: 0 20px;
+  }
+
   .mainTitle {
     margin: 50px 0;
-    font-size: 1.5rem;
+    font-size: 1.6rem;
   }
 
   .logoGroup img {
     width: 160px;
   }
-  
+
   .logoGroupTitle {
     font-size: 18px;
   }

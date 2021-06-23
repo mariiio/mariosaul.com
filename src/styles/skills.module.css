@@ -1,25 +1,69 @@
 .container {
   margin: 50px 0;
+  font-family: "Press Start 2P";
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.mainTitleContainer {
   display: flex;
   flex-direction: column;
   align-items: center;
+  white-space: nowrap;
 }
 
-.sideContainer {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 80vw;
+.mainTitle {
+  margin: 25px 10px;
+  font-size: 18px;
+}
+
+.titleIcon {
+  display: none;
+}
+
+.select {
+  width: auto;
+  margin: 0 20px;
+}
+
+.skillsContainer {
+  margin-top: 15px;
+  width: 90%;
+  text-align: center;
+}
+
+.badge {
+  margin: 10px;
+  padding-right: 190px;
+  pointer-events: none;
 }
 
 @media (min-width: 600px) {
-  .container {
-    margin: 60px 0;
+  .badge {
+    margin: 15px;
   }
 }
 
-@media (min-width: 1200px) {
-  .sideContainer {
-    width: 80%;
+@media (min-width: 900px) {
+  .container {
+    margin: 60px 0;
+  }
+
+  .mainTitleContainer {
+    flex-direction: row;
+  }
+
+  .mainTitle {
+    font-size: 1.5rem;
+  }
+
+  .titleIcon {
+    display: inline-block;
+  }
+
+  .skillsContainer {
+    margin-top: 30px;
   }
 }
