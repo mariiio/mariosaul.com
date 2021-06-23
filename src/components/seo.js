@@ -5,7 +5,7 @@ export function SEO({
   title = "Mario Saul | It's-a me!",
   description = 'Mario Saul is a Software Engineer, web developer, and tech enthusiast. Get to know him!',
   url = 'https://mariosaul.com/',
-  image = 'https://avatars.githubusercontent.com/u/14424870'
+  image = 'https://user-images.githubusercontent.com/14424870/123155707-1b56d300-d471-11eb-9ec0-c3217435788f.png'
 }) {
 
   return (
