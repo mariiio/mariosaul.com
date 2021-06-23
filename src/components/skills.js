@@ -3,51 +3,60 @@ import styles from "../styles/skills.module.css"
 
 const skills = {
   backend: [
-    "Elasticsearch",
-    "Elixir",
-    "Express",
-    "MongoDB",
-    "Node.js",
-    "OOP",
-    "Phoenix",
-    "PostgreSQL",
-    "Rails",
-    "Redis",
-    "Ruby",
-    "Testing",
+    { name: "Elasticsearch", favorite: true },
+    { name: "Elixir", favorite: false },
+    { name: "Express", favorite: true },
+    { name: "MongoDB", favorite: false },
+    { name: "Node.js", favorite: true },
+    { name: "OOP", favorite: false },
+    { name: "Phoenix", favorite: false },
+    { name: "PostgreSQL", favorite: false },
+    { name: "Rails", favorite: true },
+    { name: "Redis", favorite: true },
+    { name: "Ruby", favorite: true },
+    { name: "Testing", favorite: true },
   ],
   frontend: [
-    "CSS",
-    "Cypress",
-    "GraphQL",
-    "HTML",
-    "Javascript",
-    "REST",
-    "React",
-    "Swift (iOS)",
-    "Vue.js",
-    "Web perf.",
-    "Webpack",
-    "npm",
+    { name: "CSS", favorite: false },
+    { name: "Cypress", favorite: false },
+    { name: "GraphQL", favorite: false },
+    { name: "HTML", favorite: false },
+    { name: "Javascript", favorite: true },
+    { name: "REST", favorite: false },
+    { name: "React", favorite: true },
+    { name: "Swift (iOS)", favorite: false },
+    { name: "Vue.js", favorite: true },
+    { name: "Web perf.", favorite: true },
+    { name: "Webpack", favorite: true },
+    { name: "npm", favorite: false },
   ],
   cloud: [
-    "AWS",
-    "Athena",
-    "CI/CD",
-    "CloudFront",
-    "Docker",
-    "Firehose",
-    "Git",
-    "Heroku",
-    "K8s",
-    "Kinesis",
-    "Lambda",
-    "S3",
-    "SNS",
-    "SQS",
+    { name: "AWS", favorite: true },
+    { name: "Athena", favorite: false },
+    { name: "CI/CD", favorite: true },
+    { name: "CloudFront", favorite: false },
+    { name: "Docker", favorite: false },
+    { name: "Firehose", favorite: false },
+    { name: "Git", favorite: true },
+    { name: "Heroku", favorite: false },
+    { name: "K8s", favorite: false },
+    { name: "Kinesis", favorite: true },
+    { name: "Lambda", favorite: false },
+    { name: "S3", favorite: false },
+    { name: "SNS", favorite: false },
+    { name: "SQS", favorite: false },
   ],
-  languages: ["English", "Hebrew", "Spanish"],
-  other: ["Agile", "Leadership", "Management", "Scrum"],
+  languages: [
+    { name: "English", favorite: false },
+    { name: "Hebrew", favorite: false },
+    { name: "Spanish", favorite: true },
+  ],
+  other: [
+    { name: "Agile", favorite: false },
+    { name: "Leadership", favorite: true },
+    { name: "Management", favorite: false },
+    { name: "Scrum", favorite: true },
+  ],
 }
 
 export function Skills() {
@@ -79,12 +88,22 @@ export function Skills() {
       <div className={styles.skillsContainer}>
         {skills[selectedSkill].map(skill => {
           return (
-            <a
-              href="javascript:void(0)"
-              className={`${styles.badge} nes-badge`}
-            >
-              <span class="is-primary">{skill}</span>
-            </a>
+            <span className={styles.badgeContainer}>
+              {skill.favorite && (
+                <a href="#" className={`${styles.favorite} nes-badge is-icon`}>
+                  <span class="is-warning">
+                    <i class="nes-icon star is-small"></i>
+                  </span>
+                  <span></span>
+                </a>
+              )}
+              <a
+                href="javascript:void(0)"
+                className={`${styles.badge} nes-badge`}
+              >
+                <span class="is-primary">{skill.name}</span>
+              </a>
+            </span>
           )
         })}
       </div>

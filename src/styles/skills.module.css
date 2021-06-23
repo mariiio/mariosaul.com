@@ -34,10 +34,22 @@
   text-align: center;
 }
 
+.badgeContainer {
+  display: inline-block;
+  position: relative;
+}
+
 .badge {
   margin: 10px;
   padding-right: 190px;
   pointer-events: none;
+}
+
+.favorite {
+  position: absolute;
+  z-index: 2;
+  top: 5px;
+  left: 5px;
 }
 
 @media (min-width: 600px) {
@@ -65,5 +77,10 @@
 
   .skillsContainer {
     margin-top: 30px;
+  }
+
+  .favorite {
+    top: 10px;
+    left: 15px;
   }
 }
