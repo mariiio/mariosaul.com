@@ -93,8 +93,8 @@ export function ContactLinks({ color, children, id, ...props }) {
 
       <img loading="lazy" src={flag} className={styles.flag} alt="Flag" />
 
-      {/* <div className={styles.cvContainer}>
-        <section className={styles.balloonContainer}>
+      <div className={styles.cvContainer}>
+        {/* <section className={styles.balloonContainer}>
           <div className={"nes-balloon from-right"}>
             <h2>Download CV</h2>
             <div>
@@ -108,7 +108,7 @@ export function ContactLinks({ color, children, id, ...props }) {
               </a>
             </div>
           </div>
-        </section>
+        </section> */}
 
         <img
           loading="lazy"
@@ -116,7 +116,7 @@ export function ContactLinks({ color, children, id, ...props }) {
           className={styles.bowser}
           alt="Bowser"
         />
-      </div> */}
+      </div>
 
       <div>
         <img

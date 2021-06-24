@@ -9,6 +9,14 @@ import { useStaticQuery, graphql } from "gatsby"
 
 const taglines = [
   {
+    size: "6.3vw",
+    "size-lg": "48px",
+    text: `
+      is a software engineer
+    `,
+    "margin-top": "12px",
+  },
+  {
     size: "5.1vw",
     "size-lg": "43px",
     text: `
@@ -23,14 +31,6 @@ const taglines = [
       can't live without ☕️
     `,
     "margin-top": "8px",
-  },
-  {
-    size: "6.3vw",
-    "size-lg": "48px",
-    text: `
-      is a software engineer
-    `,
-    "margin-top": "12px",
   },
   {
     size: "5.8vw",
