@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useEffect, useRef } from "react"
 import { SettingsProvider } from "../context/settings.js"
 import { SEO } from "../components/seo.js"
 import { Layout } from "../components/layout.js"
@@ -11,6 +11,10 @@ import { Projects } from "../components/projects.js"
 import { ContactLinks } from "../components/contactLinks.js"
 import { MusicPlayer } from "../components/musicPlayer.js"
 import "../styles/global.css"
+
+const ANIMATE_CLASS_NAME = "animateSection"
+
+const animate = element => element.classList.add(ANIMATE_CLASS_NAME)
 
 export default function Home() {
   console.log(
@@ -25,6 +29,34 @@ export default function Home() {
     `
   )
 
+  const elRefs = React.useRef([])
+  elRefs.current = Array(3)
+    .fill()
+    .map((_, i) => elRefs.current[i] || React.createRef())
+
+  const observer = new IntersectionObserver(
+    ([entry]) => {
+      console.log(entry.target)
+
+      if (entry.isIntersecting) {
+        animate(entry.target)
+        observer.unobserve(entry.target)
+      }
+    },
+    {
+      root: null,
+      rootMargin: "0px",
+      threshold: 0.3,
+    }
+  )
+  useEffect(() => {
+    for (const ref of elRefs.current) {
+      if (ref.current) {
+        observer.observe(ref.current)
+      }
+    }
+  }, [elRefs.current])
+
   return [
     <SettingsProvider>
       <SEO />
@@ -32,13 +64,19 @@ export default function Home() {
         <Block background="clouds">
           <Hero />
         </Block>
-        <span id="scroll-up-interception-sentinel" />
         <Clouds previousColor="blue">
-          <Bio />
-          <hr/>
-          <Skills />
+          <span id="scroll-up-interception-sentinel" />
+          <div class="unanimatedSection" ref={elRefs.current[0]}>
+            <Bio />
+          </div>
           <hr />
-          <Projects />
+          <div class="unanimatedSection" ref={elRefs.current[1]}>
+            <Skills />
+          </div>
+          <hr />
+          <div class="unanimatedSection" ref={elRefs.current[2]}>
+            <Projects />
+          </div>
         </Clouds>
         <Clouds
           inverted="true"
