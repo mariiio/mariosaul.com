@@ -9,15 +9,15 @@ import { useStaticQuery, graphql } from "gatsby"
 
 const taglines = [
   {
-    size: "6.3vw",
-    "size-lg": "48px",
+    size: "6.8vw",
+    "size-lg": "53px",
     text: `
-      is a software engineer
+    is a software engineer
     `,
     "margin-top": "12px",
   },
   {
-    size: "5.1vw",
+    size: "5.5vw",
     "size-lg": "43px",
     text: `
       was born in 🇺🇾 and lives in 🇮🇱
@@ -25,31 +25,39 @@ const taglines = [
     "margin-top": "13px",
   },
   {
-    size: "7vw",
-    "size-lg": "55px",
+    size: "7.5vw",
+    "size-lg": "58px",
     text: `
       can't live without ☕️
     `,
     "margin-top": "8px",
   },
   {
-    size: "5.8vw",
-    "size-lg": "46px",
+    size: "6.3vw",
+    "size-lg": "49px",
     text: `
       has 7 beautiful nephews
     `,
     "margin-top": "12px",
   },
   {
-    size: "8vw",
-    "size-lg": "62px",
+    size: "8.6vw",
+    "size-lg": "66px",
     text: `
       plays soccer okay
     `,
   },
   {
-    size: "8vw",
-    "size-lg": "65px",
+    size: "7.5vw",
+    "size-lg": "58px",
+    text: `
+      sucks at videogames
+    `,
+    "margin-top": "12px",
+  },
+  {
+    size: "8.8vw",
+    "size-lg": "69px",
     text: `
       is a Beatlemaniac
     `,
@@ -159,7 +167,7 @@ export function Hero() {
     setTimeout(() => {
       const newCoins = coins + 1
       playCoin()
-      if (newCoins % 10 === 0) playLiveUp()
+      if (newCoins % taglines.length === 0) playLiveUp()
       setCoins(newCoins)
       setTaglineIndex(index < taglines.length ? index : 0)
     }, 200)
