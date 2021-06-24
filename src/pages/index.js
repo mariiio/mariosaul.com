@@ -34,22 +34,23 @@ export default function Home() {
     .fill()
     .map((_, i) => elRefs.current[i] || React.createRef())
 
-  const observer = new IntersectionObserver(
-    ([entry]) => {
-      console.log(entry.target)
-
-      if (entry.isIntersecting) {
-        animate(entry.target)
-        observer.unobserve(entry.target)
-      }
-    },
-    {
-      root: null,
-      rootMargin: "0px",
-      threshold: 0.3,
-    }
-  )
   useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        console.log(entry.target)
+
+        if (entry.isIntersecting) {
+          animate(entry.target)
+          observer.unobserve(entry.target)
+        }
+      },
+      {
+        root: null,
+        rootMargin: "0px",
+        threshold: 0.3,
+      }
+    )
+
     for (const ref of elRefs.current) {
       if (ref.current) {
         observer.observe(ref.current)
