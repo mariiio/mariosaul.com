@@ -1,4 +1,5 @@
 import React, { useState } from "react"
+import { useSfx } from "../hooks/use-sfx.js"
 import styles from "../styles/skills.module.css"
 
 const skills = {
@@ -60,7 +61,10 @@ const skills = {
 
 export function Skills() {
   const [selectedSkill, setSelectedSkill] = useState(Object.keys(skills)[0])
+  const { playClick } = useSfx()
+
   const handleChange = event => {
+    playClick()
     setSelectedSkill(event.target.value)
   }
 
