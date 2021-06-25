@@ -37,12 +37,12 @@
 .badgeContainer {
   display: inline-block;
   position: relative;
+  pointer-events: none;
 }
 
 .badge {
   margin: 10px;
   padding-right: 190px;
-  pointer-events: none;
 }
 
 .favorite {

@@ -14,10 +14,10 @@ const taglines = [
     text: `
     is a software engineer
     `,
-    "margin-top": "12px",
+    "margin-top": "10px",
   },
   {
-    size: "5.5vw",
+    size: "5.3vw",
     "size-lg": "43px",
     text: `
       was born in 🇺🇾 and lives in 🇮🇱
@@ -25,12 +25,12 @@ const taglines = [
     "margin-top": "13px",
   },
   {
-    size: "7.5vw",
+    size: "7.3vw",
     "size-lg": "58px",
     text: `
       can't live without ☕️
     `,
-    "margin-top": "8px",
+    "margin-top": "10px",
   },
   {
     size: "6.3vw",
@@ -38,14 +38,15 @@ const taglines = [
     text: `
       has 7 beautiful nephews
     `,
-    "margin-top": "12px",
+    "margin-top": "10px",
   },
   {
-    size: "8.6vw",
+    size: "8.3vw",
     "size-lg": "66px",
     text: `
       plays soccer okay
     `,
+    "margin-top": "7px",
   },
   {
     size: "7.5vw",
@@ -53,7 +54,7 @@ const taglines = [
     text: `
       sucks at videogames
     `,
-    "margin-top": "12px",
+    "margin-top": "10px",
   },
   {
     size: "8.8vw",
@@ -61,6 +62,7 @@ const taglines = [
     text: `
       is a Beatlemaniac
     `,
+    "margin-top": "7px",
   },
 ]
 

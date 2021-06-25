@@ -92,7 +92,7 @@ export function Skills() {
           return (
             <span className={styles.badgeContainer}>
               {skill.favorite && (
-                <a href="#" className={`${styles.favorite} nes-badge is-icon`}>
+                <a href="javascript:void(0)" className={`${styles.favorite} nes-badge is-icon`}>
                   <span class="is-warning">
                     <i class="nes-icon star is-small"></i>
                   </span>

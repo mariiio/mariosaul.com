@@ -37,8 +37,6 @@ export default function Home() {
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
-        console.log(entry.target)
-
         if (entry.isIntersecting) {
           animate(entry.target)
           observer.unobserve(entry.target)
