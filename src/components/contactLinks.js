@@ -1,4 +1,4 @@
-import React, { useEffect } from "react"
+import React, { useState, useEffect } from "react"
 import luigi from "../images/luigi.png"
 import mountain from "../images/mountain.png"
 import flag from "../images/flag.png"
@@ -9,7 +9,11 @@ import cv from "../../static/cv.pdf"
 import styles from "../styles/contactLinks.module.css"
 
 export function ContactLinks({ color, children, id, ...props }) {
-  const cvEnabled = new URLSearchParams(window.location.search).get("cv") === 1
+  const [CVEnabled, setCVEnabled] = useState(false)
+
+  useEffect(() => {
+    setCVEnabled(new URLSearchParams(window.location.search).get("cv") === "1")
+  }, [])
 
   return (
     <div className={styles.container}>
@@ -71,7 +75,7 @@ export function ContactLinks({ color, children, id, ...props }) {
                 <span className={styles.accountName}>@mario_saul</span>
               </a>
             </div>
-            {cvEnabled && (
+            {CVEnabled && (
               <div className={styles.cvSameBalloon}>
                 <h2>Download CV</h2>
                 <div>
@@ -98,7 +102,7 @@ export function ContactLinks({ color, children, id, ...props }) {
       <img loading="lazy" src={flag} className={styles.flag} alt="Flag" />
 
       <div className={styles.cvContainer}>
-        {cvEnabled && (
+        {CVEnabled && (
           <section className={styles.balloonContainer}>
             <div className={"nes-balloon from-right"}>
               <h2>Download CV</h2>
