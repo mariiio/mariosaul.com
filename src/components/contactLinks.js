@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useEffect } from "react"
 import luigi from "../images/luigi.png"
 import mountain from "../images/mountain.png"
 import flag from "../images/flag.png"
@@ -9,6 +9,8 @@ import cv from "../../static/cv.pdf"
 import styles from "../styles/contactLinks.module.css"
 
 export function ContactLinks({ color, children, id, ...props }) {
+  const cvEnabled = new URLSearchParams(window.location.search).get("cv") === 1
+
   return (
     <div className={styles.container}>
       <div>
@@ -69,19 +71,21 @@ export function ContactLinks({ color, children, id, ...props }) {
                 <span className={styles.accountName}>@mario_saul</span>
               </a>
             </div>
-            {/* <div className={styles.cvSameBalloon}>
-              <h2>Download CV</h2>
-              <div>
-                <a href={cv} target="_blank" rel="noreferrer">
-                  <img
-                    loading="lazy"
-                    src={floppy}
-                    className={styles.cvIcon}
-                    alt="cv"
-                  />
-                </a>
+            {cvEnabled && (
+              <div className={styles.cvSameBalloon}>
+                <h2>Download CV</h2>
+                <div>
+                  <a href={cv} target="_blank" rel="noreferrer">
+                    <img
+                      loading="lazy"
+                      src={floppy}
+                      className={styles.cvIcon}
+                      alt="cv"
+                    />
+                  </a>
+                </div>
               </div>
-            </div> */}
+            )}
           </div>
         </section>
         <img loading="lazy" src={luigi} className={styles.luigi} alt="Luigi" />
@@ -94,21 +98,23 @@ export function ContactLinks({ color, children, id, ...props }) {
       <img loading="lazy" src={flag} className={styles.flag} alt="Flag" />
 
       <div className={styles.cvContainer}>
-        {/* <section className={styles.balloonContainer}>
-          <div className={"nes-balloon from-right"}>
-            <h2>Download CV</h2>
-            <div>
-              <a href={cv} target="_blank" rel="noreferrer">
-                <img
-                  loading="lazy"
-                  src={floppy}
-                  className={styles.cvIcon}
-                  alt="cv"
-                />
-              </a>
+        {cvEnabled && (
+          <section className={styles.balloonContainer}>
+            <div className={"nes-balloon from-right"}>
+              <h2>Download CV</h2>
+              <div>
+                <a href={cv} target="_blank" rel="noreferrer">
+                  <img
+                    loading="lazy"
+                    src={floppy}
+                    className={styles.cvIcon}
+                    alt="cv"
+                  />
+                </a>
+              </div>
             </div>
-          </div>
-        </section> */}
+          </section>
+        )}
 
         <img
           loading="lazy"

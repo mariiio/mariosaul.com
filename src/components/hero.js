@@ -9,8 +9,8 @@ import { useStaticQuery, graphql } from "gatsby"
 
 const taglines = [
   {
-    size: "6.8vw",
-    "size-lg": "53px",
+    size: "6.6vw",
+    "size-lg": "51px",
     text: `
     is a software engineer
     `,
@@ -18,22 +18,22 @@ const taglines = [
   },
   {
     size: "5.3vw",
-    "size-lg": "43px",
+    "size-lg": "42px",
     text: `
       was born in 🇺🇾 and lives in 🇮🇱
     `,
     "margin-top": "13px",
   },
   {
-    size: "7.3vw",
-    "size-lg": "58px",
+    size: "7.2vw",
+    "size-lg": "56px",
     text: `
       can't live without ☕️
     `,
     "margin-top": "10px",
   },
   {
-    size: "6.3vw",
+    size: "6.2vw",
     "size-lg": "49px",
     text: `
       has 7 beautiful nephews
@@ -41,7 +41,7 @@ const taglines = [
     "margin-top": "10px",
   },
   {
-    size: "8.3vw",
+    size: "8.2vw",
     "size-lg": "66px",
     text: `
       plays soccer okay
@@ -49,7 +49,7 @@ const taglines = [
     "margin-top": "7px",
   },
   {
-    size: "7.5vw",
+    size: "7.4vw",
     "size-lg": "58px",
     text: `
       sucks at videogames
@@ -57,8 +57,8 @@ const taglines = [
     "margin-top": "10px",
   },
   {
-    size: "8.8vw",
-    "size-lg": "69px",
+    size: "8.6vw",
+    "size-lg": "67px",
     text: `
       is a Beatlemaniac
     `,
