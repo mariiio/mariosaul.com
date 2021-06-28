@@ -49,10 +49,10 @@ const taglines = [
     "margin-top": "7px",
   },
   {
-    size: "7.4vw",
-    "size-lg": "58px",
+    size: "6.5vw",
+    "size-lg": "52px",
     text: `
-      sucks at videogames
+      doesn't like spicy food
     `,
     "margin-top": "10px",
   },
