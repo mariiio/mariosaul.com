@@ -2,12 +2,12 @@
   --white: white;
   --text: #403c4a;
   --text-muted: #78757f;
-  --blue: #3FBEFF;
+  --blue: #3fbeff;
   --black: #070707;
   --gray-light: #d4d0e0;
-  --brown: #FDC4B6;
-  --brown-dark: #D64B00;
-  --font-family: 'Work Sans', Roboto, Helvetica, Arial, sans-serif;
+  --brown: #fdc4b6;
+  --brown-dark: #d64b00;
+  --font-family: "Work Sans", Roboto, Helvetica, Arial, sans-serif;
   --background: var(--white);
   --foreground: var(--black);
 }
@@ -63,16 +63,16 @@ img {
 
 .noselect {
   -webkit-touch-callout: none; /* iOS Safari */
-    -webkit-user-select: none; /* Safari */
-     -khtml-user-select: none; /* Konqueror HTML */
-       -moz-user-select: none; /* Old versions of Firefox */
-        -ms-user-select: none; /* Internet Explorer/Edge */
-            user-select: none; /* Non-prefixed version, currently
+  -webkit-user-select: none; /* Safari */
+  -khtml-user-select: none; /* Konqueror HTML */
+  -moz-user-select: none; /* Old versions of Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
+  user-select: none; /* Non-prefixed version, currently
                                   supported by Chrome, Edge, Opera and Firefox */
 }
 
 .visually-hidden {
-  display: none
+  display: none;
 }
 
 hr {
@@ -83,10 +83,21 @@ hr {
 }
 
 .unanimatedSection {
-  opacity: 0
+  opacity: 0;
 }
 
 .animateSection {
   opacity: 1;
-  transition: opacity .5s;
+  transition: opacity 1s;
+  animation: 0.4s ease-out 0s 1 slideInFromBottom;
+}
+
+@keyframes slideInFromBottom {
+  0% {
+    transform: translateY(10%);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
 }

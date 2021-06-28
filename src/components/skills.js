@@ -84,7 +84,7 @@ export function Skills() {
             })}
           </select>
         </div>
-        <h2 className={styles.mainTitle}>Top Skills</h2>
+        <h2 className={styles.mainTitle}>Skills</h2>
         <i className={`${styles.titleIcon} nes-icon trophy is-medium`}></i>
       </div>
 
