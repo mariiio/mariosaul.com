@@ -1,4 +1,5 @@
 import React from "react"
+import { useSfx } from "../hooks/use-sfx.js"
 import trr from "../images/trr.png"
 import emeritus from "../images/emeritus.png"
 import wmg from "../images/wmg.png"
@@ -11,6 +12,8 @@ import wyeworks from "../images/wyeworks.png"
 import styles from "../styles/projects.module.css"
 
 export function Projects() {
+  const { playClick, playPop } = useSfx()
+
   return (
     <div className={styles.logosContainer}>
       <h2 className={styles.mainTitle}>
@@ -28,13 +31,31 @@ export function Projects() {
             target="_blank"
             rel="noreferrer"
           >
-            <img alt="The realreal" loading="lazy" src={trr}></img>
+            <img
+              alt="The realreal"
+              loading="lazy"
+              src={trr}
+              onMouseOver={playPop}
+              onClick={playClick}
+            ></img>
           </a>
           <a href="https://emeritus.org/" target="_blank" rel="noreferrer">
-            <img alt="Emeritus" loading="lazy" src={emeritus}></img>
+            <img
+              alt="Emeritus"
+              loading="lazy"
+              src={emeritus}
+              onMouseOver={playPop}
+              onClick={playClick}
+            ></img>
           </a>
           <a href="https://imgn.media/" target="_blank" rel="noreferrer">
-            <img alt="Warner Music Group" loading="lazy" src={wmg}></img>
+            <img
+              alt="Warner Music Group"
+              loading="lazy"
+              src={wmg}
+              onMouseOver={playPop}
+              onClick={playClick}
+            ></img>
           </a>
         </div>
       </div>
@@ -49,10 +70,18 @@ export function Projects() {
               alt="SeatMate"
               loading="lazy"
               src={seatmate}
+              onMouseOver={playPop}
+              onClick={playClick}
             ></img>
           </a>
           <a href="https://retroally.com/" target="_blank" rel="noreferrer">
-            <img alt="Retroally" loading="lazy" src={retroally}></img>
+            <img
+              alt="Retroally"
+              loading="lazy"
+              src={retroally}
+              onMouseOver={playPop}
+              onClick={playClick}
+            ></img>
           </a>
           <a
             href="https://www.frankyaguilar.com/projects/okjux"
@@ -64,6 +93,8 @@ export function Projects() {
               alt="okjux"
               loading="lazy"
               src={okjux}
+              onMouseOver={playPop}
+              onClick={playClick}
             ></img>
           </a>
           <a
@@ -76,6 +107,8 @@ export function Projects() {
               alt="IllumeHealth"
               loading="lazy"
               src={illumehealth}
+              onMouseOver={playPop}
+              onClick={playClick}
             ></img>
           </a>
         </div>
@@ -86,10 +119,22 @@ export function Projects() {
         </h3>
         <div id={styles.factoriesLogos} className={styles.logoGroup}>
           <a href="https://www.wyeworks.com/" target="_blank" rel="noreferrer">
-            <img alt="WyeWorks" loading="lazy" src={wyeworks}></img>
+            <img
+              alt="WyeWorks"
+              loading="lazy"
+              src={wyeworks}
+              onMouseOver={playPop}
+              onClick={playClick}
+            ></img>
           </a>
           <a href="https://www.rootstrap.com/" target="_blank" rel="noreferrer">
-            <img alt="Rootstrap" loading="lazy" src={rootstrap}></img>
+            <img
+              alt="Rootstrap"
+              loading="lazy"
+              src={rootstrap}
+              onMouseOver={playPop}
+              onClick={playClick}
+            ></img>
           </a>
         </div>
       </div>
