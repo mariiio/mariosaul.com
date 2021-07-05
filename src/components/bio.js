@@ -88,7 +88,7 @@ function BioText({ bioDifficulty }) {
 export function Bio() {
   const [bioDifficulty, setBioDifficulty] = useState("normal")
   const bioDifficulties = ["very_easy", "easy", "normal", "hard", "very_hard"]
-  const { playClick } = useSfx()
+  const { playClick, playPop } = useSfx()
 
   const clickHandler = difficulty => {
     setBioDifficulty(difficulty)
@@ -107,6 +107,7 @@ export function Bio() {
           title="Select Difficulty"
           selectedOption={bioDifficulty}
           options={bioDifficulties}
+          hoverSound={playPop}
           clickSound={playClick}
           clickHandler={clickHandler}
         />

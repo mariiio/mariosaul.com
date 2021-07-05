@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react"
+import React from "react"
 import { useSettings } from "../context/settings.js"
 import { useSfx } from "../hooks/use-sfx.js"
 import { Button } from "./button.js"
@@ -10,7 +10,7 @@ import styles from "../styles/navbar.module.css"
 
 export function NavBar() {
   const { soundEnabled, toggleSound, musicEnabled, toggleMusic } = useSettings()
-  const { playBump, playClick, playPop } = useSfx()
+  const { playClick, playPop } = useSfx()
 
   return (
     <header className={styles.navbar}>

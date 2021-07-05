@@ -5,8 +5,9 @@ export function OptionsPicker({
   title,
   selectedOption,
   options,
+  hoverSound = () => {},
   clickSound = () => {},
-  clickHandler
+  clickHandler,
 }) {
   const handleClick = event => {
     event.preventDefault()
@@ -29,7 +30,7 @@ export function OptionsPicker({
                     name="difficulty"
                     checked={selectedOption === option}
                   />
-                  <span onClick={handleClick}>
+                  <span onMouseOver={hoverSound} onClick={handleClick}>
                     {option.replace(/_/, " ").toUpperCase()}
                   </span>
                 </label>
