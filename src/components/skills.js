@@ -61,7 +61,7 @@ const skills = {
 
 export function Skills() {
   const [selectedSkill, setSelectedSkill] = useState(Object.keys(skills)[0])
-  const { playClick } = useSfx()
+  const { playClick, playPop } = useSfx()
 
   const handleChange = event => {
     playClick()
@@ -74,7 +74,7 @@ export function Skills() {
         <i className={`${styles.titleIcon} nes-icon trophy is-medium`}></i>
         <h2 className={styles.mainTitle}>Player's</h2>
         <div className={`${styles.select} nes-select`}>
-          <select required value={selectedSkill} onChange={handleChange}>
+          <select required value={selectedSkill} onMouseOver={playPop} onChange={handleChange}>
             {Object.keys(skills).map(skillOption => {
               return (
                 <option value={skillOption}>
@@ -93,7 +93,9 @@ export function Skills() {
           return (
             <span className={styles.badgeContainer}>
               {skill.favorite && (
-                <a href="javascript:void(0)" className={`${styles.favorite} nes-badge is-icon`}>
+                <a
+                  className={`${styles.favorite} nes-badge is-icon`}
+                >
                   <span class="is-warning">
                     <i class="nes-icon star is-small"></i>
                   </span>
@@ -101,7 +103,6 @@ export function Skills() {
                 </a>
               )}
               <a
-                href="javascript:void(0)"
                 className={`${styles.badge} nes-badge`}
               >
                 <span class="is-primary">{skill.name}</span>
