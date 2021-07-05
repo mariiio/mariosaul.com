@@ -6,6 +6,7 @@ import timeWarning from "../sounds/time-warning.wav"
 import jump from "../sounds/jump-small.wav"
 import coin from "../sounds/coin.wav"
 import bump from "../sounds/bump.wav"
+import pop from "../sounds/pop.mp3"
 import click from "../sounds/click.wav"
 
 const sfxCache = {}
@@ -67,6 +68,10 @@ export function useSfx() {
     soundEnabled,
   })
 
+  const [playPop] = useSound(pop, {
+    soundEnabled,
+  })
+
   const [playClick] = useSound(click, {
     soundEnabled,
   })
@@ -88,6 +93,7 @@ export function useSfx() {
     stopThemeSong,
     playJump,
     playClick,
+    playPop,
     playBump,
     playCoin,
     playLiveUp,

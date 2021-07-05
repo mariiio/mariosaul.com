@@ -10,7 +10,7 @@ import styles from "../styles/navbar.module.css"
 
 export function NavBar() {
   const { soundEnabled, toggleSound, musicEnabled, toggleMusic } = useSettings()
-  const { playBump, playClick } = useSfx()
+  const { playBump, playClick, playPop } = useSfx()
 
   return (
     <header className={styles.navbar}>
@@ -19,8 +19,8 @@ export function NavBar() {
       <div className={styles.settings}>
         <Button
           className={styles.settingsButton}
-          hoverSound={playClick}
-          clickSound={playBump}
+          hoverSound={playPop}
+          clickSound={playClick}
           handleClick={toggleMusic}
           forceSoundEnabled={true}
         >
@@ -34,8 +34,8 @@ export function NavBar() {
 
         <Button
           className={styles.settingsButton}
-          hoverSound={playClick}
-          clickSound={playBump}
+          hoverSound={playPop}
+          clickSound={playClick}
           handleClick={toggleSound}
           forceSoundEnabled={true}
         >
