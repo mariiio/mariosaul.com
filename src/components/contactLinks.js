@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react"
+import { useSfx } from "../hooks/use-sfx.js"
 import luigi from "../images/luigi.png"
 import mountain from "../images/mountain.png"
 import flag from "../images/flag.png"
@@ -10,6 +11,7 @@ import styles from "../styles/contactLinks.module.css"
 
 export function ContactLinks({ color, children, id, ...props }) {
   const [CVEnabled, setCVEnabled] = useState(false)
+  const { playClick, playPop } = useSfx()
 
   useEffect(() => {
     setCVEnabled(new URLSearchParams(window.location.search).get("cv") === "1")
@@ -28,6 +30,8 @@ export function ContactLinks({ color, children, id, ...props }) {
                 target="_blank"
                 rel="noreferrer"
                 className={styles.contactLink}
+                onMouseOver={playPop}
+                onClick={playClick}
               >
                 <i className="nes-icon github is-large"></i>
                 <span className={styles.accountName}>/mariiio</span>
@@ -37,6 +41,8 @@ export function ContactLinks({ color, children, id, ...props }) {
                 target="_blank"
                 rel="noreferrer"
                 className={styles.contactLink}
+                onMouseOver={playPop}
+                onClick={playClick}
               >
                 <i className="nes-icon instagram is-large"></i>
                 <span
@@ -52,6 +58,8 @@ export function ContactLinks({ color, children, id, ...props }) {
                 target="_blank"
                 rel="noreferrer"
                 className={styles.contactLink}
+                onMouseOver={playPop}
+                onClick={playClick}
               >
                 <i className="nes-icon linkedin is-large"></i>
                 <span className={styles.accountName}>/mario-saul</span>
@@ -61,6 +69,8 @@ export function ContactLinks({ color, children, id, ...props }) {
                 target="_blank"
                 rel="noreferrer"
                 className={styles.contactLink}
+                onMouseOver={playPop}
+                onClick={playClick}
               >
                 <i className="nes-icon medium is-large"></i>
                 <span className={styles.accountName}>@mariiosaul</span>
@@ -70,6 +80,8 @@ export function ContactLinks({ color, children, id, ...props }) {
                 target="_blank"
                 rel="noreferrer"
                 className={styles.contactLink}
+                onMouseOver={playPop}
+                onClick={playClick}
               >
                 <i className="nes-icon twitter is-large"></i>
                 <span className={styles.accountName}>@mario_saul</span>
@@ -107,7 +119,13 @@ export function ContactLinks({ color, children, id, ...props }) {
             <div className={"nes-balloon from-right"}>
               <h2>Download CV</h2>
               <div>
-                <a href={cv} target="_blank" rel="noreferrer">
+                <a
+                  href={cv}
+                  target="_blank"
+                  rel="noreferrer"
+                  onMouseOver={playPop}
+                  onClick={playClick}
+                >
                   <img
                     loading="lazy"
                     src={floppy}
