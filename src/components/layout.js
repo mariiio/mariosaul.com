@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react"
+import { useSfx } from "../hooks/use-sfx.js"
 import { NavBar } from "./navbar.js"
 import { Main } from "./main.js"
 import { Footer } from "./footer.js"
-import { useSfx } from "../hooks/use-sfx.js"
 import { Button } from "./button.js"
 import styles from "../styles/layout.module.css"
 
