@@ -29,7 +29,8 @@ export default function Home() {
     `
   )
 
-  const elRefs = React.useRef([])
+  const elRefs = useRef([])
+  const scrollUpSentinelRef = useRef()
   elRefs.current = Array(3)
     .fill()
     .map((_, i) => elRefs.current[i] || React.createRef())
@@ -59,21 +60,21 @@ export default function Home() {
   return [
     <SettingsProvider>
       <SEO />
-      <Layout>
+      <Layout scrollUpSentinelRef={scrollUpSentinelRef}>
         <Block background="clouds">
           <Hero />
         </Block>
         <Clouds previousColor="blue">
-          <span id="scroll-up-interception-sentinel" />
-          <div class="unanimatedSection" ref={elRefs.current[0]}>
+          <span ref={scrollUpSentinelRef} />
+          <div className="unanimatedSection" ref={elRefs.current[0]}>
             <Bio />
           </div>
           <hr />
-          <div class="unanimatedSection" ref={elRefs.current[1]}>
+          <div className="unanimatedSection" ref={elRefs.current[1]}>
             <Skills />
           </div>
           <hr />
-          <div class="unanimatedSection" ref={elRefs.current[2]}>
+          <div className="unanimatedSection" ref={elRefs.current[2]}>
             <Projects />
           </div>
         </Clouds>

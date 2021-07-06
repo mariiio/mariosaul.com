@@ -77,7 +77,7 @@ export function Skills() {
           <select required value={selectedSkill} onMouseOver={playPop} onChange={handleChange}>
             {Object.keys(skills).map(skillOption => {
               return (
-                <option value={skillOption}>
+                <option key={skillOption} value={skillOption}>
                   {skillOption.charAt(0).toUpperCase() + skillOption.slice(1)}
                 </option>
               )
@@ -91,13 +91,13 @@ export function Skills() {
       <div className={styles.skillsContainer}>
         {skills[selectedSkill].map(skill => {
           return (
-            <span className={styles.badgeContainer}>
+            <span key={skill.name} className={styles.badgeContainer}>
               {skill.favorite && (
                 <a
                   className={`${styles.favorite} nes-badge is-icon`}
                 >
-                  <span class="is-warning">
-                    <i class="nes-icon star is-small"></i>
+                  <span className="is-warning">
+                    <i className="nes-icon star is-small"></i>
                   </span>
                   <span></span>
                 </a>
@@ -105,7 +105,7 @@ export function Skills() {
               <a
                 className={`${styles.badge} nes-badge`}
               >
-                <span class="is-primary">{skill.name}</span>
+                <span className="is-primary">{skill.name}</span>
               </a>
             </span>
           )

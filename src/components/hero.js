@@ -112,7 +112,7 @@ const Tagline = ({ active, setActive, clickHandler }) => {
 
   return (
     <div>
-      <div>
+      <div className={styles.marioContainer}>
         <a
           href="#mario"
           onClick={handleClick}

@@ -17,9 +17,9 @@ export function Projects() {
   return (
     <div className={styles.logosContainer}>
       <h2 className={styles.mainTitle}>
-        <i class="nes-logo"></i>
+        <i className="nes-logo"></i>
         Player's History
-        <i class="nes-logo"></i>
+        <i className="nes-logo"></i>
       </h2>
       <div id={styles.companiesSection} className={styles.logoSection}>
         <h3 id={styles.companiesTitle} className={styles.logoGroupTitle}>

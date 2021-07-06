@@ -6,7 +6,7 @@ import { Footer } from "./footer.js"
 import { Button } from "./button.js"
 import styles from "../styles/layout.module.css"
 
-export function Layout({ children }) {
+export function Layout({ scrollUpSentinelRef, children }) {
   const { playClick, playPop } = useSfx()
   const [scrollUp, setScrollUp] = useState(false)
 
@@ -21,7 +21,7 @@ export function Layout({ children }) {
       threshold: 1,
     }
     const observer = new IntersectionObserver(handleIntersect, options)
-    observer.observe(document.getElementById("scroll-up-interception-sentinel"))
+    observer.observe(scrollUpSentinelRef.current)
   }, [])
 
   return (

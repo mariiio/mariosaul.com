@@ -98,6 +98,11 @@
   position: relative;
 }
 
+.marioContainer {
+  position: sticky;
+  top: 50px;
+}
+
 .mario {
   display: block;
   margin: 0 auto;
@@ -200,6 +205,11 @@
 
   .tagline {
     font-size: var(--size-lg, 57.5px);
+  }
+
+  .marioContainer {
+    position: sticky;
+    top: 150px;
   }
 
   .mario {
