@@ -72,7 +72,7 @@ export function Skills() {
     <div className={styles.container}>
       <div className={styles.mainTitleContainer}>
         <i className={`${styles.titleIcon} nes-icon trophy is-medium`}></i>
-        <h2 className={styles.mainTitle}>Player's</h2>
+        <h2 className={styles.mainTitle}>Mario's</h2>
         <div className={`${styles.select} nes-select`}>
           <select required value={selectedSkill} onMouseOver={playPop} onChange={handleChange}>
             {Object.keys(skills).map(skillOption => {

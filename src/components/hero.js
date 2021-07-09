@@ -66,7 +66,20 @@ const taglines = [
   },
 ]
 
-const GameBar = ({ time, coins }) => {
+const GameBar = ({ coins }) => {
+  const [time, setTime] = useState(150)
+  const { playTimeWarning, playDie, stopThemeSong } = useSfx()
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setTime(time > 0 ? time - 1 : "-")
+      if (time === 50) playTimeWarning()
+      if (time === 0) playDie() && stopThemeSong()
+    }, 1000)
+
+    return () => clearTimeout(timer)
+  }, [time])
+
   return (
     <div className={styles.gameBar}>
       <div className={styles.timer}>
@@ -152,17 +165,10 @@ const Tagline = ({ active, setActive, clickHandler }) => {
 
 export function Hero() {
   const [coins, setCoins] = useState(0)
-  const [time, setTime] = useState(150)
   const [active, setActive] = useState(false)
   const [taglineIndex, setTaglineIndex] = useState(0)
   const tagline = taglines[taglineIndex]
-  const {
-    playCoin,
-    playTimeWarning,
-    playDie,
-    playLiveUp,
-    stopThemeSong,
-  } = useSfx()
+  const { playCoin, playLiveUp } = useSfx()
 
   function changeTagline() {
     const index = taglineIndex + 1
@@ -175,18 +181,8 @@ export function Hero() {
     }, 200)
   }
 
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setTime(time > 0 ? time - 1 : "-")
-      if (time === 50) playTimeWarning()
-      if (time === 0) playDie() && stopThemeSong()
-    }, 1000)
-
-    return () => clearTimeout(timer)
-  }, [time])
-
   return [
-    <GameBar time={time} coins={coins} />,
+    <GameBar coins={coins} />,
     <h1 className={styles.hero}>
       <span className={styles.box}>Mario Saul</span>
       <span

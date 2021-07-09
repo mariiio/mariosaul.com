@@ -100,6 +100,7 @@
 
 .marioContainer {
   position: sticky;
+  z-index: 0;
   top: 50px;
 }
 

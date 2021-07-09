@@ -98,7 +98,7 @@ export function Bio() {
     <div className={styles.container}>
       <div className={styles.mainTitleContainer}>
         <i className={`${styles.titleIcon} nes-icon is-medium star`}></i>
-        <h2 className={styles.mainTitle}>Player's Bio</h2>
+        <h2 className={styles.mainTitle}>Mario's Bio</h2>
         <i className={`${styles.titleIcon} nes-icon is-medium star`}></i>
       </div>
 

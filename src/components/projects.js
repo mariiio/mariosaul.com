@@ -18,7 +18,7 @@ export function Projects() {
     <div className={styles.logosContainer}>
       <h2 className={styles.mainTitle}>
         <i className="nes-logo"></i>
-        Player's History
+        Mario's History
         <i className="nes-logo"></i>
       </h2>
       <div id={styles.companiesSection} className={styles.logoSection}>
