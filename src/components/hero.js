@@ -6,6 +6,7 @@ import stand from "../images/stand.png"
 import jump from "../images/jump.png"
 import { useSfx } from "../hooks/use-sfx.js"
 import { useStaticQuery, graphql } from "gatsby"
+import { useRef } from "react"
 
 const taglines = [
   {
@@ -95,8 +96,14 @@ const GameBar = ({ coins }) => {
   )
 }
 
-const Tagline = ({ active, setActive, clickHandler }) => {
-  const [clickedMario, setClickedMario] = useState(false)
+const Tagline = ({
+  clickedMario,
+  setClickedMario,
+  active,
+  setActive,
+  enteringPipe,
+  clickHandler,
+}) => {
   const { playJump } = useSfx()
 
   const handleClick = event => {
@@ -142,7 +149,7 @@ const Tagline = ({ active, setActive, clickHandler }) => {
             alt="it's a me! Mario jumping!"
           />
         </a>
-        {!clickedMario && (
+        {!clickedMario && !enteringPipe && (
           <img
             className={`${styles.clickIndicator} noselect`}
             src={cursor}
@@ -165,12 +172,15 @@ const Tagline = ({ active, setActive, clickHandler }) => {
 
 export function Hero() {
   const [coins, setCoins] = useState(0)
+  const [clickedMario, setClickedMario] = useState(false)
   const [active, setActive] = useState(false)
+  const [enteringPipe, setEnteringPipe] = useState(false)
   const [taglineIndex, setTaglineIndex] = useState(0)
   const tagline = taglines[taglineIndex]
   const { playCoin, playLiveUp } = useSfx()
+  const stickySentinelRef = useRef()
 
-  function changeTagline() {
+  const changeTagline = () => {
     const index = taglineIndex + 1
     setTimeout(() => {
       const newCoins = coins + 1
@@ -181,10 +191,23 @@ export function Hero() {
     }, 200)
   }
 
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([e]) => {
+        setEnteringPipe(e.intersectionRatio < 1)
+      },
+      {
+        threshold: [1],
+      }
+    )
+    observer.observe(stickySentinelRef.current)
+  }, [])
+
   return [
     <GameBar coins={coins} />,
     <h1 className={styles.hero}>
       <span className={styles.box}>Mario Saul</span>
+      <span ref={stickySentinelRef}></span>
       <span
         className={`${styles.tagline} ${active ? styles.active : ""}`}
         style={{
@@ -196,8 +219,11 @@ export function Hero() {
       />
     </h1>,
     <Tagline
+      setClickedMario={setClickedMario}
+      clickedMario={clickedMario}
       active={active}
       setActive={setActive}
+      enteringPipe={enteringPipe}
       clickHandler={changeTagline}
     />,
   ]
