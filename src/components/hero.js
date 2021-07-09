@@ -108,6 +108,7 @@ const Tagline = ({
 
   const handleClick = event => {
     event.preventDefault()
+    if (enteringPipe) return
 
     if (!clickedMario) setClickedMario(true)
     setActive(true)
