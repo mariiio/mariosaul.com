@@ -150,7 +150,9 @@ export function ContactLinks({ color, children, id, ...props }) {
         <img
           loading="lazy"
           src={castle}
-          className={styles.castle}
+          className={`${styles.castle} ${
+            CVEnabled ? styles.castleHidden : styles.castle
+          }`}
           alt="castle"
         />
       </div>

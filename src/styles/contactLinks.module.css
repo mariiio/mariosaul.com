@@ -49,13 +49,12 @@
 .bowser {
   float: right;
   position: relative;
-  z-index: 1;
+  z-index: 0;
+  margin-bottom: -3px
 }
 
 .flag {
   display: none;
-  position: relative;
-  z-index: 1;
 }
 
 .mountain {
@@ -122,9 +121,8 @@
     margin-right: 0px;
   }
 
-  .castle {
-    /* Uncomment with CV */
-    /* display: none; */
+  .castle-hidden {
+    display: none;
   }
 }
 
