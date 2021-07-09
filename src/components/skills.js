@@ -12,9 +12,8 @@ const skills = {
     { name: "Phoenix", favorite: false },
     { name: "PostgreSQL", favorite: false },
     { name: "Python", favorite: false },
-    { name: "Rails", favorite: true },
     { name: "Redis", favorite: true },
-    { name: "Ruby", favorite: true },
+    { name: "Ruby on Rails", favorite: true },
     { name: "Testing", favorite: true },
   ],
   frontend: [

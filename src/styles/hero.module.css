@@ -98,12 +98,6 @@
   position: relative;
 }
 
-.marioContainer {
-  position: sticky;
-  z-index: 0;
-  top: 50px;
-}
-
 .mario {
   display: block;
   margin: 0 auto;
