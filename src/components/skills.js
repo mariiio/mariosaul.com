@@ -34,7 +34,7 @@ const skills = {
     { name: "Athena", favorite: false },
     { name: "CI/CD", favorite: true },
     { name: "CloudFront", favorite: false },
-    { name: "Docker", favorite: false },
+    { name: "Docker", favorite: true },
     { name: "Firehose", favorite: false },
     { name: "Heroku", favorite: false },
     { name: "K8s", favorite: false },
@@ -50,9 +50,9 @@ const skills = {
     { name: "Spanish", favorite: true },
   ],
   other: [
-    { name: "Agile", favorite: false },
-    { name: "Googling", favorite: true },
+    { name: "Agile", favorite: true },
     { name: "Git", favorite: true },
+    { name: "Googling ;)", favorite: true },
     { name: "Leadership", favorite: true },
     { name: "Scrum", favorite: true },
   ],
@@ -73,7 +73,12 @@ export function Skills() {
         <i className={`${styles.titleIcon} nes-icon trophy is-medium`}></i>
         <h2 className={styles.mainTitle}>Mario's</h2>
         <div className={`${styles.select} nes-select`}>
-          <select required value={selectedSkill} onMouseOver={playPop} onChange={handleChange}>
+          <select
+            required
+            value={selectedSkill}
+            onMouseOver={playPop}
+            onChange={handleChange}
+          >
             {Object.keys(skills).map(skillOption => {
               return (
                 <option key={skillOption} value={skillOption}>
@@ -92,18 +97,14 @@ export function Skills() {
           return (
             <span key={skill.name} className={styles.badgeContainer}>
               {skill.favorite && (
-                <a
-                  className={`${styles.favorite} nes-badge is-icon`}
-                >
+                <a className={`${styles.favorite} nes-badge is-icon`}>
                   <span className="is-warning">
                     <i className="nes-icon star is-small"></i>
                   </span>
                   <span></span>
                 </a>
               )}
-              <a
-                className={`${styles.badge} nes-badge`}
-              >
+              <a className={`${styles.badge} nes-badge`}>
                 <span className="is-primary">{skill.name}</span>
               </a>
             </span>
