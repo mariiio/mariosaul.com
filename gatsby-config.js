@@ -2,7 +2,7 @@ const path = require(`path`)
 
 module.exports = {
   siteMetadata: {
-    title: "Mario Saul | It's-a me!",
+    title: "Mario Saul - It's-a me!",
   },
   plugins: [
     {
@@ -22,9 +22,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-google-gtag`,
       options: {
-        trackingIds: [
-          "G-P5D1XZNWHR"
-        ],
+        trackingIds: ["G-P5D1XZNWHR"],
       },
     },
     `gatsby-plugin-sharp`,
