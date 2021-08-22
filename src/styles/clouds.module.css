@@ -2,7 +2,7 @@
   line-height: 0;
   position: relative;
   fill: var(--background);
-	stroke: var(--background);
+  stroke: var(--background);
 }
 
 .clouds svg {
