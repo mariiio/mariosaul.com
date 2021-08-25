@@ -35,7 +35,6 @@ const skills = {
     { name: "CI/CD", favorite: true },
     { name: "CloudFront", favorite: false },
     { name: "Docker", favorite: true },
-    { name: "Firehose", favorite: false },
     { name: "Heroku", favorite: false },
     { name: "K8s", favorite: false },
     { name: "Kinesis", favorite: true },
