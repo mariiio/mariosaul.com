@@ -11,6 +11,8 @@ export function Layout({ scrollUpSentinelRef, children }) {
   const [scrollUp, setScrollUp] = useState(false)
 
   useEffect(() => {
+    if (!scrollUpSentinelRef) return
+
     const handleIntersect = (entries, _observer) => {
       const sentinel = entries[0]
       setScrollUp(sentinel.boundingClientRect.bottom < 0)
