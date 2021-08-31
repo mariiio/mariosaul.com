@@ -75,7 +75,7 @@ function BioText({ bioDifficulty }) {
         </span>
         <span style={{ display: getVisibility("hard") }}>
           {" "}
-          {yearsSinceAlyah} year{yearsSinceAlyah > 1 ? "s" : ""} ago
+          {yearsSinceAlyah} years ago
         </span>
         .
       </p>
