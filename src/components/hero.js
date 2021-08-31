@@ -18,14 +18,6 @@ const taglines = [
     "margin-top": "10px",
   },
   {
-    size: "5.3vw",
-    "size-lg": "42px",
-    text: `
-      was born in 🇺🇾 and lives in 🇮🇱
-    `,
-    "margin-top": "13px",
-  },
-  {
     size: "7.2vw",
     "size-lg": "56px",
     text: `
