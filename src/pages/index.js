@@ -22,7 +22,7 @@ export default function Home() {
     `
       font-size: 5vw;
       color: transparent;
-      background-image: url(https://mariosaul.netlify.app/static/jump-d872183963adf9062b228c74c5515b76.png);
+      background-image: url(https://mario.nintendo.com/static/c3dae4617cec36bb6591b8f935bd7b21/e49c4/character-3.png);
       background-blend-mode: multiply;
       background-size: contain;
       line-height: 1;
