@@ -2,7 +2,7 @@ import React from "react"
 import { Helmet } from "react-helmet"
 
 export function SEO({
-  title = "Mario Saul | Personal Website",
+  title = "Mario Saul - It's-a me!",
   description = "Mario Saul is a Software Engineer, Web Developer and tech enthusiast. Get to know him!",
   url = "https://mariosaul.com/",
   image = "https://user-images.githubusercontent.com/14424870/123155707-1b56d300-d471-11eb-9ec0-c3217435788f.png",
