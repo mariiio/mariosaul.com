@@ -5,11 +5,10 @@ import styles from "../styles/skills.module.css"
 const skills = {
   backend: [
     { name: "Elasticsearch", favorite: true },
-    { name: "Elixir", favorite: false },
+    { name: "Elixir/Phoenix", favorite: false },
     { name: "Express", favorite: true },
     { name: "MongoDB", favorite: false },
     { name: "Node.js", favorite: true },
-    { name: "Phoenix", favorite: false },
     { name: "PostgreSQL", favorite: false },
     { name: "Python", favorite: false },
     { name: "Redis", favorite: true },
