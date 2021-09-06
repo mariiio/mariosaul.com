@@ -50,6 +50,7 @@
 
   .bio {
     font-size: 14px;
+    width: 80%;
   }
 
   .mainTitle {
@@ -72,6 +73,6 @@
   }
 
   .bio {
-    font-size: 14px;
+    width: 72%;
   }
 }
