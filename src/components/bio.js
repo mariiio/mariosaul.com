@@ -33,7 +33,7 @@ function BioText({ bioDifficulty }) {
           </span>
           <span style={{ display: getVisibility("very_hard") }}>
             {" "}
-            for leading San Francisco companies from different fields
+            for leading companies in different fields
           </span>
         </span>
         .
