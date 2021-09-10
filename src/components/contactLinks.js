@@ -14,7 +14,8 @@ export function ContactLinks({ color, children, id, ...props }) {
   const { playClick, playPop } = useSfx()
 
   useEffect(() => {
-    setCVEnabled(new URLSearchParams(window.location.search).get("cv") === "1")
+    const cv = new URLSearchParams(window.location.search).get("cv")
+    setCVEnabled(cv == 1 || cv == "true")
   }, [])
 
   return (
