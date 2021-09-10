@@ -11,18 +11,17 @@ export function Layout({ scrollUpSentinelRef, children }) {
   const [scrollUp, setScrollUp] = useState(false)
 
   useEffect(() => {
-    if (!scrollUpSentinelRef) return
+    if (!scrollUpSentinelRef) return // if 404 page
 
     const handleIntersect = (entries, _observer) => {
       const sentinel = entries[0]
       setScrollUp(sentinel.boundingClientRect.bottom < 0)
     }
-    const options = {
+    const observer = new IntersectionObserver(handleIntersect, {
       root: null,
       rootMargin: "0px",
       threshold: 1,
-    }
-    const observer = new IntersectionObserver(handleIntersect, options)
+    })
     observer.observe(scrollUpSentinelRef.current)
   }, [])
 
