@@ -18,6 +18,7 @@ export function Footer() {
         </svg>
         <a
           href="https://github.com/mariiio/mariosaul.com"
+          target="_blank"
           onMouseOver={playPop}
           onClick={playClick}
         >
