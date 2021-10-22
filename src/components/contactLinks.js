@@ -15,7 +15,7 @@ import styles from "../styles/contactLinks.module.css"
 export function ContactLinks({ color, children, id, ...props }) {
   const [CVEnabled, setCVEnabled] = useState(false)
   const { playClick, playPop } = useSfx()
-  const [marioSliding, setMarioSliding] = useState(0)
+  const [marioSliding, setMarioSliding] = useState(false)
   const pipeRef = useRef()
 
   useEffect(() => {
@@ -24,7 +24,7 @@ export function ContactLinks({ color, children, id, ...props }) {
 
     const observer = new IntersectionObserver(
       ([e]) => {
-        setMarioSliding(e.intersectionRatio == 1 ? 1 : 0)
+        setMarioSliding(e.intersectionRatio == 1)
       },
       {
         rootMargin: "-100px",
@@ -32,24 +32,13 @@ export function ContactLinks({ color, children, id, ...props }) {
       }
     )
     observer.observe(pipeRef.current)
-
-    const observer2 = new IntersectionObserver(
-      ([e]) => {
-        setMarioSliding(e.intersectionRatio == 1 ? 2 : 1)
-      },
-      {
-        rootMargin: "-225px",
-        threshold: 1,
-      }
-    )
-    observer2.observe(pipeRef.current)
   }, [])
 
   return (
     <div>
       <span className={styles.marioSlide}>
         <img
-          src={marioSliding == 1 ? marioStand : marioPole}
+          src={marioPole}
           loading="lazy"
           style={{ display: `${marioSliding ? "block" : "none"}` }}
           className={styles.mario}
