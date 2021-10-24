@@ -1,3 +1,7 @@
+.marioSlide {
+  display: none;
+}
+
 .container {
   margin-bottom: -4rem;
   display: flex;
@@ -6,10 +10,25 @@
   align-items: flex-end;
 }
 
+.mario {
+  width: 60px;
+  margin: 0 auto;
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 155px;
+  z-index: 1;
+}
+
 .balloonContainer {
   font-family: "Press Start 2P";
   position: relative;
   z-index: 1;
+}
+
+.balloonCVContainer {
+  font-family: "Press Start 2P";
+  margin: 0px -30px 65px 0px;
 }
 
 .contactLink {
@@ -47,9 +66,6 @@
 }
 
 .bowser {
-  float: right;
-  position: relative;
-  z-index: 0;
   margin-bottom: -3px;
 }
 
@@ -110,15 +126,12 @@
 
 @media (min-width: 1300px) {
   .cvContainer {
-    display: block;
+    display: flex;
+    align-items: flex-end;
   }
 
   .cvSameBalloon {
     display: none;
-  }
-
-  .flag {
-    margin-right: 0px;
   }
 
   .castle-hidden {
@@ -129,5 +142,33 @@
 @media (min-width: 1600px) {
   .castle {
     display: block;
+  }
+}
+
+@media (min-width: 1700px) {
+  .marioSlide {
+    display: block;
+  }
+
+  .pipe {
+    margin: 0 auto;
+    margin-top: -95px;
+    margin-bottom: 150px;
+    width: 150px;
+    transform: rotateX(180deg);
+    position: relative;
+    z-index: 1;
+  }
+
+  .flag {
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    padding-right: 80px;
+  }
+
+  .cvContainer {
+    margin-left: 80px;
   }
 }
