@@ -20,7 +20,7 @@ export function ContactLinks({ color, children, id, ...props }) {
 
   useEffect(() => {
     const cv = new URLSearchParams(window.location.search).get("cv")
-    setCVEnabled(cv == 1 || cv == "true")
+    setCVEnabled(!!cv)
 
     const observer = new IntersectionObserver(
       ([e]) => {
