@@ -150,7 +150,7 @@ export function ContactLinks({ color, children, id, ...props }) {
 
         <div className={styles.cvContainer}>
           {CVEnabled && (
-            <section className={styles.balloonContainer}>
+            <section className={styles.balloonCVContainer}>
               <div className={"nes-balloon from-right"}>
                 <h2>Download CV</h2>
                 <div>
@@ -179,17 +179,16 @@ export function ContactLinks({ color, children, id, ...props }) {
             className={styles.bowser}
             alt="Bowser"
           />
-        </div>
-
-        <div>
-          <img
-            loading="lazy"
-            src={castle}
-            className={`${styles.castle} ${
-              CVEnabled ? styles.castleHidden : styles.castle
-            }`}
-            alt="castle"
-          />
+          <div>
+            <img
+              loading="lazy"
+              src={castle}
+              className={`${styles.castle} ${
+                CVEnabled ? styles.castleHidden : styles.castle
+              }`}
+              alt="castle"
+            />
+          </div>
         </div>
       </div>
     </div>
