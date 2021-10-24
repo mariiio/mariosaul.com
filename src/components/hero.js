@@ -34,12 +34,12 @@ const taglines = [
     "margin-top": "10px",
   },
   {
-    size: "8.2vw",
-    "size-lg": "66px",
+    size: "6.2vw",
+    "size-lg": "49px",
     text: `
-      plays soccer okay
+      wishes he was good at ⚽️
     `,
-    "margin-top": "7px",
+    "margin-top": "10px",
   },
   {
     size: "8.6vw",
@@ -54,6 +54,14 @@ const taglines = [
     "size-lg": "52px",
     text: `
       doesn't like spicy food
+    `,
+    "margin-top": "10px",
+  },
+  {
+    size: "7.0vw",
+    "size-lg": "55px",
+    text: `
+      ❤️s playing 🏐 at the 🏖
     `,
     "margin-top": "10px",
   },
