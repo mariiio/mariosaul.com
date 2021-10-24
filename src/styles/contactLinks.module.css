@@ -2,14 +2,6 @@
   display: none;
 }
 
-.pipe {
-  margin: 0 auto;
-  margin-top: -95px;
-  margin-bottom: 150px;
-  width: 150px;
-  transform: rotateX(180deg);
-}
-
 .container {
   margin-bottom: -4rem;
   display: flex;
@@ -25,6 +17,7 @@
   left: 0;
   right: 0;
   bottom: 155px;
+  z-index: 1;
 }
 
 .balloonContainer {
@@ -154,8 +147,14 @@
     display: block;
   }
 
-  .cvContainer {
-    margin-left: 80px;
+  .pipe {
+    margin: 0 auto;
+    margin-top: -95px;
+    margin-bottom: 150px;
+    width: 150px;
+    transform: rotateX(180deg);
+    position: relative;
+    z-index: 1;
   }
 
   .flag {
@@ -164,5 +163,9 @@
     right: 0;
     margin: 0 auto;
     padding-right: 80px;
+  }
+
+  .cvContainer {
+    margin-left: 80px;
   }
 }
