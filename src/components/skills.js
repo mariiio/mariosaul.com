@@ -48,11 +48,10 @@ const skills = {
     { name: "Spanish", favorite: true },
   ],
   other: [
-    { name: "Agile", favorite: true },
+    { name: "Agile (Scrum)", favorite: true },
     { name: "Git", favorite: true },
     { name: "Googling ;)", favorite: true },
     { name: "Leadership", favorite: true },
-    { name: "Scrum", favorite: true },
   ],
 }
 
