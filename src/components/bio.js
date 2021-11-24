@@ -44,7 +44,7 @@ function BioText({ bioDifficulty }) {
         <span style={{ display: getVisibility("easy") }}>
           {" "}
           He currently works as a Team Leader at{" "}
-          <a href="https://imgn.media/">IMGN Media (Warner Music Group)</a>
+          <a href="https://imgn.media/">Warner Music Group (IMGN Media)</a>
           <span style={{ display: getVisibility("normal") }}>
             {" "}
             where he guides his teams through technical challenges to build
