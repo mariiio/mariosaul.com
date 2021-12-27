@@ -24,6 +24,7 @@ const skills = {
     { name: "React", favorite: true },
     { name: "Redux", favorite: false },
     { name: "Swift (iOS)", favorite: false },
+    { name: "Tailwind CSS", favorite: false },
     { name: "TypeScript", favorite: false },
     { name: "Vue.js", favorite: true },
     { name: "Web perf.", favorite: true },
