@@ -13,14 +13,14 @@ import cv from "../../static/cv.pdf"
 import styles from "../styles/contactLinks.module.css"
 
 export function ContactLinks({ color, children, id, ...props }) {
-  const [CVEnabled, setCVEnabled] = useState(false)
+  const [CVEnabled, setCVEnabled] = useState(true)
   const { playClick, playPop } = useSfx()
   const [marioSliding, setMarioSliding] = useState(false)
   const pipeRef = useRef()
 
   useEffect(() => {
-    const cv = new URLSearchParams(window.location.search).get("cv")
-    setCVEnabled(!!cv)
+    // const cv = new URLSearchParams(window.location.search).get("cv")
+    // setCVEnabled(!!cv)
 
     const observer = new IntersectionObserver(
       ([e]) => {

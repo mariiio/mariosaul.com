@@ -6,12 +6,13 @@ const skills = {
   backend: [
     { name: "Elasticsearch", favorite: true },
     { name: "Elixir/Phoenix", favorite: false },
-    { name: "Express", favorite: true },
+    { name: "GraphQL", favorite: false },
     { name: "MongoDB", favorite: false },
-    { name: "Node.js", favorite: true },
+    { name: "Node/Express", favorite: true },
     { name: "PostgreSQL", favorite: true },
     { name: "Python", favorite: false },
     { name: "Redis", favorite: true },
+    { name: "REST API", favorite: true },
     { name: "Ruby on Rails", favorite: true },
   ],
   frontend: [
