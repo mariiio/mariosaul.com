@@ -4,7 +4,7 @@ const SettingsContext = createContext()
 
 export const SettingsProvider = ({ children }) => {
   const [soundEnabled, setSoundEnabled] = useState()
-  const [musicEnabled, setMusicEnabled] = useState()
+  const [musicEnabled, setMusicEnabled] = useState(false)
 
   const initializeSetting = ({
     localStorageKey,
