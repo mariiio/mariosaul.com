@@ -4,63 +4,64 @@ import styles from "../styles/skills.module.css"
 
 const skills = {
   backend: [
-    { name: "Elasticsearch", favorite: true },
-    { name: "Elixir/Phoenix", favorite: false },
-    { name: "GraphQL", favorite: false },
-    { name: "MongoDB", favorite: false },
-    { name: "Node/Express", favorite: true },
-    { name: "PostgreSQL", favorite: true },
-    { name: "Python", favorite: false },
-    { name: "Redis", favorite: true },
-    { name: "REST API", favorite: true },
-    { name: "Ruby on Rails", favorite: true },
+    { name: "Elasticsearch", level: 3 },
+    { name: "Elixir/Phoenix" },
+    { name: "Javascript", level: 4 },
+    { name: "MongoDB", level: 3 },
+    { name: "Node.js", level: 4 },
+    { name: "NestJS/Express", level: 4 },
+    { name: "OS & Network", level: 4 },
+    { name: "Python", level: 1 },
+    { name: "Redis", level: 3 },
+    { name: "REST API", level: 4 },
+    { name: "Ruby on Rails", level: 4 },
+    { name: "SQL", level: 4 },
+    { name: "TypeScript", level: 4 },
+    { name: "Unit Testing", level: 2 },
   ],
   frontend: [
-    { name: "CSS/Sass", favorite: false },
-    { name: "Cypress", favorite: false },
-    { name: "GraphQL", favorite: false },
-    { name: "HTML", favorite: true },
-    { name: "Javascript", favorite: true },
-    { name: "npm & Yarn", favorite: false },
-    { name: "React", favorite: true },
-    { name: "Redux", favorite: false },
-    { name: "Swift (iOS)", favorite: false },
-    { name: "Tailwind CSS", favorite: false },
-    { name: "TypeScript", favorite: false },
-    { name: "Vue.js", favorite: true },
-    { name: "Web perf.", favorite: true },
-    { name: "Webpack", favorite: true },
+    { name: "Angular", level: 2 },
+    { name: "CSS/Sass", level: 1 },
+    { name: "Cypress", level: 3 },
+    { name: "GraphQL" },
+    { name: "HTML", level: 4 },
+    { name: "Javascript", level: 4 },
+    { name: "Next.js", level: 4 },
+    { name: "npm & Yarn", level: 3 },
+    { name: "React", level: 4 },
+    { name: "Swift (iOS)" },
+    { name: "Tailwind CSS", level: 2 },
+    { name: "Vue.js", level: 3 },
+    { name: "Web perf.", level: 4 },
+    { name: "Webpack", level: 3 },
   ],
   cloud: [
-    { name: "Argo CD", favorite: false },
-    { name: "AWS", favorite: true },
-    { name: "Athena", favorite: true },
-    { name: "CI/CD", favorite: true },
-    { name: "CloudFront", favorite: true },
-    { name: "Docker", favorite: true },
-    { name: "GH Actions", favorite: true },
-    { name: "Heroku", favorite: false },
-    { name: "K8s", favorite: false },
-    { name: "Kibana", favorite: true },
-    { name: "Kinesis", favorite: true },
-    { name: "Lambda", favorite: true },
-    { name: "S3", favorite: true },
-    { name: "SNS", favorite: true },
-    { name: "SQS", favorite: true },
-    { name: "Tekton", favorite: false },
+    { name: "Argo", level: 4 },
+    { name: "Athena" },
+    { name: "AWS", level: 4 },
+    { name: "CI/CD", level: 4 },
+    { name: "CloudFront", level: 4 },
+    { name: "Docker", level: 3 },
+    { name: "GH Actions", level: 4 },
+    { name: "K8s", level: 2 },
+    { name: "Kibana", level: 2 },
+    { name: "Kinesis", level: 3 },
+    { name: "Lambda", level: 4 },
+    { name: "S3", level: 4 },
+    { name: "SNS", level: 3 },
+    { name: "SQS", level: 3 },
   ],
   languages: [
-    { name: "English", favorite: false },
-    { name: "Hebrew", favorite: false },
-    { name: "Spanish", favorite: true },
+    { name: "English", level: 3 },
+    { name: "Hebrew", level: 3 },
+    { name: "Italian", level: 1 },
+    { name: "Spanish", level: 4 },
   ],
   other: [
-    { name: "Agile (Scrum)", favorite: true },
-    { name: "Git", favorite: true },
-    { name: "Googling ;)", favorite: true },
-    { name: "Leadership", favorite: true },
-    { name: "OS & Network", favorite: true },
-    { name: "Testing", favorite: true },
+    { name: "Agile", level: 4 },
+    { name: "Asking ChatGPT", level: 4 },
+    { name: "Git", level: 4 },
+    { name: "Leadership", level: 4 },
   ],
 }
 
@@ -71,6 +72,21 @@ export function Skills() {
   const handleChange = event => {
     playClick()
     setSelectedSkill(event.target.value)
+  }
+
+  const getLevelClass = level => {
+    switch (level) {
+      case 1:
+        return "is-empty"
+      case 2:
+        return "is-transparent"
+      case 3:
+        return "is-half"
+      case 4:
+        return ""
+      default:
+        return ""
+    }
   }
 
   return (
@@ -102,10 +118,14 @@ export function Skills() {
         {skills[selectedSkill].map(skill => {
           return (
             <span key={skill.name} className={styles.badgeContainer}>
-              {skill.favorite && (
+              {skill.level && (
                 <a className={`${styles.favorite} nes-badge is-icon`}>
                   <span className="is-warning">
-                    <i className="nes-icon star is-small"></i>
+                    <i
+                      className={`nes-icon heart is-small ${getLevelClass(
+                        skill.level
+                      )}`}
+                    ></i>
                   </span>
                   <span></span>
                 </a>

@@ -29,11 +29,17 @@ function BioText({ bioDifficulty }) {
           with {yearsWorking}+ years of experience
           <span style={{ display: getVisibility("hard") }}>
             {" "}
-            in building user-centric, high-impact solutions
+            in building
+            <span style={{ display: getVisibility("very_hard") }}>
+            {" "}
+              and leading
+            </span>
+            {" "}
+            user-centric, high-impact solutions
           </span>
           <span style={{ display: getVisibility("very_hard") }}>
             {" "}
-            for leading companies in different fields
+            for leading companies across various industries
           </span>
         </span>
         .
@@ -43,17 +49,17 @@ function BioText({ bioDifficulty }) {
       <p>
         <span style={{ display: getVisibility("easy") }}>
           {" "}
-          He currently works as a Team Leader at{" "}
-          <a href="https://imgn.media/">Warner Music Group (IMGN Media)</a>
+          Currently, he works as a Team Leader at{" "}
+          <a href="https://www.konnecto.com/">Konnecto</a>
           <span style={{ display: getVisibility("normal") }}>
             {" "}
-            where he guides his teams through technical challenges to build
-            robust solutions to complex problems
+            where he leads his team through technical challenges to develop
+            robust solutions for complex problems
           </span>
           <span style={{ display: getVisibility("hard") }}>
-            , using a broad set of technologies and tools to build real time,
-            big data applications in a distributed environment that reach
-            millions of people
+            , leveraging a diverse set of technologies and tools to build
+            big data applications in a distributed environment that help
+            drive the company's growth
           </span>
           .
           <br />
@@ -63,9 +69,8 @@ function BioText({ bioDifficulty }) {
       <p>
         <span style={{ display: getVisibility("very_hard") }}>
           {" "}
-          The multi-faceted nature of developing software and the drive to
-          always learn something new is what excites him most about the
-          profession.
+          His passion for software development stems from the multifaceted
+          nature of the field and a relentless drive to learn new things.
           <br />
         </span>{" "}
         He was born in Uruguay

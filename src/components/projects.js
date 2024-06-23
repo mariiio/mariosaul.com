@@ -1,5 +1,6 @@
 import React from "react"
 import { useSfx } from "../hooks/use-sfx.js"
+import konnecto from "../images/konnecto.png"
 import trr from "../images/trr.png"
 import emeritus from "../images/emeritus.png"
 import wmg from "../images/wmg.png"
@@ -27,6 +28,19 @@ export function Projects() {
         </h3>
         <div className={styles.logoGroup}>
           <a
+            href="https://www.konnecto.com/"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <img
+              alt="Konnecto"
+              loading="lazy"
+              src={konnecto}
+              onMouseOver={playPop}
+              onClick={playClick}
+            ></img>
+          </a>
+          <a
             href="https://www.therealreal.com/"
             target="_blank"
             rel="noreferrer"
@@ -48,7 +62,7 @@ export function Projects() {
               onClick={playClick}
             ></img>
           </a>
-          <a href="https://imgn.media/" target="_blank" rel="noreferrer">
+          <a href="https://www.wmg.com/news/imgn-media-acquired-warner-music-group-34971" target="_blank" rel="noreferrer">
             <img
               alt="Warner Music Group"
               loading="lazy"
@@ -61,7 +75,7 @@ export function Projects() {
       </div>
       <div id={styles.startupsSection} className={styles.logoSection}>
         <h3 id={styles.startupsTitle} className={styles.logoGroupTitle}>
-          start-ups
+          projects
         </h3>
         <div className={styles.logoGroup}>
           <a href="http://seatmateapp.com/" target="_blank" rel="noreferrer">
