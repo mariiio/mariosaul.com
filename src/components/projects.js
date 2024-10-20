@@ -23,60 +23,66 @@ export function Projects() {
         <i className="nes-logo"></i>
       </h2>
       <div className={styles.logoSection}>
-        <h3 className={styles.logoGroupTitle}>
-          2023-now
-        </h3>
-        <div className={styles.logoGroup}>
-          <a href="https://www.konnecto.com/" target="_blank" rel="noreferrer">
-            <img
-              alt="Konnecto"
-              loading="lazy"
-              src={konnecto}
-              onMouseOver={playPop}
-              onClick={playClick}
-            ></img>
-          </a>
+        <span className={styles.logoGroupTitle}>2023 - now</span>
+        <div className={styles.historySection}>
+          <div className={styles.verticalHistoryLine}></div>
+          <div className={styles.logoGroup}>
+            <a
+              href="https://www.konnecto.com/"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <img
+                alt="Konnecto"
+                loading="lazy"
+                src={konnecto}
+                onMouseOver={playPop}
+                onClick={playClick}
+              ></img>
+            </a>
+          </div>
         </div>
       </div>
       <div className={styles.logoSection}>
-        <h3 className={styles.logoGroupTitle}>
-          2020-2023
-        </h3>
-        <div className={styles.logoGroup}>
-          <a
-            href="https://www.wmg.com/news/imgn-media-acquired-warner-music-group-34971"
-            target="_blank"
-            rel="noreferrer"
-          >
-            <img
-              alt="Warner Music Group"
-              loading="lazy"
-              src={wmg}
-              onMouseOver={playPop}
-              onClick={playClick}
-            ></img>
-          </a>
+        <span className={styles.logoGroupTitle}>2020 - 2023</span>
+        <div className={styles.historySection}>
+          <div className={styles.verticalHistoryLine}></div>
+          <div className={styles.logoGroup}>
+            <a
+              href="https://www.wmg.com/news/imgn-media-acquired-warner-music-group-34971"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <img
+                alt="Warner Music Group"
+                loading="lazy"
+                src={wmg}
+                onMouseOver={playPop}
+                onClick={playClick}
+              ></img>
+            </a>
+          </div>
         </div>
       </div>
       <div className={styles.logoSection}>
-        <h3 className={styles.logoGroupTitle}>
-          2017-2019
-        </h3>
-        <div className={styles.logoGroup}>
-          <a
-            href="https://www.therealreal.com/"
-            target="_blank"
-            rel="noreferrer"
-          >
-            <img
-              alt="The realreal"
-              loading="lazy"
-              src={trr}
-              onMouseOver={playPop}
-              onClick={playClick}
-            ></img>
-          </a>
-          {/* <a href="https://retroally.com/" target="_blank" rel="noreferrer">
+        <span className={styles.logoGroupTitle}>2017 - 2019</span>
+        <div className={styles.historySection}>
+          <div className={styles.verticalHistoryLine}></div>
+          <div className={styles.logoGroup}>
+            <a
+              href="https://www.therealreal.com/"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <img
+                alt="The realreal"
+                loading="lazy"
+                src={trr}
+                onMouseOver={playPop}
+                onClick={playClick}
+              ></img>
+            </a>
+            {/* <a href="https://retroally.com/" target="_blank" rel="noreferrer">
             <img
               alt="Retroally"
               loading="lazy"
@@ -85,25 +91,29 @@ export function Projects() {
               onClick={playClick}
             ></img>
           </a> */}
-          <a href="https://www.wyeworks.com/" target="_blank" rel="noreferrer">
-            <img
-              alt="WyeWorks"
-              loading="lazy"
-              src={wyeworks}
-              onMouseOver={playPop}
-              onClick={playClick}
-            ></img>
-          </a>
-          <a href="https://emeritus.org/" target="_blank" rel="noreferrer">
-            <img
-              alt="Emeritus"
-              loading="lazy"
-            src={emeritus}
-              onMouseOver={playPop}
-              onClick={playClick}
-            ></img>
-          </a>
-          {/* <a
+            <a
+              href="https://www.wyeworks.com/"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <img
+                alt="WyeWorks"
+                loading="lazy"
+                src={wyeworks}
+                onMouseOver={playPop}
+                onClick={playClick}
+              ></img>
+            </a>
+            <a href="https://emeritus.org/" target="_blank" rel="noreferrer">
+              <img
+                alt="Emeritus"
+                loading="lazy"
+                src={emeritus}
+                onMouseOver={playPop}
+                onClick={playClick}
+              ></img>
+            </a>
+            {/* <a
             href="https://appadvice.com/app/illume-health-sauna-tracker/1439920323"
             target="_blank"
             rel="noreferrer"
@@ -117,14 +127,15 @@ export function Projects() {
               onClick={playClick}
             ></img>
           </a> */}
+          </div>
         </div>
       </div>
       <div className={styles.logoSection}>
-        <h3 className={styles.logoGroupTitle}>
-          2016-2017
-        </h3>
-        <div className={styles.logoGroup}>
-          {/* <a
+        <span className={styles.logoGroupTitle}>2016 - 2017</span>
+        <div className={styles.historySection}>
+          <div className={styles.verticalHistoryLine}></div>
+          <div className={styles.logoGroup}>
+            {/* <a
             href="https://www.frankyaguilar.com/projects/okjux"
             target="_blank"
             rel="noreferrer"
@@ -138,16 +149,20 @@ export function Projects() {
               onClick={playClick}
             ></img>
           </a> */}
-          <a href="https://www.rootstrap.com/" target="_blank" rel="noreferrer">
-            <img
-              alt="Rootstrap"
-              loading="lazy"
-              src={rootstrap}
-              onMouseOver={playPop}
-              onClick={playClick}
-            ></img>
-          </a>
-          {/* <a href="http://seatmateapp.com/" target="_blank" rel="noreferrer">
+            <a
+              href="https://www.rootstrap.com/"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <img
+                alt="Rootstrap"
+                loading="lazy"
+                src={rootstrap}
+                onMouseOver={playPop}
+                onClick={playClick}
+              ></img>
+            </a>
+            {/* <a href="http://seatmateapp.com/" target="_blank" rel="noreferrer">
             <img
               style={{ width: "55px" }}
               alt="SeatMate"
@@ -157,6 +172,7 @@ export function Projects() {
               onClick={playClick}
             ></img>
           </a> */}
+          </div>
         </div>
       </div>
     </div>

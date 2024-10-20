@@ -35,16 +35,26 @@
   align-items: center;
   flex-wrap: wrap;
   gap: 10px;
+  border-style: solid;
+  border-width: 20px 0px 0px 0px;
+  border-image-source: url("../images/block.png");
+  border-image-slice: 100% 0%;
+  border-image-repeat: repeat;
+  padding: 16px 0;
+  margin-bottom: 8px;
+  width: auto;
 }
 
 .logoGroupTitle {
-  color: gray;
-  font-family: var(--font-family);
+  background-color: #fbb00c;
+  width: 250px;
+  padding: 4px;
   font-weight: 100;
-  font-size: 12px;
-}
-
-.logoGroupTitle {
+  border: 1px solid #0f0f04;
+  border-radius: 0;
+  box-shadow: 0 0 0 1px #0f0f04, 0 0 0 4px #9b4a12;
+  text-align: center;
+  font-size: 10px;
   margin-bottom: 0.5rem;
 }
 
@@ -52,13 +62,19 @@
   margin-bottom: 1rem;
 }
 
-.verticalHistoryLine {
-  width: 20px;
-  height: 50px;
-  background-color: #fff0b5;
-  position: absolute;
-  left: 50%; /* Center horizontally */
-  transform: translateX(-50%);
+.historySection {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.historySection .verticalHistoryLine {
+  background-color: #9b4a12;
+  align-self: center;
+  width: 15px;
+  height: 12px;
+  margin-top: 2px;
+  margin-bottom: -3px;
 }
 
 @media (min-width: 600px) {
@@ -76,12 +92,26 @@
     font-size: 1.6rem;
   }
 
+  .logoGroup {
+    border-width: 50px 0px 0px 0px;
+  }
+
   .logoGroup img {
     width: 140px;
   }
 
   .logoGroupTitle {
-    font-size: 18px;
+    font-size: 14px;
+    padding: 8px;
+    border: 3px solid #0f0f04;
+    box-shadow: 0 0 0 1px #0f0f04, 0 0 0 6px #9b4a12;
+  }
+
+  .historySection .verticalHistoryLine {
+    width: 30px;
+    height: 20px;
+    margin-top: 10px;
+    margin-bottom: -8px;
   }
 }
 
@@ -92,10 +122,6 @@
 
   .logoGroupTitle {
     margin-bottom: 1.5rem;
-  }
-
-  .logoSection {
-    margin-bottom: 2rem;
   }
 }
 
