@@ -39,7 +39,7 @@ function BioText({ bioDifficulty }) {
           </span>
           <span style={{ display: getVisibility("very_hard") }}>
             {" "}
-            for leading companies across various industries
+            for top-tier companies across a range of industries
           </span>
         </span>
         .

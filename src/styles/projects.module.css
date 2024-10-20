@@ -15,10 +15,13 @@
 
 .logoSection {
   margin: 20px 0;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
 }
 
 .logoGroup img {
-  width: 90px;
+  width: 100px;
   filter: grayscale(50%);
 }
 
@@ -31,6 +34,7 @@
   justify-content: space-evenly;
   align-items: center;
   flex-wrap: wrap;
+  gap: 10px;
 }
 
 .logoGroupTitle {
@@ -40,28 +44,21 @@
   font-size: 12px;
 }
 
-.logoGroupTitle#companiesTitle {
-  margin-bottom: -20px;
+.logoGroupTitle {
+  margin-bottom: 0.5rem;
 }
 
-.logoSection#companiesSection {
-  margin-bottom: -30px;
+.logoSection {
+  margin-bottom: 1rem;
 }
 
-.logoGroupTitle#startupsTitle {
-  margin-bottom: 5px;
-}
-
-.logoSection#startupsSection {
-  margin-bottom: -15px;
-}
-
-.logoGroupTitle#factoriesTitle {
-  margin-bottom: 5px;
-}
-
-.logoGroup#factoriesLogos img {
-  width: 120px;
+.verticalHistoryLine {
+  width: 20px;
+  height: 50px;
+  background-color: #fff0b5;
+  position: absolute;
+  left: 50%; /* Center horizontally */
+  transform: translateX(-50%);
 }
 
 @media (min-width: 600px) {
@@ -80,35 +77,11 @@
   }
 
   .logoGroup img {
-    width: 160px;
+    width: 140px;
   }
 
   .logoGroupTitle {
     font-size: 18px;
-  }
-
-  .logoGroupTitle#companiesTitle {
-    margin-bottom: -35px;
-  }
-
-  .logoSection#companiesSection {
-    margin-bottom: -35px;
-  }
-
-  .logoGroupTitle#startupsTitle {
-    margin-bottom: 0px;
-  }
-
-  .logoSection#startupsSection {
-    margin-bottom: 0px;
-  }
-
-  .logoGroupTitle#factoriesTitle {
-    margin-bottom: 10px;
-  }
-
-  .logoGroup#factoriesLogos img {
-    width: 250px;
   }
 }
 
@@ -117,29 +90,17 @@
     width: auto;
   }
 
-  .logoGroupTitle#companiesTitle {
-    margin-bottom: -55px;
+  .logoGroupTitle {
+    margin-bottom: 1.5rem;
   }
 
-  .logoSection#companiesSection {
-    margin-bottom: -55px;
-  }
-
-  .logoGroupTitle#startupsTitle {
-    margin-bottom: 10px;
-  }
-
-  .logoSection#startupsSection {
-    margin-bottom: 22px;
-  }
-
-  .logoGroup#factoriesLogos img {
-    width: 300px;
+  .logoSection {
+    margin-bottom: 2rem;
   }
 }
 
 @media (min-width: 1017px) {
-  .logoGroup#factoriesLogos img {
+  .logoGroup img {
     width: auto;
   }
 }
