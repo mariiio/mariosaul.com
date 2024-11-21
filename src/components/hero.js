@@ -42,6 +42,14 @@ const taglines = [
     "margin-top": "10px",
   },
   {
+    size: "8.6vw",
+    "size-lg": "67px",
+    text: `
+      is a gym rat 🏋🏽
+    `,
+    "margin-top": "7px",
+  },
+  {
     size: "6.5vw",
     "size-lg": "52px",
     text: `
