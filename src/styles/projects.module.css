@@ -40,8 +40,7 @@
   border-image-source: url("../images/block.png");
   border-image-slice: 100% 0%;
   border-image-repeat: repeat;
-  padding: 16px 0;
-  margin-bottom: 8px;
+  padding-top: 12px;
   width: auto;
 }
 
@@ -68,14 +67,14 @@
   flex-direction: column;
 }
 
-.historySection .verticalHistoryLine {
+/* .historySection .verticalHistoryLine {
   background-color: #9b4a12;
   align-self: center;
   width: 15px;
   height: 12px;
   margin-top: 2px;
   margin-bottom: -3px;
-}
+} */
 
 @media (min-width: 600px) {
   .logosContainer {
@@ -93,6 +92,8 @@
   }
 
   .logoGroup {
+    margin: 0.5rem 80px;
+    padding: 2rem 0;
     border-width: 50px 0px 0px 0px;
   }
 
@@ -107,12 +108,12 @@
     box-shadow: 0 0 0 1px #0f0f04, 0 0 0 6px #9b4a12;
   }
 
-  .historySection .verticalHistoryLine {
+  /* .historySection .verticalHistoryLine {
     width: 30px;
     height: 20px;
     margin-top: 10px;
     margin-bottom: -8px;
-  }
+  } */
 }
 
 @media (min-width: 903px) {

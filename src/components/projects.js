@@ -25,7 +25,7 @@ export function Projects() {
       <div className={styles.logoSection}>
         <span className={styles.logoGroupTitle}>2023 - now</span>
         <div className={styles.historySection}>
-          <div className={styles.verticalHistoryLine}></div>
+          {/* <div className={styles.verticalHistoryLine}></div> */}
           <div className={styles.logoGroup}>
             <a
               href="https://www.konnecto.com/"
@@ -46,7 +46,7 @@ export function Projects() {
       <div className={styles.logoSection}>
         <span className={styles.logoGroupTitle}>2020 - 2023</span>
         <div className={styles.historySection}>
-          <div className={styles.verticalHistoryLine}></div>
+          {/* <div className={styles.verticalHistoryLine}></div> */}
           <div className={styles.logoGroup}>
             <a
               href="https://www.wmg.com/news/imgn-media-acquired-warner-music-group-34971"
@@ -67,7 +67,7 @@ export function Projects() {
       <div className={styles.logoSection}>
         <span className={styles.logoGroupTitle}>2017 - 2019</span>
         <div className={styles.historySection}>
-          <div className={styles.verticalHistoryLine}></div>
+          {/* <div className={styles.verticalHistoryLine}></div> */}
           <div className={styles.logoGroup}>
             <a
               href="https://www.therealreal.com/"
@@ -133,7 +133,7 @@ export function Projects() {
       <div className={styles.logoSection}>
         <span className={styles.logoGroupTitle}>2016 - 2017</span>
         <div className={styles.historySection}>
-          <div className={styles.verticalHistoryLine}></div>
+          {/* <div className={styles.verticalHistoryLine}></div> */}
           <div className={styles.logoGroup}>
             {/* <a
             href="https://www.frankyaguilar.com/projects/okjux"
