@@ -13,7 +13,7 @@ const taglines = [
     size: "6.6vw",
     "size-lg": "51px",
     text: `
-    is a software engineer
+      is a software engineer
     `,
     "margin-top": "10px",
   },
@@ -34,10 +34,10 @@ const taglines = [
     "margin-top": "10px",
   },
   {
-    size: "6.2vw",
-    "size-lg": "49px",
+    size: "5.5vw",
+    "size-lg": "43px",
     text: `
-      wishes he was good at ⚽️
+      was born in 🇺🇾 and lives in 🇮🇱
     `,
     "margin-top": "10px",
   },
@@ -45,7 +45,7 @@ const taglines = [
     size: "8.6vw",
     "size-lg": "67px",
     text: `
-      is a Beatlemaniac
+      is a gym rat 🏋🏽
     `,
     "margin-top": "7px",
   },
@@ -56,6 +56,14 @@ const taglines = [
       doesn't like spicy food
     `,
     "margin-top": "10px",
+  },
+  {
+    size: "8.6vw",
+    "size-lg": "67px",
+    text: `
+      is a Beatlemaniac
+    `,
+    "margin-top": "7px",
   },
   {
     size: "7.0vw",

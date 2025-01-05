@@ -15,10 +15,13 @@
 
 .logoSection {
   margin: 20px 0;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
 }
 
 .logoGroup img {
-  width: 90px;
+  width: 100px;
   filter: grayscale(50%);
 }
 
@@ -31,38 +34,47 @@
   justify-content: space-evenly;
   align-items: center;
   flex-wrap: wrap;
+  gap: 10px;
+  border-style: solid;
+  border-width: 20px 0px 0px 0px;
+  border-image-source: url("../images/block.png");
+  border-image-slice: 100% 0%;
+  border-image-repeat: repeat;
+  padding-top: 12px;
+  width: auto;
 }
 
 .logoGroupTitle {
-  color: gray;
-  font-family: var(--font-family);
+  background-color: #fbb00c;
+  width: 250px;
+  padding: 4px;
   font-weight: 100;
-  font-size: 12px;
+  border: 1px solid #0f0f04;
+  border-radius: 0;
+  box-shadow: 0 0 0 1px #0f0f04, 0 0 0 4px #9b4a12;
+  text-align: center;
+  font-size: 10px;
+  margin-bottom: 0.5rem;
 }
 
-.logoGroupTitle#companiesTitle {
-  margin-bottom: -20px;
+.logoSection {
+  margin-bottom: 1rem;
 }
 
-.logoSection#companiesSection {
-  margin-bottom: -30px;
+.historySection {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
 }
 
-.logoGroupTitle#startupsTitle {
-  margin-bottom: 5px;
-}
-
-.logoSection#startupsSection {
-  margin-bottom: -15px;
-}
-
-.logoGroupTitle#factoriesTitle {
-  margin-bottom: 5px;
-}
-
-.logoGroup#factoriesLogos img {
-  width: 120px;
-}
+/* .historySection .verticalHistoryLine {
+  background-color: #9b4a12;
+  align-self: center;
+  width: 15px;
+  height: 12px;
+  margin-top: 2px;
+  margin-bottom: -3px;
+} */
 
 @media (min-width: 600px) {
   .logosContainer {
@@ -79,37 +91,29 @@
     font-size: 1.6rem;
   }
 
+  .logoGroup {
+    margin: 0.5rem 80px;
+    padding: 2rem 0;
+    border-width: 50px 0px 0px 0px;
+  }
+
   .logoGroup img {
-    width: 160px;
+    width: 140px;
   }
 
   .logoGroupTitle {
-    font-size: 18px;
+    font-size: 14px;
+    padding: 8px;
+    border: 3px solid #0f0f04;
+    box-shadow: 0 0 0 1px #0f0f04, 0 0 0 6px #9b4a12;
   }
 
-  .logoGroupTitle#companiesTitle {
-    margin-bottom: -35px;
-  }
-
-  .logoSection#companiesSection {
-    margin-bottom: -35px;
-  }
-
-  .logoGroupTitle#startupsTitle {
-    margin-bottom: 0px;
-  }
-
-  .logoSection#startupsSection {
-    margin-bottom: 0px;
-  }
-
-  .logoGroupTitle#factoriesTitle {
-    margin-bottom: 10px;
-  }
-
-  .logoGroup#factoriesLogos img {
-    width: 250px;
-  }
+  /* .historySection .verticalHistoryLine {
+    width: 30px;
+    height: 20px;
+    margin-top: 10px;
+    margin-bottom: -8px;
+  } */
 }
 
 @media (min-width: 903px) {
@@ -117,29 +121,13 @@
     width: auto;
   }
 
-  .logoGroupTitle#companiesTitle {
-    margin-bottom: -55px;
-  }
-
-  .logoSection#companiesSection {
-    margin-bottom: -55px;
-  }
-
-  .logoGroupTitle#startupsTitle {
-    margin-bottom: 10px;
-  }
-
-  .logoSection#startupsSection {
-    margin-bottom: 22px;
-  }
-
-  .logoGroup#factoriesLogos img {
-    width: 300px;
+  .logoGroupTitle {
+    margin-bottom: 1.5rem;
   }
 }
 
 @media (min-width: 1017px) {
-  .logoGroup#factoriesLogos img {
+  .logoGroup img {
     width: auto;
   }
 }
