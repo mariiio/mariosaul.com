@@ -12,9 +12,7 @@ function BioText({ bioDifficulty }) {
       hard: ["easy", "normal", "hard"],
       very_hard: ["easy", "normal", "hard", "very_hard"],
     }
-
     const visibility = mappings[bioDifficulty]
-
     return visibility.includes(group) ? "inline" : "none"
   }
   const yearsSinceAlyah = new Date().getFullYear() - 2019
@@ -31,10 +29,9 @@ function BioText({ bioDifficulty }) {
             {" "}
             in building
             <span style={{ display: getVisibility("very_hard") }}>
-            {" "}
+              {" "}
               and leading
-            </span>
-            {" "}
+            </span>{" "}
             user-centric, high-impact solutions
           </span>
           <span style={{ display: getVisibility("very_hard") }}>
@@ -57,12 +54,43 @@ function BioText({ bioDifficulty }) {
             robust solutions for complex problems
           </span>
           <span style={{ display: getVisibility("hard") }}>
-            , leveraging a diverse set of technologies and tools to build
-            big data applications in a distributed environment that help
-            drive the company's growth
+            , leveraging a diverse set of technologies and tools to build big
+            data applications in a distributed environment that help drive the
+            company's growth
           </span>
           .
           <br />
+        </span>
+      </p>
+
+      <p>
+        <span style={{ display: getVisibility("normal") }}>
+          {" "}
+          He also enjoys solving his own problems by doing what he knows best:
+          writing code!
+        </span>
+        <span style={{ display: getVisibility("hard") }}>
+          {" "}
+          Check out some of his projects like{" "}
+          <a
+            href="https://super-box-app.vercel.app/about.html"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            SuperBox
+          </a>
+          <span style={{ display: getVisibility("very_hard") }}>
+            {" "}
+            and{" "}
+            <a
+              href="https://github.com/mariiio/linkedin_connect"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              LinkedIn Connect
+            </a>
+          </span>
+          .
         </span>
       </p>
 
