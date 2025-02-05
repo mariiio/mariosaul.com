@@ -66,6 +66,28 @@ function BioText({ bioDifficulty }) {
       <p>
         <span style={{ display: getVisibility("normal") }}>
           {" "}
+          Beyond his work, Mario is also an entrepreneur
+          <span style={{ display: getVisibility("hard") }}>
+            . He co-founded and built{" "}
+            <a
+              href="https://www.dbarato.com"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              dbarato
+            </a>
+          </span>
+          <span style={{ display: getVisibility("very_hard") }}>
+            , an e-commerce platform focused on providing great deals and a
+            seamless shopping experience
+          </span>
+          .
+        </span>
+      </p>
+
+      <p>
+        <span style={{ display: getVisibility("normal") }}>
+          {" "}
           He also enjoys solving his own problems by doing what he knows best:
           writing code!
         </span>
@@ -95,12 +117,6 @@ function BioText({ bioDifficulty }) {
       </p>
 
       <p>
-        <span style={{ display: getVisibility("very_hard") }}>
-          {" "}
-          His passion for software development stems from the multifaceted
-          nature of the field and a relentless drive to learn new things.
-          <br />
-        </span>{" "}
         He was born in Uruguay
         <span style={{ display: getVisibility("easy") }}>
           {" "}
