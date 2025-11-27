@@ -1,6 +1,6 @@
 import React from "react"
 import { Block } from "./block.js"
-import styles from "../styles/clouds.module.css"
+import * as styles from "../styles/clouds.module.css"
 
 export function Clouds({
   inverted,

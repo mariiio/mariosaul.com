@@ -4,7 +4,7 @@ import { NavBar } from "./navbar.js"
 import { Main } from "./main.js"
 import { Footer } from "./footer.js"
 import { Button } from "./button.js"
-import styles from "../styles/layout.module.css"
+import * as styles from "../styles/layout.module.css"
 
 export function Layout({ scrollUpSentinelRef, children }) {
   const { playClick, playPop } = useSfx()

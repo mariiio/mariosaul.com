@@ -1,6 +1,6 @@
 import React, { useState } from "react"
 import { useSfx } from "../hooks/use-sfx.js"
-import styles from "../styles/skills.module.css"
+import * as styles from "../styles/skills.module.css"
 
 const skills = {
   backend: [

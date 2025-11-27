@@ -1,5 +1,4 @@
 import React from "react"
-import { Helmet } from "react-helmet"
 
 export function SEO({
   title = "Mario Saul - It's-a me!",
@@ -8,7 +7,7 @@ export function SEO({
   image = "https://user-images.githubusercontent.com/14424870/123155707-1b56d300-d471-11eb-9ec0-c3217435788f.png",
 }) {
   return (
-    <Helmet defer={false}>
+    <>
       <title>{title}</title>
       <link rel="canonical" href={url} />
       <meta name="description" content={description} />
@@ -26,6 +25,6 @@ export function SEO({
       <meta name="twitter:title" content={title} />
       <meta name="twitter:description" content={description} />
       <meta name="twitter:image" content={image} />
-    </Helmet>
+    </>
   )
 }

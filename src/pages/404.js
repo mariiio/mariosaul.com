@@ -2,7 +2,7 @@ import React from "react"
 import { SettingsProvider } from "../context/settings.js"
 import { Layout } from "../components/layout.js"
 import { Block } from "../components/block.js"
-import styles from "../styles/404.module.css"
+import * as styles from "../styles/404.module.css"
 
 export default () => {
   return [

@@ -1,6 +1,6 @@
 import React from "react"
 import { useSfx } from "../hooks/use-sfx.js"
-import styles from "../styles/footer.module.css"
+import * as styles from "../styles/footer.module.css"
 
 export function Footer() {
   const { playClick, playPop } = useSfx()

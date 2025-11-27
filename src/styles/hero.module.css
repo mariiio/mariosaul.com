@@ -53,11 +53,9 @@
   height: 78%;
   width: 20px;
   top: 0px;
-  background-image: radial-gradient(
-      circle at center,
+  background-image: radial-gradient(circle at center,
       var(--brown) 5px,
-      transparent 5px
-    ),
+      transparent 5px),
     radial-gradient(circle at center, var(--brown) 5px, transparent 5px);
   background-size: 20px 20px;
   background-position: top center, bottom center;
@@ -89,7 +87,7 @@
 .pipe {
   display: block;
   margin: 0 auto;
-  margin-bottom: -165px;
+  margin-bottom: -160px;
   width: 150px;
 }
 
@@ -131,9 +129,11 @@
   0% {
     transform: scale(1, 1) translateY(0);
   }
+
   50% {
     transform: scale(0.95, 1.05) translate(30px, 5px);
   }
+
   100% {
     transform: scale(1, 1) translateY(0);
   }
@@ -143,12 +143,15 @@
   0% {
     transform: scale(1, 1) translateY(0);
   }
+
   23% {
     transform: scale(1, 1) translateY(0);
   }
+
   45% {
     transform: scale(0.95, 1.05) translateY(-30px);
   }
+
   100% {
     transform: scale(1, 1) translateY(0);
   }
@@ -158,18 +161,23 @@
   0% {
     transform: scale(1, 1) translateY(0);
   }
+
   10% {
     transform: scale(1.1, 0.9) translateY(0);
   }
+
   23% {
     transform: scale(0.9, 1.1) translateY(-50px);
   }
+
   55% {
     transform: scale(1.05, 0.95) translateY(0);
   }
+
   60% {
     transform: scale(1, 1) translateY(0);
   }
+
   100% {
     transform: scale(1, 1) translateY(0);
   }

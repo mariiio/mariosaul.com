@@ -57,9 +57,8 @@ export default function Home() {
     }
   }, [])
 
-  return [
+  return (
     <SettingsProvider>
-      <SEO />
       <Layout scrollUpSentinelRef={scrollUpSentinelRef}>
         <Block background="clouds">
           <Hero />
@@ -88,6 +87,10 @@ export default function Home() {
         </Clouds>
       </Layout>
       <MusicPlayer />
-    </SettingsProvider>,
-  ]
+    </SettingsProvider>
+  )
+}
+
+export function Head() {
+  return <SEO />
 }

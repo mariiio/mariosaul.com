@@ -1,5 +1,5 @@
 import React from "react"
-import styles from "../styles/block.module.css"
+import * as styles from "../styles/block.module.css"
 
 export function Block({
   background,

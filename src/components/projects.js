@@ -10,7 +10,7 @@ import illumehealth from "../images/illumehealth.png"
 import retroally from "../images/retroally.png"
 import rootstrap from "../images/rootstrap.png"
 import wyeworks from "../images/wyeworks.png"
-import styles from "../styles/projects.module.css"
+import * as styles from "../styles/projects.module.css"
 
 export function Projects() {
   const { playClick, playPop } = useSfx()

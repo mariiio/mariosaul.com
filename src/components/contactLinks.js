@@ -10,7 +10,7 @@ import bowser from "../images/bowser.png"
 import floppy from "../images/floppy.png"
 import castle from "../images/castle.png"
 import cv from "../../static/cv.pdf"
-import styles from "../styles/contactLinks.module.css"
+import * as styles from "../styles/contactLinks.module.css"
 
 export function ContactLinks({ color, children, id, ...props }) {
   const [CVEnabled, setCVEnabled] = useState(true)

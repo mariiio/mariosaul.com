@@ -1,11 +1,10 @@
 import React, { useState, useEffect } from "react"
 import cursor from "../images/cursor.png"
-import styles from "../styles/hero.module.css"
-import Img from "gatsby-image"
+import * as styles from "../styles/hero.module.css"
 import stand from "../images/mario-stand.png"
 import jump from "../images/mario-jump.png"
+import pipe from "../images/pipe.png"
 import { useSfx } from "../hooks/use-sfx.js"
-import { useStaticQuery, graphql } from "gatsby"
 import { useRef } from "react"
 
 const taglines = [
@@ -127,17 +126,6 @@ const Tagline = ({
   }
 
   const marioImages = { stand, jump }
-  const images = useStaticQuery(graphql`
-    query {
-      pipe: file(relativePath: { eq: "pipe.png" }) {
-        childImageSharp {
-          fixed(width: 150, height: 120) {
-            ...GatsbyImageSharpFixed
-          }
-        }
-      }
-    }
-  `)
 
   return (
     <div>
@@ -169,11 +157,7 @@ const Tagline = ({
       </div>
 
       <div className={styles.pipe}>
-        <Img
-          className="noselect"
-          fixed={images.pipe.childImageSharp.fixed}
-          alt="pipe"
-        />
+        <img className="noselect" src={pipe} alt="pipe" />
       </div>
     </div>
   )

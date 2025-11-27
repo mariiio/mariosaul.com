@@ -1,5 +1,5 @@
 import React from "react"
-import styles from "../styles/optionsPicker.module.css"
+import * as styles from "../styles/optionsPicker.module.css"
 
 export function OptionsPicker({
   title,

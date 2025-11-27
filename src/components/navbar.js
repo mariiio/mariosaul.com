@@ -6,7 +6,7 @@ import sound from "../images/sound.png"
 import muteSound from "../images/mute-sound.png"
 import music from "../images/music.png"
 import muteMusic from "../images/mute-music.png"
-import styles from "../styles/navbar.module.css"
+import * as styles from "../styles/navbar.module.css"
 
 export function NavBar() {
   const { soundEnabled, toggleSound, musicEnabled, toggleMusic } = useSettings()

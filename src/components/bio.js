@@ -1,7 +1,7 @@
 import React, { useState } from "react"
 import { OptionsPicker } from "../components/optionsPicker"
 import { useSfx } from "../hooks/use-sfx.js"
-import styles from "../styles/bio.module.css"
+import * as styles from "../styles/bio.module.css"
 
 function BioText({ bioDifficulty }) {
   const getVisibility = group => {
