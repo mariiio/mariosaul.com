@@ -1,4 +1,10 @@
-import React, { createContext, useEffect, useState, useContext } from "react"
+import React, {
+  createContext,
+  useEffect,
+  useState,
+  useContext,
+  useMemo,
+} from "react"
 
 const SettingsContext = createContext()
 
@@ -44,15 +50,18 @@ export const SettingsProvider = ({ children }) => {
     })
   }, [])
 
+  const value = useMemo(
+    () => ({
+      soundEnabled,
+      setSoundEnabled,
+      musicEnabled,
+      setMusicEnabled,
+    }),
+    [soundEnabled, musicEnabled]
+  )
+
   return (
-    <SettingsContext.Provider
-      value={{
-        soundEnabled,
-        setSoundEnabled,
-        musicEnabled,
-        setMusicEnabled,
-      }}
-    >
+    <SettingsContext.Provider value={value}>
       {children}
     </SettingsContext.Provider>
   )

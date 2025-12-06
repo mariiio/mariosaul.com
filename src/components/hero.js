@@ -1,11 +1,12 @@
-import React, { useState, useEffect } from "react"
+import React, { useState, useEffect, useRef, useCallback } from "react"
 import cursor from "../images/cursor.png"
 import * as styles from "../styles/hero.module.css"
 import stand from "../images/mario-stand.png"
 import jump from "../images/mario-jump.png"
+import die from "../images/mario-die.png"
 import pipe from "../images/pipe.png"
+import coinImg from "../images/coin.png"
 import { useSfx } from "../hooks/use-sfx.js"
-import { useRef } from "react"
 
 const taglines = [
   {
@@ -13,6 +14,22 @@ const taglines = [
     "size-lg": "51px",
     text: `
       is a software engineer
+    `,
+    "margin-top": "10px",
+  },
+  {
+    size: "5.5vw",
+    "size-lg": "43px",
+    text: `
+      was born in 🇺🇾 and lives in 🇮🇱
+    `,
+    "margin-top": "10px",
+  },
+  {
+    size: "7vw",
+    "size-lg": "56px",
+    text: `
+      is addicted to 🏖🏐
     `,
     "margin-top": "10px",
   },
@@ -28,15 +45,7 @@ const taglines = [
     size: "6.2vw",
     "size-lg": "49px",
     text: `
-      has 7 beautiful nephews
-    `,
-    "margin-top": "10px",
-  },
-  {
-    size: "5.5vw",
-    "size-lg": "43px",
-    text: `
-      was born in 🇺🇾 and lives in 🇮🇱
+      has 8 beautiful nephews
     `,
     "margin-top": "10px",
   },
@@ -65,28 +74,42 @@ const taglines = [
     "margin-top": "7px",
   },
   {
-    size: "7.0vw",
-    "size-lg": "55px",
+    size: "7.2vw",
+    "size-lg": "56px",
     text: `
-      ❤️s playing 🏐 at the 🏖
+      drinks 🧉 every day
     `,
     "margin-top": "10px",
   },
+
 ]
 
-const GameBar = ({ coins }) => {
-  const [time, setTime] = useState(150)
+const GameBar = ({ coins, time, setTime, onDeath, isDead }) => {
   const { playTimeWarning, playDie, stopThemeSong } = useSfx()
 
+  // Use refs to keep callbacks stable and avoid resetting the timer
+  const callbacksRef = useRef({ playTimeWarning, playDie, stopThemeSong, onDeath })
   useEffect(() => {
+    callbacksRef.current = { playTimeWarning, playDie, stopThemeSong, onDeath }
+  })
+
+  useEffect(() => {
+    if (isDead) return
+
     const timer = setTimeout(() => {
-      setTime(time > 0 ? time - 1 : "-")
-      if (time === 50) playTimeWarning()
-      if (time === 0) playDie() && stopThemeSong()
+      setTime(prevTime => {
+        if (prevTime === 50) callbacksRef.current.playTimeWarning()
+        if (prevTime === 0) {
+          callbacksRef.current.playDie()
+          callbacksRef.current.stopThemeSong()
+          callbacksRef.current.onDeath()
+        }
+        return prevTime > 0 ? prevTime - 1 : "-"
+      })
     }, 1000)
 
     return () => clearTimeout(timer)
-  }, [time])
+  }, [time, isDead, setTime])
 
   return (
     <div className={styles.gameBar}>
@@ -108,51 +131,87 @@ const Tagline = ({
   setClickedMario,
   active,
   setActive,
+  jumping,
+  setJumping,
   enteringPipe,
   clickHandler,
+  isDead,
+  isVisible,
+  onInsertCoin,
 }) => {
-  const { playJump } = useSfx()
+  const { playJump, playCoin, playThemeSong } = useSfx()
 
   const handleClick = event => {
     event.preventDefault()
-    if (enteringPipe) return
+    if (enteringPipe || isDead || active) return
 
     if (!clickedMario) setClickedMario(true)
     setActive(true)
+    setJumping(true)
     playJump()
-    setTimeout(() => setActive(false), 450)
+    setTimeout(() => setJumping(false), 400)
+    setTimeout(() => setActive(false), 950)
 
     clickHandler()
   }
 
-  const marioImages = { stand, jump }
+  const handleInsertCoin = () => {
+    playCoin()
+    playThemeSong()
+    onInsertCoin()
+  }
+
+  const getMarioClass = () => {
+    if (isDead) return `${styles.mario} ${styles.dead} noselect`
+    if (active) return `${styles.mario} ${styles.active} noselect`
+    return `${styles.mario} noselect`
+  }
+
+  const getMarioImage = () => {
+    if (isDead) return die
+    if (jumping) return jump
+    return stand
+  }
+
+  const getMarioWrapperClass = () => {
+    const classes = [getMarioClass()]
+    if (!isVisible) classes.push(styles.marioHidden)
+    return classes.join(" ")
+  }
+
+  const getMarioContainerClass = () => {
+    // Use static positioning when showing INSERT COIN (no sticky scroll behavior)
+    if (isDead && !isVisible) {
+      return `${styles.marioContainer} ${styles.marioContainerStatic}`
+    }
+    return styles.marioContainer
+  }
 
   return (
     <div>
-      <div className={styles.marioContainer}>
+      <div className={getMarioContainerClass()}>
         <a
           href="#mario"
           onClick={handleClick}
-          className={`${styles.mario} ${active ? styles.active : ""} noselect`}
+          className={getMarioWrapperClass()}
         >
           <img
-            src={marioImages["stand"]}
-            style={{ display: `${active ? "none" : "block"}` }}
-            alt="it's a me! Mario!"
-          />
-          <img
-            src={marioImages["jump"]}
-            style={{ display: `${active ? "block" : "none"}` }}
-            alt="it's a me! Mario jumping!"
+            src={getMarioImage()}
+            alt={isDead ? "Mario died!" : active ? "Mario jumping!" : "It's a me! Mario!"}
           />
         </a>
-        {!clickedMario && !enteringPipe && (
+        {!clickedMario && !enteringPipe && !isDead && isVisible && (
           <img
             className={`${styles.clickIndicator} noselect`}
             src={cursor}
             onClick={handleClick}
             alt="click indicator"
           />
+        )}
+        {isDead && !isVisible && !enteringPipe && (
+          <div className={styles.insertCoin} onClick={handleInsertCoin}>
+            INSERT COIN
+          </div>
         )}
       </div>
 
@@ -167,11 +226,28 @@ export function Hero() {
   const [coins, setCoins] = useState(0)
   const [clickedMario, setClickedMario] = useState(false)
   const [active, setActive] = useState(false)
+  const [jumping, setJumping] = useState(false)
   const [enteringPipe, setEnteringPipe] = useState(false)
   const [taglineIndex, setTaglineIndex] = useState(0)
+  const [time, setTime] = useState(100)
+  const [isDead, setIsDead] = useState(false)
+  const [isVisible, setIsVisible] = useState(true)
   const tagline = taglines[taglineIndex]
   const { playCoin, playLiveUp } = useSfx()
   const stickySentinelRef = useRef()
+
+  const handleDeath = useCallback(() => {
+    setIsDead(true)
+    setTimeout(() => {
+      setIsVisible(false)
+    }, 1500)
+  }, [])
+
+  const restartGame = () => {
+    setTime(100)
+    setIsDead(false)
+    setIsVisible(true)
+  }
 
   const changeTagline = () => {
     const index = taglineIndex + 1
@@ -197,8 +273,15 @@ export function Hero() {
   }, [])
 
   return [
-    <GameBar coins={coins} />,
-    <h1 className={styles.hero}>
+    <GameBar
+      key="gamebar"
+      coins={coins}
+      time={time}
+      setTime={setTime}
+      onDeath={handleDeath}
+      isDead={isDead}
+    />,
+    <h1 key="hero" className={styles.hero}>
       <span className={styles.box}>Mario Saul</span>
       <span ref={stickySentinelRef}></span>
       <span
@@ -208,16 +291,30 @@ export function Hero() {
           "--size": tagline.size || "11vw",
           "--size-lg": tagline["size-lg"] || "45px",
         }}
-        dangerouslySetInnerHTML={{ __html: tagline.text }}
-      />
+      >
+        {tagline.text.trim()}
+      </span>
+      {active && (
+        <img
+          className={styles.coinPop}
+          src={coinImg}
+          alt="coin"
+        />
+      )}
     </h1>,
     <Tagline
+      key="tagline"
       setClickedMario={setClickedMario}
       clickedMario={clickedMario}
       active={active}
       setActive={setActive}
+      jumping={jumping}
+      setJumping={setJumping}
       enteringPipe={enteringPipe}
       clickHandler={changeTagline}
+      isDead={isDead}
+      isVisible={isVisible}
+      onInsertCoin={restartGame}
     />,
   ]
 }

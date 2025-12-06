@@ -10,6 +10,9 @@ import { Skills } from "../components/skills.js"
 import { Projects } from "../components/projects.js"
 import { ContactLinks } from "../components/contactLinks.js"
 import { MusicPlayer } from "../components/musicPlayer.js"
+import "@fontsource/work-sans/400.css"
+import "@fontsource/work-sans/900.css"
+import "@fontsource/press-start-2p"
 import "../styles/global.css"
 
 const ANIMATE_CLASS_NAME = "animateSection"
@@ -17,17 +20,19 @@ const ANIMATE_CLASS_NAME = "animateSection"
 const animate = element => element.classList.add(ANIMATE_CLASS_NAME)
 
 export default function Home() {
-  console.log(
-    "%c HEY THERE!",
-    `
-      font-size: 5vw;
-      color: transparent;
-      background-image: url(https://mario.nintendo.com/static/c3dae4617cec36bb6591b8f935bd7b21/e49c4/character-3.png);
-      background-blend-mode: multiply;
-      background-size: contain;
-      line-height: 1;
-    `
-  )
+  if (process.env.NODE_ENV === "development") {
+    console.log(
+      "%c HEY THERE!",
+      `
+        font-size: 5vw;
+        color: transparent;
+        background-image: url(https://mario.nintendo.com/static/c3dae4617cec36bb6591b8f935bd7b21/e49c4/character-3.png);
+        background-blend-mode: multiply;
+        background-size: contain;
+        line-height: 1;
+      `
+    )
+  }
 
   const elRefs = useRef([])
   const scrollUpSentinelRef = useRef()

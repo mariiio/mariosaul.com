@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React, { useState, useRef, useEffect } from "react"
 import { useSfx } from "../hooks/use-sfx.js"
 import * as styles from "../styles/skills.module.css"
 
@@ -6,6 +6,7 @@ const skills = {
   backend: [
     { name: "Elasticsearch", level: 3 },
     { name: "Elixir/Phoenix" },
+    { name: "Go", level: 2 },
     { name: "Javascript", level: 4 },
     { name: "MongoDB", level: 3 },
     { name: "Node.js", level: 4 },
@@ -67,11 +68,30 @@ const skills = {
 
 export function Skills() {
   const [selectedSkill, setSelectedSkill] = useState(Object.keys(skills)[0])
+  const [isOpen, setIsOpen] = useState(false)
+  const dropdownRef = useRef(null)
   const { playClick, playPop } = useSfx()
 
-  const handleChange = event => {
+  useEffect(() => {
+    const handleClickOutside = event => {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+        setIsOpen(false)
+      }
+    }
+    document.addEventListener("mousedown", handleClickOutside)
+    return () => document.removeEventListener("mousedown", handleClickOutside)
+  }, [])
+
+  const handleSelect = value => {
     playClick()
-    setSelectedSkill(event.target.value)
+    setSelectedSkill(value)
+    setIsOpen(false)
+  }
+
+  const handleKeyDown = event => {
+    if (event.key === "Escape") {
+      setIsOpen(false)
+    }
   }
 
   const getLevelClass = level => {
@@ -94,21 +114,42 @@ export function Skills() {
       <div className={styles.mainTitleContainer}>
         <i className={`${styles.titleIcon} nes-icon trophy is-medium`}></i>
         <h2 className={styles.mainTitle}>Mario's</h2>
-        <div className={`${styles.select} nes-select`}>
-          <select
-            required
-            value={selectedSkill}
+        <div
+          className={styles.dropdown}
+          ref={dropdownRef}
+          onKeyDown={handleKeyDown}
+        >
+          <button
+            className={styles.dropdownButton}
+            onClick={() => {
+              playClick()
+              setIsOpen(!isOpen)
+            }}
             onMouseOver={playPop}
-            onChange={handleChange}
+            aria-haspopup="listbox"
+            aria-expanded={isOpen}
           >
-            {Object.keys(skills).map(skillOption => {
-              return (
-                <option key={skillOption} value={skillOption}>
+            {selectedSkill.charAt(0).toUpperCase() + selectedSkill.slice(1)}
+            <span className={styles.dropdownArrow}>{isOpen ? "▲" : "▼"}</span>
+          </button>
+          {isOpen && (
+            <ul className={styles.dropdownMenu} role="listbox">
+              {Object.keys(skills).map(skillOption => (
+                <li
+                  key={skillOption}
+                  className={`${styles.dropdownItem} ${
+                    skillOption === selectedSkill ? styles.dropdownItemActive : ""
+                  }`}
+                  onClick={() => handleSelect(skillOption)}
+                  onMouseOver={playPop}
+                  role="option"
+                  aria-selected={skillOption === selectedSkill}
+                >
                   {skillOption.charAt(0).toUpperCase() + skillOption.slice(1)}
-                </option>
-              )
-            })}
-          </select>
+                </li>
+              ))}
+            </ul>
+          )}
         </div>
         <h2 className={styles.mainTitle}>Skills</h2>
         <i className={`${styles.titleIcon} nes-icon trophy is-medium`}></i>

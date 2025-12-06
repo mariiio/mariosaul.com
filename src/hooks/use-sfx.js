@@ -24,14 +24,22 @@ function useSound(
 
   try {
     if (sfxCache[sound]) {
-      return [() => sfxCache[sound].play()]
+      return [
+        () => {
+          sfxCache[sound].play().catch(() => {})
+        },
+      ]
     } else {
       const sfx = new Audio(sound)
       sfx.volume = volume
       sfx.loop = loop
       sfxCache[sound] = sfx
 
-      return [() => sfxCache[sound].play()]
+      return [
+        () => {
+          sfxCache[sound].play().catch(() => {})
+        },
+      ]
     }
   } catch (e) {
     return [() => {}]

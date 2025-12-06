@@ -11,8 +11,9 @@ export function Button({
   return (
     <button
       className={props.class}
-      onKeyPress={event => {
-        if (event.key !== "Enter") return
+      onKeyDown={event => {
+        if (event.key !== "Enter" && event.key !== " ") return
+        event.preventDefault()
         handleClick(event)
         clickSound({ forceSoundEnabled })
       }}

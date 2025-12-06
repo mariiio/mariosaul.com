@@ -4,24 +4,25 @@
   text-align: center;
 }
 
-.mainTitle > * {
+.mainTitle>* {
   display: none;
 }
 
 .mainTitle {
-  margin: 25px 0;
+  margin: 25px 0 55px;
   font-size: 18px;
 }
 
 .logoSection {
-  margin: 20px 0;
+  margin-bottom: 40px;
   flex-direction: column;
   align-items: center;
   position: relative;
 }
 
 .logoGroup img {
-  width: 100px;
+  height: 30px;
+  width: auto;
   filter: grayscale(50%);
 }
 
@@ -29,12 +30,33 @@
   filter: grayscale(0%);
 }
 
+/* Height adjustments for logos */
+.logoGroup .linguanaLogo {
+  height: 50px;
+}
+
+.logoGroup .wmgLogo {
+  height: 50px;
+}
+
+.logoGroup .konnectoLogo {
+  height: 18px;
+}
+
+.logoGroup .rootstrapLogo {
+  height: 18px;
+}
+
+.logoGroup .wyeworksLogo {
+  height: 22px;
+}
+
 .logoGroup {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: center;
   align-items: center;
-  flex-wrap: wrap;
-  gap: 10px;
+  flex-wrap: nowrap;
+  gap: 12px;
   border-style: solid;
   border-width: 20px 0px 0px 0px;
   border-image-source: url("../images/block.png");
@@ -46,25 +68,55 @@
 
 .logoGroupTitle {
   background-color: #fbb00c;
-  width: 250px;
-  padding: 4px;
+  width: auto;
+  padding: 1px 6px;
   font-weight: 100;
   border: 1px solid #0f0f04;
   border-radius: 0;
-  box-shadow: 0 0 0 1px #0f0f04, 0 0 0 4px #9b4a12;
+  box-shadow: 0 0 0 1px #0f0f04, 0 0 0 2px #9b4a12;
   text-align: center;
-  font-size: 10px;
-  margin-bottom: 0.5rem;
-}
-
-.logoSection {
-  margin-bottom: 1rem;
+  font-size: 6px;
+  position: absolute;
+  top: 3px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
 }
 
 .historySection {
   display: flex;
   justify-content: center;
   flex-direction: column;
+  position: relative;
+}
+
+.enemyContainer {
+  position: absolute;
+  top: -20px;
+  left: 0;
+  right: 0;
+  height: 20px;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.enemy {
+  position: absolute;
+  height: 20px;
+  width: auto;
+  bottom: 0;
+  image-rendering: pixelated;
+  animation: walkEnemy 15s linear infinite;
+}
+
+@keyframes walkEnemy {
+  0% {
+    left: 100%;
+  }
+
+  100% {
+    left: -20px;
+  }
 }
 
 /* .historySection .verticalHistoryLine {
@@ -81,53 +133,104 @@
     margin-top: 60px;
   }
 
-  .mainTitle > * {
+  .mainTitle>* {
     display: inline-block;
     margin: 0 20px;
   }
 
   .mainTitle {
-    margin: 50px 0;
+    margin: 50px 0 80px;
     font-size: 1.6rem;
+  }
+
+  .logoSection {
+    margin-bottom: 60px;
   }
 
   .logoGroup {
     margin: 0.5rem 80px;
     padding: 2rem 0;
     border-width: 50px 0px 0px 0px;
+    gap: 40px;
+    flex-wrap: wrap;
   }
 
   .logoGroup img {
-    width: 140px;
+    height: 50px;
+  }
+
+  .logoGroup .linguanaLogo {
+    height: 85px;
+  }
+
+  .logoGroup .wmgLogo {
+    height: 85px;
+  }
+
+  .logoGroup .konnectoLogo {
+    height: 28px;
+  }
+
+  .logoGroup .rootstrapLogo {
+    height: 28px;
+  }
+
+  .logoGroup .wyeworksLogo {
+    height: 38px;
   }
 
   .logoGroupTitle {
-    font-size: 14px;
-    padding: 8px;
-    border: 3px solid #0f0f04;
-    box-shadow: 0 0 0 1px #0f0f04, 0 0 0 6px #9b4a12;
+    font-size: 12px;
+    padding: 4px 8px;
+    border: 2px solid #0f0f04;
+    box-shadow: 0 0 0 1px #0f0f04, 0 0 0 4px #9b4a12;
+    top: 17px;
   }
 
-  /* .historySection .verticalHistoryLine {
-    width: 30px;
-    height: 20px;
-    margin-top: 10px;
-    margin-bottom: -8px;
-  } */
+  .enemyContainer {
+    top: -46px;
+    left: 80px;
+    right: 80px;
+    height: 55px;
+  }
+
+  .enemy {
+    height: 55px;
+  }
+
+  @keyframes walkEnemy {
+    0% {
+      left: 100%;
+    }
+
+    100% {
+      left: -55px;
+    }
+  }
 }
 
 @media (min-width: 903px) {
   .logoGroup img {
-    width: auto;
+    height: 60px;
   }
 
-  .logoGroupTitle {
-    margin-bottom: 1.5rem;
+  .logoGroup .linguanaLogo {
+    height: 100px;
   }
-}
 
-@media (min-width: 1017px) {
-  .logoGroup img {
-    width: auto;
+  .logoGroup .wmgLogo {
+    height: 100px;
+  }
+
+  .logoGroup .konnectoLogo {
+    height: 35px;
+  }
+
+  .logoGroup .rootstrapLogo {
+    height: 35px;
+  }
+
+  .logoGroup .wyeworksLogo {
+    height: 45px;
   }
 }

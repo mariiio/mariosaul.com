@@ -47,7 +47,7 @@ function BioText({ bioDifficulty }) {
         <span style={{ display: getVisibility("easy") }}>
           {" "}
           Currently, he works as a Team Leader at{" "}
-          <a href="https://www.konnecto.com/">Konnecto</a>
+          <a href="https://www.linguana.com/">Linguana</a>
           <span style={{ display: getVisibility("normal") }}>
             {" "}
             where he leads his team through technical challenges to develop
@@ -70,7 +70,7 @@ function BioText({ bioDifficulty }) {
           <span style={{ display: getVisibility("hard") }}>
             . He co-founded and built{" "}
             <a
-              href="https://www.dbarato.com"
+              href="https://www.youtube.com/watch?v=NtyGeXcNP6o"
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -84,7 +84,6 @@ function BioText({ bioDifficulty }) {
           .
         </span>
       </p>
-
       <p>
         <span style={{ display: getVisibility("normal") }}>
           {" "}

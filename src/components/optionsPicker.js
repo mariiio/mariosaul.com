@@ -9,12 +9,6 @@ export function OptionsPicker({
   clickSound = () => {},
   clickHandler,
 }) {
-  const handleClick = event => {
-    event.preventDefault()
-    clickSound()
-    clickHandler(event.target.innerHTML.replace(/\s/, "_").toLowerCase())
-  }
-
   return (
     <div className={styles.optionsContainer}>
       <div className="nes-container with-title is-centered">
@@ -29,8 +23,12 @@ export function OptionsPicker({
                     className="nes-radio"
                     name="difficulty"
                     checked={selectedOption === option}
+                    onChange={() => {
+                      clickSound()
+                      clickHandler(option)
+                    }}
                   />
-                  <span onMouseOver={hoverSound} onClick={handleClick}>
+                  <span onMouseEnter={hoverSound}>
                     {option.replace(/_/, " ").toUpperCase()}
                   </span>
                 </label>

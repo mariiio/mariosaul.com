@@ -19,6 +19,7 @@ export function Footer() {
         <a
           href="https://github.com/mariiio/mariosaul.com"
           target="_blank"
+          rel="noreferrer"
           onMouseOver={playPop}
           onClick={playClick}
         >

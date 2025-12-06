@@ -5,20 +5,24 @@
   "version": "0.1.0",
   "license": "0BSD",
   "scripts": {
-    "prebuild": "postcss src/styles/*.css --dir .cache/styles/ && mkdir -p public/styles &&  cat .cache/styles/*.css > public/styles/global.css",
+    "prebuild": "npx postcss src/styles/*.css --dir .cache/styles/ && mkdir -p public/styles && cat .cache/styles/*.css > public/styles/global.css",
     "build": "gatsby build",
-    "develop": "gatsby develop",
+    "dev": "gatsby develop",
     "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md}\"",
     "start": "npm run develop",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
+    "lint": "eslint src --ext .js,.jsx",
     "test": "echo \"Don't fix it if it ain't broke.\" && exit 1"
   },
   "dependencies": {
+    "@fontsource/press-start-2p": "^5.2.7",
+    "@fontsource/work-sans": "^5.2.8",
     "gatsby": "^5.13.0",
-    "gatsby-plugin-google-fonts": "^1.0.1",
     "gatsby-plugin-google-gtag": "^5.13.0",
     "gatsby-plugin-image": "^3.13.0",
+    "gatsby-plugin-manifest": "^5.15.0",
+    "gatsby-plugin-offline": "^6.15.0",
     "gatsby-plugin-postcss": "^6.13.0",
     "gatsby-plugin-sharp": "^5.13.0",
     "gatsby-source-filesystem": "^5.13.0",
@@ -30,6 +34,10 @@
     "react-dom": "^18.2.0"
   },
   "devDependencies": {
+    "eslint": "^7.32.0",
+    "eslint-plugin-react": "^7.37.5",
+    "eslint-plugin-react-hooks": "^4.6.2",
+    "postcss-cli": "^11.0.1",
     "prettier": "^3.0.0"
   },
   "repository": {
