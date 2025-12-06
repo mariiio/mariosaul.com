@@ -4,6 +4,9 @@
   "description": "Mario Saul personal website",
   "version": "0.1.0",
   "license": "0BSD",
+  "engines": {
+    "node": "18.x"
+  },
   "scripts": {
     "prebuild": "npx postcss src/styles/*.css --dir .cache/styles/ && mkdir -p public/styles && cat .cache/styles/*.css > public/styles/global.css",
     "build": "gatsby build",
